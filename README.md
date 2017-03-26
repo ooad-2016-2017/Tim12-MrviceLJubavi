@@ -59,3 +59,10 @@ dodati novog kandidata i obrisati kandidata iz baze, no samo do odreðenog roka
 struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti) 
 
 #### Akteri
+1. Glasaè - Glasaè je osoba koja ima moguænost glasanja, odabira naèina glasanja,
+ pronalaska biraèkog mjesta, odluke da li uopšte želi glasati, igranja igrice,
+ pregleda informacionog dijela stranice
+2. Administrator - Administrator je osoba koja je zadužena za održavanje sistema
+ i baze kandidata (dodavanje, brisanje i mijenjanje kandidata ali samo do odreðenog
+roka). Može upravljati oficijelnim Twitter accountom za izbore te dodavati,
+ mijenjati i brisati dijelove informacionog dijela.
