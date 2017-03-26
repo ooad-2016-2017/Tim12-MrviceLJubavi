@@ -1,4 +1,4 @@
-#### Glasanje na bosanskohercegovaèkim izborima (u Sarajevu)
+##### Naziv Tima: Tim12-MrviceLJubavi
 
 ##### Èlanovi Tima:
 
@@ -6,24 +6,25 @@
 - Krupalija Ehlimana
 - Muftiæ Belma
 
+#### Nziv teme: Glasanje na bosanskohercegovaèkim izborima (u Sarajevu)
+
 #### Opis teme
 
 Potrebno je kreirati aplikaciju za (online) glasanje na izborima 
 u Sarajevu (BiH).
 Svrha sistema jeste omoguæiti lakši naèin glasanja graðanima BiH (Sarajlijama),
- taènije omoguæiti eletronsko glasanje ili pronalazak biraèkog mjesta 
+ taènije omoguæiti elektronsko glasanje ili pronalazak biraèkog mjesta 
 (ukoliko se glasaè odluèi za glasanje na listiæu).
-Ponekad je graðanima teško pronaæi biraèko mjesto 
+Ponekad je graðanima teško pronaæi biraèko mjesto ...
 Sam dolazak na biraèko mjesto za neke glasaèe je nemoguæ ili skoro
  pa nemoguæ te bi u tom sluèaju online glasanje bilo najjednostavniji
  naèin.
 Ukoliko se glasaè odluèi za glasanje putem Interneta (ili odluèi da 
 neæe nikako glasati), tada se neæe 
-kreirati njegov glasaèki listiæ te se smanjiti ukupna potrošnja budžetskog
-novca i proizvodnja papira (što je ekološki prihvatljivo--).
+kreirati njegov glasaèki listiæ te æe se time smanjiti ukupna potrošnja budžetskog
+novca i proizvodnja papira (što je pozitivno za našu okolinu).
 Ukoliko glasaè želi glasati na biraèkom mjestu, aplikacija æe mu
-pomoæi da naðe lokaciju svog biraèkog mjesta u odnosu na ulicu u kojoj 
-stanuje te tako uštedjeti njegovo vrijeme i novac.
+pomoæi da naðe lokaciju svog biraèkog mjesta te tako uštedjeti njegovo vrijeme i novac.
 
 #### Procesi
 Glasaè se pokuša prijaviti u sistem koristeæi svoj JMBG, ime i prezime.
