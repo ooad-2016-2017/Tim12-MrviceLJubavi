@@ -6,16 +6,15 @@
 - Krupalija Ehlimana
 - Muftiæ Belma
 
-#### Nziv teme: Glasanje na bosanskohercegovaèkim izborima (u Sarajevu)
+#### Naziv teme: Glasanje na bosanskohercegovaèkim izborima (u Sarajevu)
 
 #### Opis teme
 
 Potrebno je kreirati aplikaciju za (online) glasanje na izborima 
-u Sarajevu (BiH).
+u Sarajevu.
 Svrha sistema jeste omoguæiti lakši naèin glasanja graðanima BiH (Sarajlijama),
  taènije omoguæiti elektronsko glasanje ili pronalazak biraèkog mjesta 
 (ukoliko se glasaè odluèi za glasanje na listiæu).
-Ponekad je graðanima teško pronaæi biraèko mjesto ...
 Sam dolazak na biraèko mjesto za neke glasaèe je nemoguæ ili skoro
  pa nemoguæ te bi u tom sluèaju online glasanje bilo najjednostavniji
  naèin.
@@ -30,7 +29,7 @@ pomoæi da naðe lokaciju svog biraèkog mjesta te tako uštedjeti njegovo vrijeme i
 Glasaè se pokuša prijaviti u sistem koristeæi svoj JMBG, ime i prezime.
 Ukoliko podaci nisu validni sistem mu prijavljuje grešku, a ukoliko su
 validni tada se glasaè prijavljuje i time mu se omoguæuje glasanje
-(ukoliko je glasaè ulogovan u vremenu glasanja), moguænost izbora naèina
+(ukoliko je glasaè prijavljen u vremenu glasanja), moguænost izbora naèina
 glasanja (elektronskim ili pismenim putem), pronalazak biraèkog mjesta,
 pristup informacionom dijelu koji se sastoji od:
 informacija o stranakama, informacija o kandidatima, vrstama izbora, 
@@ -46,7 +45,7 @@ dodati novog kandidata i obrisati kandidata iz baze, no samo do odreðenog roka
 
 #### Funkcionalnosti
 - moguænost odabira naèina glasanja
-- moguænost informisanja o naèinu glasanja, vrstama izbora
+- moguænost informisanja o naèinu glasanja i vrstama izbora
 - moguænost prijave u sistem sa razlièitim privilegijama
 - moguænost pronalaska biraèkog mjesta
 - moguænost pregleda historije politike u BiH
@@ -62,8 +61,8 @@ struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti)
 #### Akteri
 1. Glasaè - Glasaè je osoba koja ima moguænost glasanja, odabira naèina glasanja,
  pronalaska biraèkog mjesta, odluke da li uopšte želi glasati, igranja igrice,
- pregleda informacionog dijela stranice
+ pregleda informacionog dijela
 2. Administrator - Administrator je osoba koja je zadužena za održavanje sistema
  i baze kandidata (dodavanje, brisanje i mijenjanje kandidata ali samo do odreðenog
-roka). Može upravljati oficijelnim [Twitter accountom](https://twitter.com/glasaj_ba) za izbore te dodavati,
- mijenjati i brisati dijelove informacionog dijela.
+roka). Može upravljati oficijelnim [Twitter accountom](https://twitter.com/glasaj_ba) 
+za izbore te dodavati, mijenjati i brisati dijelove informacionog dijela.
