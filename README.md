@@ -1,12 +1,12 @@
 #### Glasanje na bosanskohercegovaèkim izborima (u Sarajevu)
-Tim12-MrviceLJubavi
-Èlanovi Tima:
 
-Kupusoviæ Elma
-Krupalija Ehlimana
-Muftiæ Belma
+##### Èlanovi Tima:
 
-##### Opis teme
+- Kupusoviæ Elma
+- Krupalija Ehlimana
+- Muftiæ Belma
+
+#### Opis teme
 
 Potrebno je kreirati aplikaciju za (online) glasanje na izborima 
 u Sarajevu (BiH).
@@ -25,7 +25,7 @@ Ukoliko glasaè želi glasati na biraèkom mjestu, aplikacija æe mu
 pomoæi da naðe lokaciju svog biraèkog mjesta u odnosu na ulicu u kojoj 
 stanuje te tako uštedjeti njegovo vrijeme i novac.
 
-#####Procesi
+#### Procesi
 Glasaè se pokuša prijaviti u sistem koristeæi svoj JMBG, ime i prezime.
 Ukoliko podaci nisu validni sistem mu prijavljuje grešku, a ukoliko su
 validni tada se glasaè prijavljuje i time mu se omoguæuje glasanje
@@ -43,7 +43,7 @@ baze sa glasovima). Administrator može promijeniti informacije o kandidatu,
 dodati novog kandidata i obrisati kandidata iz baze, no samo do odreðenog roka
 (ako trenutno izbori nisu u toku ili ako nije par dana pred izbor).
 
-##### Funkcionalnosti
+#### Funkcionalnosti
 - moguænost odabira naèina glasanja
 - moguænost informisanja o naèinu glasanja, vrstama izbora
 - moguænost prijave u sistem sa razlièitim privilegijama
@@ -58,4 +58,4 @@ dodati novog kandidata i obrisati kandidata iz baze, no samo do odreðenog roka
 - moguænost pregeda svih trenutnih kandidata uz odreðena filtriranja (po godinama,
 struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti) 
 
-##### Akteri
+#### Akteri
