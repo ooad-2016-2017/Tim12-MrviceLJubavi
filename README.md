@@ -1,5 +1,4 @@
 ![alt tag](https://github.com/ooad-2016-2017/Tim12-MrviceLJubavi/blob/master/Slike/glasaj.ba.jpg)
-![alt tag](https://github.com/ooad-2016-2017/Tim12-MrviceLJubavi/blob/master/Slike/squirtlesquad.png)
 ![Gifovi](Gifovi/ssquad.gif)
 
 ##### Naziv Tima: Tim12-MrviceLJubavi:chicken:
