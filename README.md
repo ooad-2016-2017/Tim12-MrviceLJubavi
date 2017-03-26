@@ -1,4 +1,4 @@
-####Glasanje na bosanskohercegovaèkim izborima (u Sarajevu)
+#### Glasanje na bosanskohercegovaèkim izborima (u Sarajevu)
 Tim12-MrviceLJubavi
 Èlanovi Tima:
 
@@ -6,7 +6,7 @@ Kupusoviæ Elma
 Krupalija Ehlimana
 Muftiæ Belma
 
-#####Opis teme
+##### Opis teme
 
 Potrebno je kreirati aplikaciju za (online) glasanje na izborima 
 u Sarajevu (BiH).
@@ -43,19 +43,19 @@ baze sa glasovima). Administrator može promijeniti informacije o kandidatu,
 dodati novog kandidata i obrisati kandidata iz baze, no samo do odreðenog roka
 (ako trenutno izbori nisu u toku ili ako nije par dana pred izbor).
 
-#####Funkcionalnosti
--moguænost odabira naèina glasanja
--moguænost informisanja o naèinu glasanja, vrstama izbora
--moguænost prijave u sistem sa razlièitim privilegijama
--moguænost pronalaska biraèkog mjesta
--moguænost pregleda historije politike u BiH
--moguænost online glasanja
--moguænost održavanja baze kandidata (dodavanje, mijenjanje i brisanje)
--moguænost igranja igre
--moguænost informisanja o strankama i kandidatima
--moguænost pregleda novosti o tekuæim izborima
--moguænost pregleda najnovijih „tweetova“ sa Twitter accounta stranice
--moguænost pregeda svih trenutnih kandidata uz odreðena filtriranja (po godinama,
+##### Funkcionalnosti
+- moguænost odabira naèina glasanja
+- moguænost informisanja o naèinu glasanja, vrstama izbora
+- moguænost prijave u sistem sa razlièitim privilegijama
+- moguænost pronalaska biraèkog mjesta
+- moguænost pregleda historije politike u BiH
+- moguænost online glasanja
+- moguænost održavanja baze kandidata (dodavanje, mijenjanje i brisanje)
+- moguænost igranja igre
+- moguænost informisanja o strankama i kandidatima
+- moguænost pregleda novosti o tekuæim izborima
+- moguænost pregleda najnovijih „tweetova“ sa Twitter accounta stranice
+- moguænost pregeda svih trenutnih kandidata uz odreðena filtriranja (po godinama,
 struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti) 
 
-#####Akteri
+##### Akteri
