@@ -1,9 +1,9 @@
 ##### Naziv Tima: Tim12-MrviceLJubavi:chicken:
 
 ****
-##### Èlanovi Tima:
+##### Èlanovi Tima: :hatching_chick::hatched_chick:
 
-1. Kupusoviæ Elma
+1. Kupusoviæ Elma :baby_chick::bread::corn:
 2. Krupalija Ehlimana :dog:
 3. Muftiæ Belma :octocat:
 
@@ -19,8 +19,7 @@ Svrha sistema jeste omoguæiti lakši naèin glasanja graðanima BiH (Sarajlijama),
 Sam dolazak na biraèko mjesto za neke glasaèe je nemoguæ ili skoro
  pa nemoguæ te bi u tom sluèaju online glasanje bilo najjednostavniji
  naèin.
-Ukoliko se glasaè odluèi za glasanje putem Interneta (ili odluèi da 
-neæe nikako glasati), tada se neæe 
+Ukoliko se glasaè odluèi za glasanje putem Interneta, tada se neæe 
 kreirati njegov glasaèki listiæ te æe se time smanjiti ukupna potrošnja budžetskog
 novca i proizvodnja papira (što je pozitivno za našu okolinu).
 Ukoliko glasaè želi glasati na biraèkom mjestu, aplikacija æe mu
@@ -93,3 +92,4 @@ glasanja pojedinaca, biraèkim mjestima,
 ulicama koje pripadaju odreðenim biraèkim mjestima, tweetovima sa oficijelnog Twitter 
 accounta, može upravljati statistikama u informacionom dijelu, ukoliko doðe do greške,
 prijavljuje je, pruža usluge i slijepim i slabovidnim osobama.
+4. Kandidat - Kanditat je osoba koja 
