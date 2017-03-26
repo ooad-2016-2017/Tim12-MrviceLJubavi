@@ -2,11 +2,11 @@
 
 ##### Èlanovi Tima:
 
-- Kupusoviæ Elma
-- Krupalija Ehlimana
-- Muftiæ Belma
+1. Kupusoviæ Elma
+2. Krupalija Ehlimana
+3. Muftiæ Belma
 
-#### Naziv teme: Glasanje na bosanskohercegovaèkim izborima (u Sarajevu)
+#### Naziv teme: Glasanje na bosanskohercegovaèkim izborima (u Sarajevu) - Glasaj.ba
 
 #### Opis teme
 
@@ -27,7 +27,12 @@ pomoæi da naðe lokaciju svog biraèkog mjesta te tako uštedjeti njegovo vrijeme i
 
 #### Procesi
 
-##### Registracija glasaèa
+##### Glasanje
+Graðanin unosi svoje podatke (ime, prezima, JMBG, broj liène karte, ulicu 
+stanovanja, državu iz koje glasa) te bira stranku i kandidate. Ukoliko
+su podaci validni, podaci se unose u sistem i kadidat se obavješava o 
+uspješnom glasanju, u suprotnom 
+
 Glasaè se pokuša prijaviti u sistem koristeæi svoj JMBG, ime i prezime.
 Ukoliko podaci nisu validni sistem mu prijavljuje grešku, a ukoliko su
 validni tada se glasaè prijavljuje i time mu se omoguæuje glasanje
@@ -40,15 +45,29 @@ u oba sluèaja, historije politike u BiH, novostima o izborima te pregled
 najnovijih tweetova sa Twitter accounta stranice.
 
 ##### Pregled kandidata
-Glasaè ima moguænost da pogleda osnovne informacije o svakom kandidatu uz 
-pomoæno filtriranje i sortiranje
+Graðanin ima moguænost da pogleda osnovne informacije o svakom kandidatu uz 
+pomoæno filtriranje. Filtrirati kandidate može po godinama,
+struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti.
 
+##### Opcija za slijepe i slabovidne osobe
+Pri pokretanju aplikacije korisnik može klikom na dugme odabrati nastavak 
+komunikacije sa sistemom uz pomoæ zvuènih signala.
+
+##### Pronazak biraèkog mjesta
+Graðanin unosi ulicu u kojoj živi i sistem mu na osnovu nje javlja detaljnije
+informacije o tome gdje se nalazi njegovo biraèko mjesto (adresu i prikaz 
+lokacije na google maps-u). Ukoliko ulica ne postoji, sistem javlja grešku i 
+zahtijeva ponovni upis naziva ulice.
+ 
 ##### Registracija administratora
 Administrator ima poseban account kojim (kada se prijavi) može održavati 
 sistema u realnom vremenu i održavati bazu kandidata (zabranjeno je mijenjanje 
 baze sa glasovima). Administrator može promijeniti informacije o kandidatu,
 dodati novog kandidata i obrisati kandidata iz baze, no samo do odreðenog roka
-(ako trenutno izbori nisu u toku ili ako nije par dana pred izbor).
+(ako trenutno izbori nisu u toku ili ako nije par dana pred izbor). Prijavljuje
+ se tako što na glavnoj stranici aplikacije ima rubriku u koju unosi svoj 
+username i password. Ukoliko podaci nisu taèni, sistem korisnika obavještava o
+ greški i zahtijeva ponovni unos podataka (ukoliko se koristnik želi prijaviti).
 
 #### Funkcionalnosti
 - moguænost odabira naèina glasanja
@@ -64,6 +83,7 @@ dodati novog kandidata i obrisati kandidata iz baze, no samo do odreðenog roka
 - moguænost pregleda najnovijih „tweetova“ sa Twitter accounta stranice
 - moguænost pregeda svih trenutnih kandidata uz odreðena filtriranja (po godinama,
 struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti) 
+- moguænost komunikacije slijepih i slabovidnih osoba sa sistemom
 
 #### Akteri
 1. Glasaè - Glasaè je osoba koja ima moguænost glasanja, odabira naèina glasanja,
@@ -75,5 +95,6 @@ roka). Može upravljati oficijelnim [Twitter accountom](https://twitter.com/glasa
 za izbore te dodavati, mijenjati i brisati dijelove informacionog dijela.
 3. Sistem - Sistem èuva informacije o kandidatima, glasaèima, glasovima, naèinima 
 glasanja pojedinaca, biraèkim mjestima, 
-ulicama koje pripadaju odreðenim biraèkim mjestima, može upravljati statistikama u 
-informacionom dijelu.
+ulicama koje pripadaju odreðenim biraèkim mjestima, tweetovima sa oficijelnog Twitter 
+accounta, može upravljati statistikama u informacionom dijelu, ukoliko doðe do greške,
+prijavljuje je, pruža usluge i slijepim i slabovidnim osobama.
