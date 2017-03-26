@@ -26,17 +26,24 @@ Ukoliko glasaè želi glasati na biraèkom mjestu, aplikacija æe mu
 pomoæi da naðe lokaciju svog biraèkog mjesta te tako uštedjeti njegovo vrijeme i novac.
 
 #### Procesi
+
+##### Registracija glasaèa
 Glasaè se pokuša prijaviti u sistem koristeæi svoj JMBG, ime i prezime.
 Ukoliko podaci nisu validni sistem mu prijavljuje grešku, a ukoliko su
 validni tada se glasaè prijavljuje i time mu se omoguæuje glasanje
 (ukoliko je glasaè prijavljen u vremenu glasanja), moguænost izbora naèina
 glasanja (elektronskim ili pismenim putem), pronalazak biraèkog mjesta,
 pristup informacionom dijelu koji se sastoji od:
-informacija o stranakama, informacija o kandidatima, vrstama izbora, 
+informacija o stranakama, pregleda kandidata, vrstama izbora, 
 naèinima glasanja (online i na biraèkom mjestu) i objašnjenju kako glasati
 u oba sluèaja, historije politike u BiH, novostima o izborima te pregled 
 najnovijih tweetova sa Twitter accounta stranice.
 
+##### Pregled kandidata
+Glasaè ima moguænost da pogleda osnovne informacije o svakom kandidatu uz 
+pomoæno filtriranje i sortiranje
+
+##### Registracija administratora
 Administrator ima poseban account kojim (kada se prijavi) može održavati 
 sistema u realnom vremenu i održavati bazu kandidata (zabranjeno je mijenjanje 
 baze sa glasovima). Administrator može promijeniti informacije o kandidatu,
@@ -60,9 +67,13 @@ struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti)
 
 #### Akteri
 1. Glasaè - Glasaè je osoba koja ima moguænost glasanja, odabira naèina glasanja,
- pronalaska biraèkog mjesta, odluke da li uopšte želi glasati, igranja igrice,
+ pronalaska biraèkog mjesta (elektronskim ili pismenim putem), igranja igrice,
  pregleda informacionog dijela
 2. Administrator - Administrator je osoba koja je zadužena za održavanje sistema
  i baze kandidata (dodavanje, brisanje i mijenjanje kandidata ali samo do odreðenog
 roka). Može upravljati oficijelnim [Twitter accountom](https://twitter.com/glasaj_ba) 
 za izbore te dodavati, mijenjati i brisati dijelove informacionog dijela.
+3. Sistem - Sistem èuva informacije o kandidatima, glasaèima, glasovima, naèinima 
+glasanja pojedinaca, biraèkim mjestima, 
+ulicama koje pripadaju odreðenim biraèkim mjestima, može upravljati statistikama u 
+informacionom dijelu.
