@@ -1,12 +1,12 @@
 ##### Naziv Tima: Tim12-MrviceLJubavi:chicken:
 
-****
 ##### Èlanovi Tima: :hatching_chick::hatched_chick:
 
 1. Kupusoviæ Elma :baby_chick::bread::corn:
 2. Krupalija Ehlimana :dog:
 3. Muftiæ Belma :octocat:
 
+*****
 ### Naziv teme: Glasanje na bosanskohercegovaèkim izborima (u Sarajevu) - Glasaj.ba
 
 ### Opis teme
@@ -24,7 +24,7 @@ kreirati njegov glasaèki listiæ te æe se time smanjiti ukupna potrošnja budžetsk
 novca i proizvodnja papira (što je pozitivno za našu okolinu).
 Ukoliko glasaè želi glasati na biraèkom mjestu, aplikacija æe mu
 pomoæi da naðe lokaciju svog biraèkog mjesta te tako uštedjeti njegovo vrijeme i novac.
-
+*****
 ### Procesi
 
 ##### Glasanje
@@ -78,7 +78,7 @@ username i password. Ukoliko podaci nisu taèni, sistem korisnika obavještava o
 - moguænost pregeda svih trenutnih kandidata uz odreðena filtriranja (po godinama,
 struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti) 
 - moguænost komunikacije slijepih i slabovidnih osoba sa sistemom
-
+*****
 ### Akteri
 1. Glasaè - Glasaè je osoba koja ima moguænost glasanja, odabira naèina glasanja,
  pronalaska biraèkog mjesta (elektronskim ili pismenim putem), igranja igrice,
@@ -92,4 +92,5 @@ glasanja pojedinaca, biraèkim mjestima,
 ulicama koje pripadaju odreðenim biraèkim mjestima, tweetovima sa oficijelnog Twitter 
 accounta, može upravljati statistikama u informacionom dijelu, ukoliko doðe do greške,
 prijavljuje je, pruža usluge i slijepim i slabovidnim osobama.
-4. Kandidat - Kanditat je osoba koja 
+4. Kandidat - Kanditat je osoba koja administratoru daje informacije o sebi (koji vrši
+potrebne izmjene kandidatovog profila ili ga dodaje, odnosno briše iz baze).
