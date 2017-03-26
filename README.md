@@ -1,14 +1,15 @@
-##### Naziv Tima: Tim12-MrviceLJubavi
+##### Naziv Tima: Tim12-MrviceLJubavi:chicken:
 
+****
 ##### Èlanovi Tima:
 
 1. Kupusoviæ Elma
-2. Krupalija Ehlimana
-3. Muftiæ Belma
+2. Krupalija Ehlimana :dog:
+3. Muftiæ Belma :octocat:
 
-#### Naziv teme: Glasanje na bosanskohercegovaèkim izborima (u Sarajevu) - Glasaj.ba
+### Naziv teme: Glasanje na bosanskohercegovaèkim izborima (u Sarajevu) - Glasaj.ba
 
-#### Opis teme
+### Opis teme
 
 Potrebno je kreirati aplikaciju za (online) glasanje na izborima 
 u Sarajevu.
@@ -25,24 +26,18 @@ novca i proizvodnja papira (što je pozitivno za našu okolinu).
 Ukoliko glasaè želi glasati na biraèkom mjestu, aplikacija æe mu
 pomoæi da naðe lokaciju svog biraèkog mjesta te tako uštedjeti njegovo vrijeme i novac.
 
-#### Procesi
+### Procesi
 
 ##### Glasanje
 Graðanin unosi svoje podatke (ime, prezima, JMBG, broj liène karte, ulicu 
 stanovanja, državu iz koje glasa) te bira stranku i kandidate. Ukoliko
 su podaci validni, podaci se unose u sistem i kadidat se obavješava o 
-uspješnom glasanju, u suprotnom 
-
-Glasaè se pokuša prijaviti u sistem koristeæi svoj JMBG, ime i prezime.
-Ukoliko podaci nisu validni sistem mu prijavljuje grešku, a ukoliko su
-validni tada se glasaè prijavljuje i time mu se omoguæuje glasanje
-(ukoliko je glasaè prijavljen u vremenu glasanja), moguænost izbora naèina
-glasanja (elektronskim ili pismenim putem), pronalazak biraèkog mjesta,
-pristup informacionom dijelu koji se sastoji od:
-informacija o stranakama, pregleda kandidata, vrstama izbora, 
-naèinima glasanja (online i na biraèkom mjestu) i objašnjenju kako glasati
-u oba sluèaja, historije politike u BiH, novostima o izborima te pregled 
-najnovijih tweetova sa Twitter accounta stranice.
+uspješnom glasanju, u suprotnom sistem obavještava kadidata o greški i
+zahtijeva ponovni unos podataka i odabir kandidata i stranke. Ukoliko 
+glasaè želi glasati na biraèkom mjestu (i bira opciju za glasanje na biraèkom mjestu),
+ tada se samo provjeravaju njegovi 
+podaci (sistem obavještava glasaèa o ispravnosti podataka) i ukoliko su validni,
+u sistem se unosi odluka glasaèa, ukoliko nisu, zahtijeva se ponovni unos podataka.
 
 ##### Pregled kandidata
 Graðanin ima moguænost da pogleda osnovne informacije o svakom kandidatu uz 
@@ -69,7 +64,7 @@ dodati novog kandidata i obrisati kandidata iz baze, no samo do odreðenog roka
 username i password. Ukoliko podaci nisu taèni, sistem korisnika obavještava o
  greški i zahtijeva ponovni unos podataka (ukoliko se koristnik želi prijaviti).
 
-#### Funkcionalnosti
+### Funkcionalnosti
 - moguænost odabira naèina glasanja
 - moguænost informisanja o naèinu glasanja i vrstama izbora
 - moguænost prijave u sistem sa razlièitim privilegijama
@@ -85,7 +80,7 @@ username i password. Ukoliko podaci nisu taèni, sistem korisnika obavještava o
 struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti) 
 - moguænost komunikacije slijepih i slabovidnih osoba sa sistemom
 
-#### Akteri
+### Akteri
 1. Glasaè - Glasaè je osoba koja ima moguænost glasanja, odabira naèina glasanja,
  pronalaska biraèkog mjesta (elektronskim ili pismenim putem), igranja igrice,
  pregleda informacionog dijela
