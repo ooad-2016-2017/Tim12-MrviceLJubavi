@@ -10,10 +10,10 @@
 
 Potrebno je kreirati aplikaciju za (online) glasanje na izborima 
 u Sarajevu (BiH).
-Svrha sistema jeste omoguæiti lakši naèin glasanja graðanima BiH,
+Svrha sistema jeste omoguæiti lakši naèin glasanja graðanima BiH (Sarajlijama),
  taènije omoguæiti eletronsko glasanje ili pronalazak biraèkog mjesta 
 (ukoliko se glasaè odluèi za glasanje na listiæu).
-Ponekad je graðanima teško pronaæi biraèko mjesto ...
+Ponekad je graðanima teško pronaæi biraèko mjesto 
 Sam dolazak na biraèko mjesto za neke glasaèe je nemoguæ ili skoro
  pa nemoguæ te bi u tom sluèaju online glasanje bilo najjednostavniji
  naèin.
@@ -64,5 +64,5 @@ struènoj spremi, stranci, poziciji, društvenim priznanjima, popularnosti)
  pregleda informacionog dijela stranice
 2. Administrator - Administrator je osoba koja je zadužena za održavanje sistema
  i baze kandidata (dodavanje, brisanje i mijenjanje kandidata ali samo do odreðenog
-roka). Može upravljati oficijelnim Twitter accountom za izbore te dodavati,
+roka). Može upravljati oficijelnim [Twitter accountom](https://twitter.com/glasaj_ba) za izbore te dodavati,
  mijenjati i brisati dijelove informacionog dijela.
