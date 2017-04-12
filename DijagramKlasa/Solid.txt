@@ -1,0 +1,66 @@
+1. Single Responsiility Principle (S):
+
+KLASA BI TREBALA IMATI SAMO JEDAN RAZLOG ZA PROMJENU.
+
+Ulica
+~ Klasa ispunjava dati princip, buduæi da se sastoji samo od gettera i settera. 
+Ona zna samo jednu stvar - svoje podatke, te je jedini razlog za njenu eventualnu promjenu promjena strukture podataka.
+
+Novost
+~ Klasa ispunjava dati princip, buduæi da se sastoji samo od gettera i settera. 
+Ona zna samo jednu stvar - svoje podatke, te je jedini razlog za njenu eventualnu promjenu promjena strukture podataka.
+
+Glasaè
+~ Klasa ispunjava dati princip, buduæi da se sastoji samo od gettera i settera. 
+Ona zna samo jednu stvar - svoje podatke, te je jedini razlog za njenu eventualnu promjenu promjena strukture podataka.
+
+Osoba
+~ Klasa ispunjava dati princip, buduæi da se sastoji samo od gettera i settera. 
+Ona zna samo jednu stvar - svoje podatke, te je jedini razlog za njenu eventualnu promjenu promjena strukture podataka.
+
+Kandidat
+~ Klasa ispunjava dati princip, buduæi da se sastoji samo od gettera i settera. 
+Ona zna samo jednu stvar - svoje podatke, te je jedini razlog za njenu eventualnu promjenu promjena strukture podataka.
+
+Stranka
+~ Klasa ispunjava dati princip, buduæi da se sastoji samo od gettera i settera. 
+Ona zna samo jednu stvar - svoje podatke, te je jedini razlog za njenu eventualnu promjenu promjena strukture podataka.
+
+Glasaèki Sistem
+~ Klasa ne ispunjava dati princip, buduæi da kontroliše proces glasanja, komunikacije sa bazom podataka, objavom novosti, pravljenjem analiza, itd.
+Ukoliko bi, npr. bilo neophodno obrisati Twitter account glasaèkog sistema i preæi na neku drugu društvenu mrežu, metode klase bi se morale mijenjati.
+Takoðer, ukoliko bi se promijenila logika pristupa bazi podataka, metode klase morale bi se promijeniti.
+Postoji mnogo metoda koje se bave razlièitim stvarima, tako da ova klasa nema samo jednu odgovornost i jedan razlog za promjenu, veæ mnogo njih.
+
+5. Dependency Inversion Principle (D):
+
+MODULI VISOKOG NIVOA NE BI TREBALI OVISITI OD MODULA NISKOG NIVOA. OBA BI TREBALO DA OVISE OD APSTRAKCIJA.
+MODULI NE BI TREBALI OVISITI OD DETALJA. DETALJI BI TREBALI BITI OVISNI OD APSTRAKCIJA.
+
+Ulica
+~ Klasa uopæe ne ovisi o drugim klasama, tako da ispunjava navedeni princip. Ukoliko se promijeni neka druga klasa, vjerovatno neæe biti neophodno mijenjati i ovu.
+
+Novost
+~ Klasa uopæe ne ovisi o drugim klasama, tako da ispunjava navedeni princip. Ukoliko se promijeni neka druga klasa, vjerovatno neæe biti neophodno mijenjati i ovu.
+
+Glasaè
+~ Ova klasa ovisi o samo jednoj klasi - nasljeðuje klasu Osoba.
+Buduæi da je Osoba apstraktna klasa, navedeni princip je ispunjen - klasa Glasaè implementira detalje, a Osoba implementira apstrakcije (kao modul visokog nivoa).
+Obrnute ovisnosti u ovom sluèaju nema.
+
+Osoba
+~ Klasa uopæe ne ovisi o drugim klasama, tako da ispunjava navedeni princip. Ukoliko se promijeni neka druga klasa, vjerovatno neæe biti neophodno mijenjati i ovu.
+
+Kandidat
+~ Ova klasa nasljeðuje klasu Osoba, koja je apstraktna, te samim tim ovisi o modulu visokog nivoa, tako da je, što se tièe ovog dijela ovisnosti, navedeni princip ispunjen.
+S druge strane, ova klasa ovisi o još jednoj klasi - klasi Stranka, no ta klasa nije apstraktna, tako da navedeni princip nije ispunjen.
+Modul niskog nivoa (konkretna klasa Kandidat) ovisi o drugom modulu niskog nivoa (drugoj konkretnoj klasi Stranka), te je samim tim osjetljiv na promjene.
+Ukoliko se nešto promijeni u klasi Stranka, vrlo je vjerovatno da æe se to na neki naèin odraziti na klasu Kandidat, tako da æe je vjerovatno biti neophodno mijenjati.
+
+Stranka
+~ Klasa uopæe ne ovisi o drugim klasama, tako da ispunjava navedeni princip. Ukoliko se promijeni neka druga klasa, vjerovatno neæe biti neophodno mijenjati i ovu.
+
+Glasaèki sistem
+~ Ova klasa nasljeðuje tri interfejsa, koji spadaju u module visokog nivoa, tako da u ovom dijelu navedeni princip nije prekršen.
+S druge strane, ova klasa ovisi o još mnogo stranaka (Ulica, Novost, Glasaè, Stranka, Kandidat), a sve navedene klase su konkretne, a ne apstraktne, pa je navedeni princip ipak prekršen.
+Klasa Glasaèki sistem ovisi o modulima niskog nivoa, što ne bi smjelo da se desi. Kao takva je ne samo podložna, veæ i vrlo osjetljiva na promjene.
