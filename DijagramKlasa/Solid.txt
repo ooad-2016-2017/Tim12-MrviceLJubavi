@@ -32,6 +32,17 @@ Ukoliko bi, npr. bilo neophodno obrisati Twitter account glasaèkog sistema i pre
 Takoðer, ukoliko bi se promijenila logika pristupa bazi podataka, metode klase morale bi se promijeniti.
 Postoji mnogo metoda koje se bave razlièitim stvarima, tako da ova klasa nema samo jednu odgovornost i jedan razlog za promjenu, veæ mnogo njih.
 
+2. Open Closed Principle (O):
+
+Ovaj princip nije prekršen pri kreiranju dijagrama klasa za zadati projekat.
+Na primjer: ukoliko želimo izmijeniti naèin manipulacije nad bazom podataka, to možemo uèiniti
+izmjenom interfejsa Baza bez potrebe da mijenjamo klasu GlasackiSistem. Slièno vrijedi i za
+Analizu (tj. njen sadržaj i naèin prikaza) i upravljanjem oficijelnim Twitter accountom.
+Za klase Glasac i Kandidat moguæe je vršiti izmjene preko zajednièke apstraktne klase Osoba. 
+Zasebne izmjene klasa Glasac i Kandidat nisu planirane, jer se smatra da dodatne osobine 
+i funkcionalnosti nisu potrebne. Slièno vrijedi i za klase Stranka, Ulica i Novost.
+
+
 5. Dependency Inversion Principle (D):
 
 MODULI VISOKOG NIVOA NE BI TREBALI OVISITI OD MODULA NISKOG NIVOA. OBA BI TREBALO DA OVISE OD APSTRAKCIJA.
