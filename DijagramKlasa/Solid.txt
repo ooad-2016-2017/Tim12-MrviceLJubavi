@@ -32,7 +32,10 @@ Ukoliko bi, npr. bilo neophodno obrisati Twitter account glasaèkog sistema i pre
 Takoðer, ukoliko bi se promijenila logika pristupa bazi podataka, metode klase morale bi se promijeniti.
 Postoji mnogo metoda koje se bave razlièitim stvarima, tako da ova klasa nema samo jednu odgovornost i jedan razlog za promjenu, veæ mnogo njih.
 
+
 2. Open Closed Principle (O):
+
+ENTITETI SOFTVERA (KLASE, MODULI, FUNKCIJE) TREBALI BI BITI OTVORENI ZA NADOGRADNJU, ALI ZATVORENE ZA MODIFIKACIJE
 
 Ovaj princip nije prekršen pri kreiranju dijagrama klasa za zadati projekat.
 Na primjer: ukoliko želimo izmijeniti naèin manipulacije nad bazom podataka, to možemo uèiniti
@@ -41,6 +44,30 @@ Analizu (tj. njen sadržaj i naèin prikaza) i upravljanjem oficijelnim Twitter ac
 Za klase Glasac i Kandidat moguæe je vršiti izmjene preko zajednièke apstraktne klase Osoba. 
 Zasebne izmjene klasa Glasac i Kandidat nisu planirane, jer se smatra da dodatne osobine 
 i funkcionalnosti nisu potrebne. Slièno vrijedi i za klase Stranka, Ulica i Novost.
+
+
+3. Liskov Substitution Principle
+
+PODTIPOVI MORAJU BITI ZAMJENJIVI NJIHOVIM OSNOVNIM TIPOVIMA
+
+U dijagramu klasa postoji samo jedna abstraktna klasa, klasa Osoba.  
+Iz nje su naslijeðene dvije klase, klasa Glasaè, te klasa Kandidat. 
+Oba ova podtipa su zamjenjiva njihovim osnovnim tipom, 
+jer klasa Osoba sadrži osnovne informacije o jednoj osobi koje su zajednièke za kandidata i glasaèa, 
+te ako bismo dodali novu klasu koja æe je naslijediti, npr. NerezidualniGlasaè, 
+ne bi došlo do nelegalnog poziva funkcija u izvedenoj klasi. 
+Shodno tome, ispunjen je Liskov princip zamjene.
+
+
+4. Interface Segregation Principle
+
+KLIJENTI NE TREBA DA OVISE O METODAMA KOJE NEÆE UPOTREBLJAVATI
+
+Za klase koje od metoda imaju samo konstruktore, getere, i setere, što su sve klase osim klase Glasaèki sistem, 
+princip izoliranja interfejsa je ispunjen, jer korisnik ne koristi (direktno) te metode.
+Što se tièe klase GlasaèkiSistem, metode koje klijentu neæe upotrebljavati, 
+kao što je dodajTweet npr., su odvojene u zaseban interfejs. Osim metode nadjiBirackoMjesto, 
+koju klijent upotrebljava, ne postoji metoda koju on ne upotrebljava a da nije odvojena u zaseban interfejs. 
 
 
 5. Dependency Inversion Principle (D):
