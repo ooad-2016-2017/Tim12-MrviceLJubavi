@@ -104,10 +104,18 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Glasac.cs" />
+    <Compile Include="Model\GlasackiSistem.cs" />
+    <Compile Include="Model\Kandidat.cs" />
+    <Compile Include="Model\Novost.cs" />
+    <Compile Include="Model\Osoba.cs" />
+    <Compile Include="Model\Stranka.cs" />
+    <Compile Include="Model\Ulica.cs" />
     <Compile Include="Pretraga.xaml.cs">
       <DependentUpon>Pretraga.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ViewModelGlasackiSistem.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
