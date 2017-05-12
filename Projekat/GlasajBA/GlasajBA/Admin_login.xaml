@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="button" Content="Prijavi se&#xD;&#xA;" HorizontalAlignment="Left" Margin="786,610,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.077,0.375" FontFamily="Century" FontSize="32" Width="258" Height="60" Click="button_Click"/>
+        <Button x:Name="buttonPrijava" Content="Prijavi se" HorizontalAlignment="Left" Margin="786,610,0,0" VerticalAlignment="Top"  FontFamily="Century" FontSize="32" Width="258" Height="60"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="239,253,0,0" TextWrapping="Wrap" Text="Korisničko ime:" VerticalAlignment="Top" FontFamily="Century" FontSize="26"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="499,234,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="545" Height="50" FontFamily="Century" FontSize="26"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="323,380,0,0" TextWrapping="Wrap" Text="Lozinka:" VerticalAlignment="Top" FontFamily="Century" FontSize="26"/>

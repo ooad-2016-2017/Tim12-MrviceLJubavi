@@ -26,7 +26,7 @@
                     <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="23,460,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
                     <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Margin="630,40,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
                     <RichEditBox x:Name="richEditBox" HorizontalAlignment="Left" Margin="630,98,0,0" VerticalAlignment="Top" Width="240" Height="322" TextChanged="richEditBox_TextChanged"/>
-                    <Image x:Name="image" HorizontalAlignment="Left" Height="310" Margin="973,40,0,0" VerticalAlignment="Top" Width="242" FocusVisualPrimaryBrush="#FF633030"/>
+                    <!--<Image x:Name="image" HorizontalAlignment="Left" Height="310" Margin="973,40,0,0" VerticalAlignment="Top" Width="242"/> -->
                     <Button x:Name="button" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="1029,382,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="21"/>
                     <Button x:Name="button1" Content="Dodaj" HorizontalAlignment="Left" Margin="1029,530,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="25" Width="186" Height="47" FontWeight="Bold"/>
                     <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="250,250,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="23" Width="296">
@@ -58,7 +58,7 @@
                     <TextBlock x:Name="textBlock14" HorizontalAlignment="Left" Margin="23,460,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
                     <TextBlock x:Name="textBlock15" HorizontalAlignment="Left" Margin="630,40,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
                     <RichEditBox x:Name="richEditBox2" HorizontalAlignment="Left" Margin="630,98,0,0" VerticalAlignment="Top" Width="240" Height="322" TextChanged="richEditBox_TextChanged"/>
-                    <Image x:Name="image1" HorizontalAlignment="Left" Height="310" Margin="973,40,0,0" VerticalAlignment="Top" Width="242" FocusVisualPrimaryBrush="#FF633030"/>
+                    <!--<Image x:Name="image1" HorizontalAlignment="Left" Height="310" Margin="973,40,0,0" VerticalAlignment="Top" Width="242" FocusVisualPrimaryBrush="#FF633030"/> -->
                     <Button x:Name="button2" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="1029,382,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="21"/>
                     <Button x:Name="button3" Content="Spasi promjene" HorizontalAlignment="Left" Margin="1005,530,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="25" Width="210" Height="47" FontWeight="Bold"/>
                     <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="250,250,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="23" Width="296">
@@ -89,7 +89,7 @@
                     <TextBlock x:Name="textBlock22" HorizontalAlignment="Left" Margin="23,460,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
                     <TextBlock x:Name="textBlock23" HorizontalAlignment="Left" Margin="630,40,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
                     <RichEditBox x:Name="richEditBox3" HorizontalAlignment="Left" Margin="630,98,0,0" VerticalAlignment="Top" Width="240" Height="322" TextChanged="richEditBox_TextChanged"/>
-                    <Image x:Name="image2" HorizontalAlignment="Left" Height="310" Margin="973,40,0,0" VerticalAlignment="Top" Width="242" FocusVisualPrimaryBrush="#FF633030"/>
+                    <!--<Image x:Name="image2" HorizontalAlignment="Left" Height="310" Margin="973,40,0,0" VerticalAlignment="Top" Width="242" FocusVisualPrimaryBrush="#FF633030"/> -->
                     <Button x:Name="button4" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="1029,382,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="21"/>
                     <Button x:Name="button5" Content="Obriši" HorizontalAlignment="Left" Margin="1029,530,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="25" Width="186" Height="47" FontWeight="Bold"/>
                     <ComboBox x:Name="comboBox4" HorizontalAlignment="Left" Margin="250,250,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="23" Width="296">
