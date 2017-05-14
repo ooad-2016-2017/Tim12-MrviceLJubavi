@@ -1,0 +1,136 @@
+﻿<Page
+    x:Class="GlasajBA.View.PretragaKandidata"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GlasajBA.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="12*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TextFilteri.FontSize" Value="25"/>
+                        <Setter Target="TextRasponGodina.FontSize" Value="25"/>
+                        <Setter Target="TextStranka.FontSize" Value="25"/>
+                        <Setter Target="TextStrucnaSprema.FontSize" Value="25"/>
+                        <Setter Target="TextPozicija.FontSize" Value="25"/>
+                        <Setter Target="TextDrustvenaPriznanja.FontSize" Value="25"/>
+                        <Setter Target="TextPopularnost.FontSize" Value="25"/>
+                        <Setter Target="TextGodine1.FontSize" Value="25"/>
+                        <Setter Target="TextGodine2.FontSize" Value="25"/>
+                        <Setter Target="MinGodine.FontSize" Value="25"/>
+                        <Setter Target="MaxGodine.FontSize" Value="25"/>
+                        <Setter Target="BoxStranka.FontSize" Value="25"/>
+                        <Setter Target="BoxStrucnaSprema.FontSize" Value="25"/>
+                        <Setter Target="BoxPozicija.FontSize" Value="25"/>
+                        <Setter Target="BoxDrustvenaPriznanja.FontSize" Value="25"/>
+                        <Setter Target="BoxPopularnost.FontSize" Value="25"/>
+                        <Setter Target="TextKandidati.FontSize" Value="25"/>
+                        <Setter Target="ListBoxKandidati.FontSize" Value="25"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TextStranka.(Grid.Column)" Value="7"/>
+                        <Setter Target="TextStranka.(Grid.Row)" Value="1"/>
+                        <Setter Target="BoxStranka.(Grid.Column)" Value="7"/>
+                        <Setter Target="BoxStranka.(Grid.Row)" Value="2"/>
+                        <Setter Target="TextStrucnaSprema.(Grid.Row)" Value="3"/>
+                        <Setter Target="TextStrucnaSprema.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="BoxStrucnaSprema.(Grid.Row)" Value="4"/>
+                        <Setter Target="BoxStrucnaSprema.(Grid.Column)" Value="0"/>
+                        <Setter Target="BoxStrucnaSprema.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="TextPozicija.(Grid.Column)" Value="7"/>
+                        <Setter Target="TextPozicija.(Grid.Row)" Value="3"/>
+                        <Setter Target="BoxPozicija.(Grid.Column)" Value="7"/>
+                        <Setter Target="BoxPozicija.(Grid.Row)" Value="4"/>
+                        <Setter Target="MinGodine.(Grid.ColumnSpan)" Value="3"/>
+                        <Setter Target="TextGodine2.(Grid.Column)" Value="2"/>
+                        <Setter Target="TextGodine2.(Grid.Row)" Value="2"/>
+                        <Setter Target="MaxGodine.(Grid.Column)" Value="3"/>
+                        <Setter Target="MaxGodine.(Grid.Row)" Value="2"/>
+                        <Setter Target="MaxGodine.(Grid.ColumnSpan)" Value="3"/>
+                        <Setter Target="TextDrustvenaPriznanja.(Grid.Row)" Value="5"/>
+                        <Setter Target="TextDrustvenaPriznanja.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="BoxDrustvenaPriznanja.(Grid.Row)" Value="6"/>
+                        <Setter Target="BoxDrustvenaPriznanja.(Grid.Column)" Value="0"/>
+                        <Setter Target="BoxDrustvenaPriznanja.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="TextPopularnost.(Grid.Column)" Value="7"/>
+                        <Setter Target="TextPopularnost.(Grid.Row)" Value="5"/>
+                        <Setter Target="BoxPopularnost.(Grid.Column)" Value="7"/>
+                        <Setter Target="BoxPopularnost.(Grid.Row)" Value="6"/>
+                        <Setter Target="TextKandidati.(Grid.Column)" Value="0"/>
+                        <Setter Target="TextKandidati.(Grid.Row)" Value="7"/>
+                        <Setter Target="TextKandidati.(Grid.ColumnSpan)" Value="3"/>
+                        <Setter Target="ListBoxKandidati.(Grid.Row)" Value="7"/>
+                        <Setter Target="ListBoxKandidati.(Grid.Column)" Value="3"/>
+                        <Setter Target="ListBoxKandidati.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="ListBoxKandidati.(Grid.RowSpan)" Value="1"/>
+                        <Setter Target="TextRasponGodina.TextWrapping" Value="WrapWholeWords"/>
+                        <Setter Target="TextGodine1.FontSize" Value="14"/>
+                        <Setter Target="TextGodine2.FontSize" Value="14"/>
+                        <Setter Target="TextRasponGodina.(Grid.RowSpan)" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Button x:Name="ButtonIzlaz" Grid.Row="0" Grid.Column="0" Background="Blue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+        <Image Source="Assets/zastavaGlasanje.jpg" Grid.RowSpan="2" Grid.ColumnSpan="3" Stretch="Fill" Opacity="0.5"/>
+        <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="6*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="TextFilteri" Text="Filteri:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock x:Name="TextRasponGodina" Text="Raspon godina:" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TextStranka" Text="Stranka:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TextStrucnaSprema" Text="Stručna sprema:" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TextPozicija" Text="Pozicija:" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TextDrustvenaPriznanja" Text="Društvena priznanja:" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TextPopularnost" Text="Popularnost:" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TextGodine1" Text="od:" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock x:Name="TextGodine2" Text="do:" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="MinGodine" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" />
+            <TextBox x:Name="MaxGodine" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" />
+            <ComboBox x:Name="BoxStranka" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Padding="12,5,5,5"/>
+            <ComboBox x:Name="BoxStrucnaSprema" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"/>
+            <ComboBox x:Name="BoxPozicija" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"/>
+            <ComboBox x:Name="BoxDrustvenaPriznanja" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"/>
+            <ComboBox x:Name="BoxPopularnost" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"/>
+            <TextBlock x:Name="TextKandidati" Text="Kandidati:" Grid.Row="0" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontStyle="Italic"/>
+            <ListBox x:Name="ListBoxKandidati" Grid.Column="7" Grid.Row="1" Grid.RowSpan="7" Margin="10" Background="White" ScrollViewer.VerticalScrollBarVisibility="Auto" Opacity="0.75"/>
+        </Grid>
+    </Grid>
+</Page>
