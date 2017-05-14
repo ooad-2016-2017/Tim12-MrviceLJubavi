@@ -92,10 +92,10 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin_login.xaml.cs">
+    <Compile Include="View\Admin_login.xaml.cs">
       <DependentUpon>Admin_login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Admin_pocetna.xaml.cs">
+    <Compile Include="View\Admin_pocetna.xaml.cs">
       <DependentUpon>Admin_pocetna.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -105,13 +105,13 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Glasac.cs" />
-    <Compile Include="Model\GlasackiSistem.cs" />
+    <Compile Include="ViewModel\GlasackiSistem.cs" />
     <Compile Include="Model\Kandidat.cs" />
     <Compile Include="Model\Novost.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\Stranka.cs" />
     <Compile Include="Model\Ulica.cs" />
-    <Compile Include="Pretraga.xaml.cs">
+    <Compile Include="View\Pretraga.xaml.cs">
       <DependentUpon>Pretraga.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,11 +140,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Admin_login.xaml">
+    <Page Include="View\Admin_login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Admin_pocetna.xaml">
+    <Page Include="View\Admin_pocetna.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,7 +152,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pretraga.xaml">
+    <Page Include="View\Pretraga.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
