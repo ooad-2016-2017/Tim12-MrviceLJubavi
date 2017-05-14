@@ -8,6 +8,8 @@ namespace GlasajBA.Model
 {
     public class GlasackiSistem
     {
+        //ovo je ViewModel !!!
+        #region Atributi
         List<Glasac> glasaci;
         List<Kandidat> kandidati;
         List<Stranka> stranke;
@@ -15,26 +17,11 @@ namespace GlasajBA.Model
         List<Novost> novosti;
         DateTime pocetak, kraj;
         bool lokalniIzbori;
-
         string adminPassword, adminUsername;
         bool slijepi;
+        #endregion
 
-
-        string nadjiBiracko(string ul)
-        {
-            foreach (Ulica u in ulice)
-                if (ul == u.Naziv)
-                    return u.BirackoMjesto;
-            return "Greska! Nema date ulice!";
-        }
-
-        bool registrujAdmina(string un, string pass)
-        {
-            if (un == AdminUsername && pass == AdminPassword)
-                return true;
-            return false;
-        }
-
+        #region Konstruktor
         public GlasackiSistem(List<Glasac> glasaci, List<Kandidat> kandidati, List<Stranka> stranke, List<Ulica> ulice, List<Novost> novosti, DateTime pocetak, DateTime kraj, bool lokalniIzbori, string adminPassword, string adminUsername, bool slijepi)
         {
             this.glasaci = glasaci;
@@ -49,7 +36,9 @@ namespace GlasajBA.Model
             this.adminUsername = adminUsername;
             this.slijepi = slijepi;
         }
+        #endregion
 
+        #region GeteriISeteri
         public List<Glasac> Glasaci
         {
             get
@@ -192,5 +181,24 @@ namespace GlasajBA.Model
                 slijepi = value;
             }
         }
+        #endregion
+
+        #region Metode
+
+        string nadjiBiracko(string ul)
+        {
+            foreach (Ulica u in ulice)
+                if (ul == u.Naziv)
+                    return u.BirackoMjesto;
+            return "Greska! Nema date ulice!";
+        }
+
+        bool registrujAdmina(string un, string pass)
+        {
+            if (un == AdminUsername && pass == AdminPassword)
+                return true;
+            return false;
+        }
+        #endregion
     }
 }

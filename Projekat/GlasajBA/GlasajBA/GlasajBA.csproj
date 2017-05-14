@@ -115,7 +115,9 @@
       <DependentUpon>Pretraga.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\ViewModelGlasackiSistem.cs" />
+    <Compile Include="ViewModel\AdministratorViewModel.cs" />
+    <Compile Include="ViewModel\GlasanjeViewModel.cs" />
+    <Compile Include="ViewModel\OstaleFunkcionalnostiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
