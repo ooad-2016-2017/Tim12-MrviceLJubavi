@@ -133,6 +133,9 @@
     <Compile Include="View\PretragaKandidata.xaml.cs">
       <DependentUpon>PretragaKandidata.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PretragaNovosti.xaml.cs">
+      <DependentUpon>PretragaNovosti.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PronalazakBirackogMjesta.xaml.cs">
       <DependentUpon>PronalazakBirackogMjesta.xaml</DependentUpon>
     </Compile>
@@ -146,7 +149,9 @@
   <ItemGroup>
     <Content Include="Assets\blind-walking.png" />
     <Content Include="Assets\user.png" />
-    <Content Include="Assets\zastavaGlasanje.jpg" />
+    <Content Include="Assets\zastavaGlasanje.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -194,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PretragaKandidata.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PretragaNovosti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

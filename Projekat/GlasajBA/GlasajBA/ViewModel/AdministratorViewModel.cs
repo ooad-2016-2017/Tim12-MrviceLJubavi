@@ -92,19 +92,6 @@ namespace GlasajBA.ViewModel
 
         }
 
-        /*
-        public ICommand Attribute
-        {
-            get
-            {
-                return 
-            }
-            set
-            {
-
-            }
-        }
-        */
 
     }
 }

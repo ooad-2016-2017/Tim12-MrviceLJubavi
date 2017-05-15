@@ -68,19 +68,6 @@ namespace GlasajBA.ViewModel
 
         public OstaleFunkcionalnostiViewModel() { }
 
-        /*
-        public ICommand Attribute
-        {
-            get
-            {
-                return 
-            }
-            set
-            {
-
-            }
-        }
-        */
     }
 
 }
