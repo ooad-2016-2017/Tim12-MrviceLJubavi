@@ -7,10 +7,52 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="387,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontFamily="Century" FontSize="25" Width="670"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="164,87,0,0" TextWrapping="Wrap" Text="Nasolov novosti:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="462" Margin="164,199,0,0" VerticalAlignment="Top" Width="893" FontFamily="Century" FontSize="25"/>
-
+    <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Wide"/>
+                <VisualState x:Name="Narrow">
+                    <VisualState.Setters>
+                        <Setter Target="textBox.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>45,10,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBox.(Grid.Row)" Value="2"/>
+                        <Setter Target="grid.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,601,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="listBox.(FrameworkElement.Width)" Value="544"/>
+                        <Setter Target="listBox.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>45,10,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBox.(FrameworkElement.Width)" Value="544"/>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>45,23,0,10</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="textBlock.(FrameworkElement.Height)" Value="NaN"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Height="75" Margin="387,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontFamily="Century" FontSize="25" Width="670"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="75" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Margin="119,24,0,9" TextWrapping="Wrap" Text="Nasolov novosti:" FontFamily="Century" FontSize="25" Width="234" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment, TopPosition, BottomPosition"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="3" Height="410" Margin="119,20,0,0" VerticalAlignment="Top" Width="938" FontFamily="Century" FontSize="25" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="6.5*"></RowDefinition>
+        </Grid.RowDefinitions>
     </Grid>
 </Page>
