@@ -444,22 +444,22 @@
             <PivotItem Header="Dodaj kandidata" Margin="14,0,10,0">
                 <Grid HorizontalAlignment="Left" Height="605" Margin="0,10,0,0" VerticalAlignment="Top" Width="1256">
                     <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="23,40,0,0" TextWrapping="Wrap" Text="Ime:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
-                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="250,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" FontFamily="Century" FontSize="25"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="250,35,0,0" TextWrapping="Wrap" Text="{Binding Path=AdministratorViewModel.NoviKandidat.Ime}" VerticalAlignment="Top" Width="296" FontFamily="Century" FontSize="25"/>
                     <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="23,110,0,0" TextWrapping="Wrap" Text="Prezime:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
-                    <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="250,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" FontFamily="Century" FontSize="25"/>
+                    <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="250,105,0,0" TextWrapping="Wrap" Text="{Binding Path=AdministratorViewModel.NoviKandidat.Prezime}" VerticalAlignment="Top" Width="296" FontFamily="Century" FontSize="25"/>
                     <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="23,180,0,0" TextWrapping="Wrap" Text="Datum rođenja:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
                     <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="23,250,0,0" TextWrapping="Wrap" Text="Spol:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
                     <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="23,320,0,0" TextWrapping="Wrap" Text="Stranka:" VerticalAlignment="Top" FontFamily="Century" FontSize="25" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBox x:Name="textBox4" HorizontalAlignment="Left" Margin="250,315,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" FontFamily="Century" FontSize="25" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="23,390,0,0" TextWrapping="Wrap" Text="Strucna sprema:" VerticalAlignment="Top" FontFamily="Century" FontSize="25" d:LayoutOverrides="VerticalAlignment"/>
-                    <TextBox x:Name="textBox5" HorizontalAlignment="Left" Margin="250,385,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" FontFamily="Century" FontSize="25" d:LayoutOverrides="VerticalAlignment"/>
+                    <TextBox x:Name="textBox5" HorizontalAlignment="Left" Margin="250,385,0,0" TextWrapping="Wrap" Text="{Binding Path=AdministratorViewModel.NoviKandidat.StrucnaSprema}" VerticalAlignment="Top" Width="296" FontFamily="Century" FontSize="25" d:LayoutOverrides="VerticalAlignment"/>
                     <DatePicker x:Name="datePicker" Margin="250,178,0,395" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Century" FontSize="23" d:LayoutOverrides="TopMargin, BottomMargin" />
                     <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="23,460,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" FontFamily="Century" FontSize="25"/>
                     <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Margin="630,40,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" FontFamily="Century" FontSize="25" d:LayoutOverrides="HorizontalAlignment"/>
-                    <RichEditBox x:Name="richEditBox" HorizontalAlignment="Left" Margin="630,98,0,0" VerticalAlignment="Top" Width="240" Height="322" TextChanged="richEditBox_TextChanged" d:LayoutOverrides="HorizontalAlignment"/>
+                    <RichEditBox x:Name="richEditBox" HorizontalAlignment="Left" Margin="630,98,0,0" VerticalAlignment="Top"  Width="240" Height="322" d:LayoutOverrides="HorizontalAlignment"/>
                     <Image x:Name="image" HorizontalAlignment="Left" Height="300" Margin="975,35,0,0" VerticalAlignment="Top" Width="250" d:LayoutOverrides="HorizontalAlignment"/>
                     <Button x:Name="button" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="1029,382,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="21" d:LayoutOverrides="HorizontalAlignment"/>
-                    <Button x:Name="button1" Content="Dodaj" HorizontalAlignment="Left" Margin="1029,504,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="25" Width="186" Height="47" FontWeight="Bold" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="button1" Content="Dodaj" Command="{Binding Path=AdministratorViewModel.DodavanjeKandidata}" HorizontalAlignment="Left" Margin="1029,504,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="25" Width="186" Height="47" FontWeight="Bold" d:LayoutOverrides="HorizontalAlignment"/>
                     <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="250,250,0,0" VerticalAlignment="Top" FontFamily="Century" FontSize="23" Width="296">
                         <ComboBoxItem Content="F"/>
                         <ComboBoxItem Content="M"/>
@@ -570,7 +570,7 @@
                 </Grid>
             </PivotItem>
         </Pivot>
-        <Button x:Name="button12" Content="Odjava" HorizontalAlignment="Right" Margin="0,10,10,10" VerticalAlignment="Stretch" FontFamily="Century" FontSize="25" Height="64" Width="171" FontWeight="Bold" BorderThickness="2" Background="#00000000"/>
+        <Button x:Name="button12" Command="{Binding Path=AdministratorViewModel.Odjava}" Content="Odjava" HorizontalAlignment="Right" Margin="0,10,10,10" VerticalAlignment="Stretch" FontFamily="Century" FontSize="25" Height="64" Width="171" FontWeight="Bold" BorderThickness="2" Background="#00000000"/>
 
     </Grid>
 </Page>

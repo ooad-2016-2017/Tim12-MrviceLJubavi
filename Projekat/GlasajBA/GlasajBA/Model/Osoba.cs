@@ -9,7 +9,7 @@ using GlasajBA.Helper;
 
 namespace GlasajBA.Model
 {
-    public class Osoba : ValidatableBindableBase
+    public abstract class Osoba : ValidatableBindableBase
     {
         string ime;
         [Required(ErrorMessage = "Niste unijeli ime")]
@@ -25,6 +25,9 @@ namespace GlasajBA.Model
                 SetProperty(ref ime, value);
             }
         }
+
+        public Osoba() { }
+
         string prezime;
         [Required(ErrorMessage = "Niste unijeli prezime")]
         public string Prezime

@@ -17,6 +17,8 @@ namespace GlasajBA.Model
         int popularnost;
         Image slika;
 
+        public Kandidat() { }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string PropertyName)
@@ -132,6 +134,11 @@ namespace GlasajBA.Model
             this.drustvenaPriznanja = drustvenaPriznanja;
             this.popularnost = popularnost;
             this.slika = img;
+        }
+
+        public override string ToString()
+        {
+            return Ime+" "+Prezime;
         }
 
     }

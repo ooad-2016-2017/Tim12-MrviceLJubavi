@@ -34,6 +34,8 @@ namespace GlasajBA.Model
             }
         }
 
+        public Novost() { }
+
         public List<Image> Slike
         {
             get
