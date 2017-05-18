@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace GlasajBA.ViewModel
 {
@@ -37,6 +38,7 @@ namespace GlasajBA.ViewModel
         ICommand PovratakNaGlavnu { get; set; }
         ICommand PretragaKandidata { get; set; }
         ICommand PronalazakBirackogMjesta { get; set; }
+        ICommand GlasanjeNaBirackomMjestu { get; set; }
         INavigationService NavigationService { get; set; }
         public Glasac Glasac { get => glasac; set => glasac = value; }
         public List<Kandidat> RezultatiPretrage { get => rezultatiPretrage; set => rezultatiPretrage = value; }
@@ -61,6 +63,7 @@ namespace GlasajBA.ViewModel
             PretragaKandidata = new RelayCommand<object>(pretragaKandidata, jeLiMogucaPretraga);
             PovratakNaGlavnu = new RelayCommand<object>(vratiSe, jeLiIzborniDan);
             PronalazakBirackogMjesta = new RelayCommand<object>(pronadiBirackoMjesto, jeLiMogucaPretraga);
+            GlasanjeNaBirackomMjestu = new RelayCommand<object>(glasajNaBirackomMjestu, jeLiIzborniDan);
         }
         public bool jeLiMogucaPretraga (object parametar)
         {
@@ -70,17 +73,54 @@ namespace GlasajBA.ViewModel
         {
             return (DateTime.Now > Parent.Sistem.Pocetak && DateTime.Now < Parent.Sistem.Kraj);
         }
-        public void glasanje (object parametar)
+        public async void glasanje (object parametar)
         {
-            foreach (Glasac g in Parent.Sistem.Glasaci)
+            var dialog = new MessageDialog("Da li ste sigurni da želite glasati?");
+            dialog.Title = "Upit";
+            dialog.Commands.Add(new UICommand { Label = "Da", Id = 0 });
+            dialog.Commands.Add(new UICommand { Label = "Ne", Id = 1 });
+            var res=await dialog.ShowAsync();
+            if ((int)res.Id == 0)
             {
-                if (g.JMBG1 == glasac.JMBG1)
+                foreach (Glasac g in Parent.Sistem.Glasaci)
                 {
-                    g.JeLiGlasao = true;
-                    break;
+                    if (g.JMBG1 == glasac.JMBG1)
+                    {
+                        g.JeLiGlasao = true;
+                        break;
+                    }
                 }
+                dialog = new MessageDialog("Hvala Vam na glasanju!");
+                dialog.Title = "Informacija";
+                dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
+                res = await dialog.ShowAsync();
+                NavigationService.Navigate(typeof(GlasajBA.View.GlavnaStranica), Parent);
             }
-            NavigationService.Navigate(typeof(GlasajBA.View.GlavnaStranica), Parent);
+        }
+        public async void glasajNaBirackomMjestu (object parametar)
+        {
+            var dialog = new MessageDialog("Da li ste sigurni da želite glasati na biračkom mjestu?");
+            dialog.Title = "Upit";
+            dialog.Commands.Add(new UICommand { Label = "Da", Id = 0 });
+            dialog.Commands.Add(new UICommand { Label = "Ne", Id = 1 });
+            var res = await dialog.ShowAsync();
+            if ((int)res.Id == 0)
+            {
+                foreach (Glasac g in Parent.Sistem.Glasaci)
+                {
+                    if (g.JMBG1 == glasac.JMBG1)
+                    {
+                        g.JeLiGlasao = true;
+                        g.NaBirackomMjestu = true;
+                        break;
+                    }
+                }
+                dialog = new MessageDialog("Hvala Vam na glasanju!");
+                dialog.Title = "Informacija";
+                dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
+                res = await dialog.ShowAsync();
+                NavigationService.Navigate(typeof(GlasajBA.View.GlavnaStranica), Parent);
+            }
         }
         public void prediNaOpcinu (object parametar)
         {
