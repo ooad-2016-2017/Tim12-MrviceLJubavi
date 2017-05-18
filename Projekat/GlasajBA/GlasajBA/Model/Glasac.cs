@@ -11,7 +11,7 @@ namespace GlasajBA.Model
     {
         bool jeLiGlasao;
         bool naBirackomMjestu;
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string PropertyName)

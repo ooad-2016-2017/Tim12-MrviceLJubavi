@@ -41,6 +41,7 @@
                         <Setter Target="BoxPopularnost.FontSize" Value="25"/>
                         <Setter Target="TextKandidati.FontSize" Value="25"/>
                         <Setter Target="ListBoxKandidati.FontSize" Value="25"/>
+                        <Setter Target="ButtonPretraga.FontSize" Value="25"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState>
@@ -87,12 +88,14 @@
                         <Setter Target="TextGodine1.FontSize" Value="14"/>
                         <Setter Target="TextGodine2.FontSize" Value="14"/>
                         <Setter Target="TextRasponGodina.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="ButtonPretraga.FontSize" Value="14"/>
+                        <Setter Target="ButtonPretraga.(Grid.Row)" Value="0"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <Button x:Name="ButtonIzlaz" Grid.Row="0" Grid.Column="0" Background="Blue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
-        <Image Source="Assets/zastavaGlasanje.jpg" Grid.RowSpan="2" Grid.ColumnSpan="3" Stretch="Fill" Opacity="0.5"/>
+        <Button x:Name="ButtonIzlaz" Grid.Row="0" Grid.Column="0" Background="Blue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}"/>
+        <Image Source="Slike/zastavaGlasanje.jpg" Grid.RowSpan="2" Grid.ColumnSpan="3" Stretch="Fill" Opacity="0.5"/>
         <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -122,15 +125,16 @@
             <TextBlock x:Name="TextPopularnost" Text="Popularnost:" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock x:Name="TextGodine1" Text="od:" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
             <TextBlock x:Name="TextGodine2" Text="do:" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
-            <TextBox x:Name="MinGodine" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" />
-            <TextBox x:Name="MaxGodine" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" />
-            <ComboBox x:Name="BoxStranka" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Padding="12,5,5,5"/>
-            <ComboBox x:Name="BoxStrucnaSprema" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"/>
-            <ComboBox x:Name="BoxPozicija" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"/>
-            <ComboBox x:Name="BoxDrustvenaPriznanja" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"/>
-            <ComboBox x:Name="BoxPopularnost" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"/>
+            <TextBox x:Name="MinGodine" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Text="{Binding Path=GodineMin}"/>
+            <TextBox x:Name="MaxGodine" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Text="{Binding Path=GodineMax}"/>
+            <ComboBox x:Name="BoxStranka" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Padding="12,5,5,5" ItemsSource="{Binding Path=Parent.Sistem.Stranke.Ime}" SelectedValue="{Binding Path=Kandidat.Stranka, Mode=TwoWay}"/>
+            <ComboBox x:Name="BoxStrucnaSprema" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" ItemsSource="{Binding Path=Parent.Sistem.Podaci.StrucneSpreme}" SelectedValue="{Binding Path=Kandidat.StrucnaSprema, Mode=TwoWay}"/>
+            <ComboBox x:Name="BoxPozicija" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" ItemsSource="{Binding Path=Parent.Sistem.Podaci.Pozicije}" SelectedValue="{Binding Path=Kandidat.Pozicija, Mode=TwoWay}"/>
+            <ComboBox x:Name="BoxDrustvenaPriznanja" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" ItemsSource="{Binding Path=Parent.Sistem.Podaci.Priznanja}" SelectedValue="{Binding Path=Kandidat.DrustvenaPriznanja, Mode=TwoWay}"/>
+            <ComboBox x:Name="BoxPopularnost" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" ItemsSource="{Binding Path=Parent.Sistem.Podaci.Popularnosti}" SelectedValue="{Binding Path=Kandidat.Popularnost, Mode=TwoWay}"/>
             <TextBlock x:Name="TextKandidati" Text="Kandidati:" Grid.Row="0" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontStyle="Italic"/>
-            <ListBox x:Name="ListBoxKandidati" Grid.Column="7" Grid.Row="1" Grid.RowSpan="7" Margin="10" Background="White" ScrollViewer.VerticalScrollBarVisibility="Auto" Opacity="0.75"/>
+            <ListBox x:Name="ListBoxKandidati" Grid.Column="7" Grid.Row="1" Grid.RowSpan="6" Margin="10" Background="White" ScrollViewer.VerticalScrollBarVisibility="Auto" Opacity="0.75" ItemsSource="{Binding Path=RezultatiPretrage}"/>
+            <Button x:Name="ButtonPretraga" Grid.Column="7" Grid.Row="7" Margin="5" Background="AliceBlue" HorizontalAlignment="Center" Content="Pretraga" Command="{Binding Path=PretragaKandidata}"/>
         </Grid>
     </Grid>
 </Page>

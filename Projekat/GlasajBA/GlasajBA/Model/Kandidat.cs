@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Prism.Windows.Validation;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,13 +9,23 @@ using Windows.UI.Xaml.Controls;
 
 namespace GlasajBA.Model
 {
-    public class Kandidat : Osoba
+    public class Kandidat : Osoba, INotifyPropertyChanged
     {
         Stranka stranka;
         int godine;
         string strucnaSprema, pozicija, drustvenaPriznanja;
         int popularnost;
         Image slika;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string PropertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
+            }
+        }
 
         public Stranka Stranka
         {
@@ -40,7 +52,7 @@ namespace GlasajBA.Model
 
             set
             {
-                //godine = value; nije moguce mijenjati godine starosti
+                godine = value;
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GlasajBA.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace GlasajBA.ViewModel
         ICommand pregledNovosti;
         ICommand pretragaKandidata;
         ICommand sistemZaSlijepeISlabovidne;
-
+        GlasackiSistem sistem;
         public ICommand SistemZaSlijepeISlabovidne
         {
             get
@@ -65,6 +66,8 @@ namespace GlasajBA.ViewModel
                 pronalazakBirackogMjesta = value;
             }
         }
+
+        public GlasackiSistem Sistem { get => sistem; set => sistem = value; }
 
         public OstaleFunkcionalnostiViewModel() { }
 

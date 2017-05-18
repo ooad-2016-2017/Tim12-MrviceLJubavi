@@ -26,10 +26,9 @@ namespace GlasajBA.View
         {
             this.InitializeComponent();
         }
-
-        private void InitializeComponent()
+        private void Prikazi_Click (object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            SplitView1.IsPaneOpen = !SplitView1.IsPaneOpen;
         }
     }
 }

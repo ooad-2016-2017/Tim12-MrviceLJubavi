@@ -3,27 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prism.Windows.Validation;
+using System.ComponentModel.DataAnnotations;
+using GlasajBA.Helper;
 
 namespace GlasajBA.Model
 {
-    public class Osoba
+    public class Osoba : ValidatableBindableBase
     {
-        string ime, prezime;
-        DateTime datRodjenja;
-        string licnaKarta;
-        string JMBG;
-        string drzavaBoravka;
-
-        public Osoba(string im, string prez, DateTime datR, string LK, string maticni, string drzava)
-        {
-            Ime = im;
-            Prezime = prez;
-            DatRodjenja = datR;
-            LicnaKarta = LK;
-            JMBG1 = maticni;
-            DrzavaBoravka = drzava;
-        }
-
+        string ime;
+        [Required(ErrorMessage = "Niste unijeli ime")]
         public string Ime
         {
             get
@@ -33,10 +22,11 @@ namespace GlasajBA.Model
 
             set
             {
-                ime = value;
+                SetProperty(ref ime, value);
             }
         }
-
+        string prezime;
+        [Required(ErrorMessage = "Niste unijeli prezime")]
         public string Prezime
         {
             get
@@ -46,10 +36,11 @@ namespace GlasajBA.Model
 
             set
             {
-                prezime = value;
+                SetProperty(ref prezime, value);
             }
         }
-
+        DateTime datRodjenja;
+        [PunoljetstvoPropertyAttribute(ErrorMessage="Morate biti punoljetni")]
         public DateTime DatRodjenja
         {
             get
@@ -59,10 +50,11 @@ namespace GlasajBA.Model
 
             set
             {
-                datRodjenja = value;
+                SetProperty(ref datRodjenja, value);
             }
         }
-
+        string licnaKarta;
+        [Required(ErrorMessage = "Niste unijeli broj lične karte")]
         public string LicnaKarta
         {
             get
@@ -72,10 +64,11 @@ namespace GlasajBA.Model
 
             set
             {
-                licnaKarta = value;
+                SetProperty(ref licnaKarta, value);
             }
         }
-
+        string JMBG;
+        [Required(ErrorMessage = "Niste unijeli matični broj")]
         public string JMBG1
         {
             get
@@ -85,10 +78,11 @@ namespace GlasajBA.Model
 
             set
             {
-                JMBG = value;
+                SetProperty(ref JMBG, value);
             }
         }
-
+        string drzavaBoravka;
+        [Required(ErrorMessage = "Niste unijeli državu boravka")]
         public string DrzavaBoravka
         {
             get
@@ -98,8 +92,17 @@ namespace GlasajBA.Model
 
             set
             {
-                drzavaBoravka = value;
+                SetProperty(ref drzavaBoravka, value);
             }
+        }
+        public Osoba(string im, string prez, DateTime datR, string LK, string maticni, string drzava)
+        {
+            Ime = im;
+            Prezime = prez;
+            DatRodjenja = datR;
+            LicnaKarta = LK;
+            JMBG1 = maticni;
+            DrzavaBoravka = drzava;
         }
     }
 }

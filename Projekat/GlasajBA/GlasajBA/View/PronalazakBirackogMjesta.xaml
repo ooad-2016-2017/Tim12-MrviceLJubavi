@@ -22,11 +22,13 @@
         </Grid.RowDefinitions>
         <Image Source="Assets/zastavaGlasanje.jpg" Grid.RowSpan="5" Grid.ColumnSpan="3" Stretch="Fill" Opacity="0.5"/>
         <TextBlock x:Name="TextPronalazak" FontSize="25" Text="Pronalazak biračkog mjesta" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontStyle="Italic"/>
-        <Button x:Name="ButtonIzlaz" Grid.Row="0" Grid.Column="0" Background="Blue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+        <Button x:Name="ButtonIzlaz" Grid.Row="0" Grid.Column="0" Background="Blue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}"/>
         <TextBlock x:Name="TextUlica" FontSize="25" Text="Ulica:" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock x:Name="TextBirackoMjesto" FontSize="25" Text="Biračko mjesto:" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBox x:Name="BoxUlica" Grid.Row="1" Grid.Column="2" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" FontSize="25" />
-        <TextBox x:Name="BoxBirackoMjesto" Grid.Row="2" Grid.Column="2" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" IsReadOnly="True" FontSize="25" />
+        <TextBox x:Name="BoxUlica" Grid.Row="1" Grid.Column="2" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" FontSize="25" Text="{Binding Path=Ulica.Naziv}"/>
+     <TextBlock  Margin="5,5,5,5"  Text="{Binding Ulica.Errors[Naziv][0]}" Foreground="Red" HorizontalAlignment="Right" Grid.Row="4" Grid.Column="1"/>
+        <TextBox x:Name="BoxBirackoMjesto" Grid.Row="2" Grid.Column="2" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" IsReadOnly="True" FontSize="25" Text="{Binding Path=Ulica.BirackoMjesto}"/>
         <Frame x:Name="Mapa" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Opacity="0.8" />
+        <Button x:Name="ButtonPretraga" Grid.Column="2" Grid.Row="4" Margin="5" Background="AliceBlue" HorizontalAlignment="Center" Content="Pretraga" Command="{Binding Path=PronalazakBirackogMjesta}"/>
     </Grid>
 </Page>
