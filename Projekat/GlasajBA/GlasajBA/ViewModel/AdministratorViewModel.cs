@@ -5,21 +5,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.Storage;
+using Windows.Storage.Pickers;
+using Windows.UI.Xaml;
 
 namespace GlasajBA.ViewModel
 {
     public class AdministratorViewModel
     {
+
+        /*
+            sta fali:
+            -brisanje kandidata
+            -baza za novosti
+            -punjenje comboboxa sa nazivima stranki
+            -kako implementirati da se Stranka sacuva u bazu???
+            -richEditBox binding i rijesiti se onih eventa dodanih 
+            -kod ucitavanja slike
+            -kod navigacije ne moze da prepozna neke forme
+
+        */
         ICommand dodavanjeKandidata; //
         ICommand izmjenaKandidata; //
         ICommand brisanjeKandidata; //
         ICommand login; //
-        ICommand pretragaKandidata;
+        ICommand pretragaKandidata; //
         ICommand DodavanjeNovosti { get; set; } //
         ICommand IzmjenaNovosti { get; set; } //
         ICommand BrisanjeNovosti { get; set; } //
-        ICommand PretragaNovosti { get; set; }
-        ICommand Odjava { get; set; }
+        ICommand PretragaNovosti { get; set; } //
+        ICommand Odjava { get; set; } //
+        ICommand UcitajSliku { get; set; }
+        byte[] uploadSlika = null;
 
         public OstaleFunkcionalnostiViewModel Parent { get; set; }
         INavigationService INS { get; set; }
@@ -118,6 +135,7 @@ namespace GlasajBA.ViewModel
             Odjava = new RelayCommand<object>(odjava, boolDodaj);
             PretragaNovosti = new RelayCommand<object>(nadjiNovosti, boolDodaj);
             PretragaKandidata = new RelayCommand<object>(nadjiKandidate, boolDodaj);
+            UcitajSliku = new RelayCommand<object>(dodajSliku, boolDodaj);
 
         }
 
@@ -142,6 +160,7 @@ namespace GlasajBA.ViewModel
 
         public void dodajKandidata(Object o)
         {
+            NoviKandidat.DrzavaBoravka = "Bosna i Hercegovina";
             //dodati kandidata
             if (NoviKandidat.Pozicija=="Opcina")
             {
@@ -161,13 +180,24 @@ namespace GlasajBA.ViewModel
                 Sistem.KandidatiD.Add(NoviKandidat);
             } else
             {
-                //greska
+                return;
             }
+
+            using (var db = new KandidateDBContext())
+            {
+                var contact = NoviKandidat;
+                db.Kandidati.Add(contact);
+                db.SaveChanges();
+            }
+
         }
 
         public void dodajNovost(Object o)
         {
             Sistem.Novosti.Add(NovaNovost);
+
+            //potrebno dodati kod za dodavanje Novosti
+
         }
 
         public void obrisiKandidata(Object o)
@@ -213,9 +243,12 @@ namespace GlasajBA.ViewModel
                 if (ListaKandidata[i].JMBG1==NoviKandidat.JMBG1)
                 {
                     ListaKandidata.RemoveAt(i);
-                    return;
+                    break;
                 }
             }
+
+            
+
         }
 
         public void obrisiNovost(Object o)
@@ -374,5 +407,23 @@ namespace GlasajBA.ViewModel
 
 
         }
+
+        public async void dodajSliku(Object o)
+        {
+            //naci kod u primjerima sa c2
+            FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
+            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+            picker.FileTypeFilter.Add(".jpg");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
+            StorageFile file = await picker.PickSingleFileAsync();
+            if (file!=null)
+            {
+                //uploadSlika = (await Windows.Storage.FileIO.ReadBufferAsync(file)).ToArray();
+            }
+
+        }
+
     }
 }

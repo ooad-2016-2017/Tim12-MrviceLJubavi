@@ -94,8 +94,13 @@
   <ItemGroup>
     <Compile Include="Helper\DataSource.cs" />
     <Compile Include="Helper\NavigationService.cs" />
+    <Compile Include="Helper\PictureConverter.cs" />
     <Compile Include="Helper\PunoljetstvoPropertyAttribute.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
+    <Compile Include="Migration_\KandidatiDBContextModelSNapshot.cs" />
+    <Compile Include="Migration_\Migracija.cs" />
+    <Compile Include="Model\DefaultPodaciKandidati.cs" />
+    <Compile Include="Model\KandidateDBContext.cs" />
     <Compile Include="PivotAndButton.xaml.cs">
       <DependentUpon>PivotAndButton.xaml</DependentUpon>
     </Compile>

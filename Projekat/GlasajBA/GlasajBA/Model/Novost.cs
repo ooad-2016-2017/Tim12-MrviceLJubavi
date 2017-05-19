@@ -10,13 +10,13 @@ namespace GlasajBA.Model
     public class Novost
     {
         DateTime datumObjave;
-        List<Image> slike;
+        Image slika;
         string naslov, tekst;
 
-        public Novost(DateTime datumObjave, List<Image> slike, string naslov, string tekst)
+        public Novost(DateTime datumObjave, Image slike, string naslov, string tekst)
         {
             this.datumObjave = datumObjave;
-            this.slike = slike;
+            this.slika = slike;
             this.naslov = naslov;
             this.tekst = tekst;
         }
@@ -36,16 +36,16 @@ namespace GlasajBA.Model
 
         public Novost() { }
 
-        public List<Image> Slike
+        public Image Slike
         {
             get
             {
-                return slike;
+                return slika;
             }
 
             set
             {
-                slike = value;
+                slika = value;
             }
         }
 
@@ -73,6 +73,11 @@ namespace GlasajBA.Model
             {
                 tekst = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return naslov;
         }
     }
 }

@@ -57,8 +57,8 @@
         </VisualStateManager.VisualStateGroups>
         <Grid x:Name="grid" Margin="10" Opacity="0"/>
         <TextBlock x:Name="textBlock" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,10" Opacity="0" Grid.Row="1" TextWrapping="Wrap" Text="Ime kandidata:" Width="220" FontFamily="Century" FontSize="27" d:LayoutOverrides="TopMargin, BottomMargin"/>
-        <TextBox x:Name="textBox" Margin="10,10,28,10" Opacity="0" Grid.Row="3" TextWrapping="Wrap" Text="" FontFamily="Century" FontSize="27" VerticalAlignment="Center" Height="65" d:LayoutOverrides="TopMargin, BottomMargin"/>
-        <ListBox x:Name="listBox" Margin="10,10,88,30" Opacity="0" Grid.Row="5" FontFamily="Century" FontSize="22"/>
+        <TextBox x:Name="textBox" Margin="10,10,28,10" Opacity="0" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Path=AdministratorViewModel.PoljePretrageKandidata}" FontFamily="Century" FontSize="27" VerticalAlignment="Center" Height="65" d:LayoutOverrides="TopMargin, BottomMargin"/>
+        <ListBox x:Name="listBox" ItemsSource="{Binding Path=AdministratorViewModel.ListaKandidata}" Margin="10,10,88,30" Opacity="0" Grid.Row="5" FontFamily="Century" FontSize="22"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>

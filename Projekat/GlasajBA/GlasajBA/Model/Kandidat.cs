@@ -125,10 +125,11 @@ namespace GlasajBA.Model
         public Kandidat(string im, string prez, DateTime datR, string LK, string maticni, string drzava, Image img) : base(im, prez, datR, LK, maticni, drzava)
         { }
 
-        public Kandidat(string im, string prez, DateTime datR, string LK, string maticni, string drzava, Stranka stranka, int godine, string strucnaSprema, string pozicija, string drustvenaPriznanja, int popularnost, Image img) : base(im, prez, datR, LK, maticni, drzava)
+        public Kandidat(string im, string prez, DateTime datR, string LK, string maticni, string drzava, Stranka stranka, int godine, string strucnaSprema, string pozicija, string drustvenaPriznanja, Image img, int popularnost=0 ) : base(im, prez, datR, LK, maticni, drzava)
         {
             this.stranka = stranka;
             this.godine = godine;
+            this.godine = (int) ((DateTime.Today - datR).TotalDays/365.2425);
             this.strucnaSprema = strucnaSprema;
             this.pozicija = pozicija;
             this.drustvenaPriznanja = drustvenaPriznanja;

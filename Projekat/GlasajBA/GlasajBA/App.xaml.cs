@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GlasajBA.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,6 +31,11 @@ namespace GlasajBA
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            using (var db = new KandidateDBContext())
+            {
+                //db.Database.ApplyMigrations();
+                DefaultPodaciKandidati.Initialize(db);
+            }
         }
 
         /// <summary>

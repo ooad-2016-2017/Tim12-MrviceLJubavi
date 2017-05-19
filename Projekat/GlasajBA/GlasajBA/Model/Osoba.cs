@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Prism.Windows.Validation;
 using System.ComponentModel.DataAnnotations;
 using GlasajBA.Helper;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GlasajBA.Model
 {
@@ -70,6 +71,8 @@ namespace GlasajBA.Model
                 SetProperty(ref licnaKarta, value);
             }
         }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         string JMBG;
         [Required(ErrorMessage = "Niste unijeli matični broj")]
         public string JMBG1
