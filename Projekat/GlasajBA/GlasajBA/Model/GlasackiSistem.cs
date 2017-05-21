@@ -251,6 +251,15 @@ namespace GlasajBA.Model
                 return true;
             return false;
         }
+        List<Kandidat> pretraziKandidate(int minAge, int maxAge, Stranka stranka, string strucnaSprema, string pozicija, string drustvenaPriznanja, int popularnost)
+        {
+            List<Kandidat> kandidati = new List<Kandidat>();
+            foreach (Kandidat k in KandidatiD)
+                if (k.Godine <= maxAge && k.Godine >= minAge && k.Stranka == stranka
+                    && k.StrucnaSprema == strucnaSprema && k.Pozicija == pozicija && k.Popularnost >= popularnost)
+                    kandidati.add(k);
+            return kandidati;
+        }
         #endregion
     }
 }
