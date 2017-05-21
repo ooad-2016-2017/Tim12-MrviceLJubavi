@@ -25,6 +25,7 @@ namespace GlasajBA.View
         public PronalazakBirackogMjesta()
         {
             this.InitializeComponent();
+            this.DataContext = new GpsViewModel(Mapa);
         }
     }
 }

@@ -202,10 +202,12 @@ namespace GlasajBA.ViewModel
 
         public void obrisiKandidata(Object o)
         {
+            Kandidat x;
             for(int i=0; i<Sistem.KandidatiD.Count; i++)
             {
                 if (Sistem.KandidatiD[i].JMBG1==NoviKandidat.JMBG1)
                 {
+                    x = KandidatiD.Get(i);
                     Sistem.KandidatiD.RemoveAt(i);
                     break;
                 }
@@ -215,6 +217,7 @@ namespace GlasajBA.ViewModel
             {
                 if (Sistem.KandidatiE[i].JMBG1 == NoviKandidat.JMBG1)
                 {
+                    x = KandidatiD.Get(i);
                     Sistem.KandidatiE.RemoveAt(i);
                     break;
                 }
@@ -224,6 +227,7 @@ namespace GlasajBA.ViewModel
             {
                 if (Sistem.KandidatiK[i].JMBG1 == NoviKandidat.JMBG1)
                 {
+                    x = KandidatiD.Get(i);
                     Sistem.KandidatiK.RemoveAt(i);
                     break;
                 }
@@ -233,6 +237,7 @@ namespace GlasajBA.ViewModel
             {
                 if (Sistem.KandidatiO[i].JMBG1 == NoviKandidat.JMBG1)
                 {
+                    x = KandidatiD.Get(i);
                     Sistem.KandidatiO.RemoveAt(i);
                     break;
                 }
@@ -242,11 +247,16 @@ namespace GlasajBA.ViewModel
             {
                 if (ListaKandidata[i].JMBG1==NoviKandidat.JMBG1)
                 {
+                    x = KandidatiD.Get(i);
                     ListaKandidata.RemoveAt(i);
                     break;
                 }
             }
-
+            using (var db=new KandidateDBContext())
+            {
+                db.Kandidati.Remove(x);
+                db.SaveChanges();
+            }
             
 
         }

@@ -36,6 +36,11 @@ namespace GlasajBA
                 //db.Database.ApplyMigrations();
                 DefaultPodaciKandidati.Initialize(db);
             }
+            using (var db=new GlasacDBContext())
+            {
+                db.database.ApplyMigrations();
+                DefaultPodaciGlasaci.Initialize(db);
+            }
         }
 
         /// <summary>

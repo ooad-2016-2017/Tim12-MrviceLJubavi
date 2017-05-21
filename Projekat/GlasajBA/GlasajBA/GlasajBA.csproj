@@ -97,13 +97,18 @@
     <Compile Include="Helper\PictureConverter.cs" />
     <Compile Include="Helper\PunoljetstvoPropertyAttribute.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
+    <Compile Include="Migration_\GlasaciDBContextModelSNapshot.cs" />
     <Compile Include="Migration_\KandidatiDBContextModelSNapshot.cs" />
-    <Compile Include="Migration_\Migracija.cs" />
+    <Compile Include="Migration_\MigracijaGlasaci.cs" />
+    <Compile Include="Migration_\MigracijaKandidati.cs" />
+    <Compile Include="Model\DefaultPodaciGlasaci.cs" />
     <Compile Include="Model\DefaultPodaciKandidati.cs" />
+    <Compile Include="Model\GlasacDBContext.cs" />
     <Compile Include="Model\KandidateDBContext.cs" />
     <Compile Include="PivotAndButton.xaml.cs">
       <DependentUpon>PivotAndButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\GpsViewModel.cs" />
     <Compile Include="View\Admin_login.xaml.cs">
       <DependentUpon>Admin_login.xaml</DependentUpon>
     </Compile>

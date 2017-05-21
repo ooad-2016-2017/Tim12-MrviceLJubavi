@@ -189,10 +189,50 @@ namespace GlasajBA.Model
             }
         }
 
-        public List<Kandidat> KandidatiK { get => kandidatiKanton; set => kandidatiKanton = value; }
-        public List<Kandidat> KandidatiE { get => kandidatiEntitet; set => kandidatiEntitet = value; }
-        public List<Kandidat> KandidatiD { get => kandidatiDrzava; set => kandidatiDrzava = value; }
-        internal DataSource Podaci { get => podaci; set => podaci = value; }
+        public List<Kandidat> KandidatiK
+        {
+            get
+            {
+                return kandidatiKanton;
+            }
+            set
+            {
+                kandidatiKanton = value;
+            }
+        }
+        public List<Kandidat> KandidatiE
+        {
+            get
+            {
+                return kandidatiEntitet;
+            }
+            set
+            {
+                kandidatiEntitet = value;
+            }
+        }
+        public List<Kandidat> KandidatiD
+        {
+            get
+            {
+                return kandidatiDrzava;
+            }
+            set
+            {
+                kandidatiDrzava = value;
+            }
+        }
+        internal DataSource Podaci
+        {
+            get
+            {
+                return podaci;
+            }
+            set
+            {
+                podaci = value;
+            }
+        }
         #endregion
 
         #region Metode

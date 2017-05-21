@@ -29,6 +29,7 @@ namespace GlasajBA.ViewModel
         Glasac glasac;
         Kandidat kandidat;
         Ulica ulica;
+        GpsViewModel gps;
         int godineMin, godineMax;
         ICommand Glasanje { get; set; }
         ICommand PrelazakNaOpcinu { get; set; }
@@ -40,13 +41,83 @@ namespace GlasajBA.ViewModel
         ICommand PronalazakBirackogMjesta { get; set; }
         ICommand GlasanjeNaBirackomMjestu { get; set; }
         INavigationService NavigationService { get; set; }
-        public Glasac Glasac { get => glasac; set => glasac = value; }
-        public List<Kandidat> RezultatiPretrage { get => rezultatiPretrage; set => rezultatiPretrage = value; }
-        public List<Kandidat> ListaKandidata { get => listaKandidata; set => listaKandidata = value; }
-        public Kandidat Kandidat { get => kandidat; set => kandidat = value; }
-        public int GodineMin { get => GodineMin1; set => GodineMin1 = value; }
-        public int GodineMin1 { get => godineMin; set => godineMin = value; }
-        public Ulica Ulica { get => ulica; set => ulica = value; }
+        public Glasac Glasac
+        {
+            get
+            {
+                return glasac;
+            }
+            set
+            {
+                glasac = value;
+            }
+        }
+        public List<Kandidat> RezultatiPretrage
+        {
+            get
+            {
+                return rezultatiPretrage;
+            }
+            set
+            {
+                rezultatiPretrage = value;
+            }
+        }
+        public List<Kandidat> ListaKandidata
+        {
+            get
+            {
+                return listaKandidata;
+            }
+            set
+            {
+                listaKandidata = value;
+            }
+        }
+        public Kandidat Kandidat
+        {
+            get
+            {
+                return kandidat;
+            }
+            set
+            {
+                kandidat = value;
+            }
+        }
+        public int GodineMin
+        {
+            get
+            {
+                return godineMin;
+            }
+            set
+            {
+                godineMin = value;
+            }
+        }
+        public int GodineMax
+        {
+            get
+            {
+                return godineMax;
+            }
+            set
+            {
+                godineMax = value;
+            }
+        }
+        public Ulica Ulica
+        {
+            get
+            {
+                return ulica;
+            }
+            set
+            {
+                ulica = value;
+            }
+        }
 
         List<Kandidat> listaKandidata;
         List<Kandidat> rezultatiPretrage = new List<Kandidat>();
@@ -90,6 +161,7 @@ namespace GlasajBA.ViewModel
                         break;
                     }
                 }
+                urediBazu<Glasac>(Parent.Sistem.Glasaci);
                 dialog = new MessageDialog("Hvala Vam na glasanju!");
                 dialog.Title = "Informacija";
                 dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
@@ -115,6 +187,7 @@ namespace GlasajBA.ViewModel
                         break;
                     }
                 }
+                urediBazu<Glasac>(Parent.Sistem.Glasaci);
                 dialog = new MessageDialog("Hvala Vam na glasanju!");
                 dialog.Title = "Informacija";
                 dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
@@ -168,7 +241,7 @@ namespace GlasajBA.ViewModel
             {
                 if (u.Naziv == ulica.Naziv) ulica.BirackoMjesto = u.BirackoMjesto;
             }
-            //ovdje će se implementirati povezivanje s mapama
+            
         }
         public List<Glasac> citajIzBaze<Glasac> ()
         {
@@ -177,11 +250,15 @@ namespace GlasajBA.ViewModel
         }
         public void unesiUBazu<Glasac> (List<Glasac> glasaci)
         {
-            //rad s bazom
+            //kod mene nema ništa novo da se unosi u bazu pa ovu metodu neću ni implementirati
         }
         public void urediBazu<Glasac>(List<Glasac> glasaci)
         {
-            //rad s bazom
+            using (var db=new GlasacDBContext())
+            {
+                db.Entries(glasaci).State = EntityState.Modified;
+                db.SaveChanges();
+            }
         }
 
         public void dodajTweet(Novost novost)
