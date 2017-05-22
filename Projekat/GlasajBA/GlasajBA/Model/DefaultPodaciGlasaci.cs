@@ -8,7 +8,7 @@ namespace GlasajBA.Model
 {
     class DefaultPodaciGlasaci
     {
-        public static void Initialize(GlasacDbContext context)
+        public static void Initialize(GlasacDBContext context)
         {
             if (!context.Glasaci.Any())
             {

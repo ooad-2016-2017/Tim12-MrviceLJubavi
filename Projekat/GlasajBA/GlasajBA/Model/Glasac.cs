@@ -14,6 +14,8 @@ namespace GlasajBA.Model
         
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public Glasac() { }
+
         protected void OnPropertyChanged(string PropertyName)
         {
             if (PropertyChanged!=null)

@@ -257,7 +257,7 @@ namespace GlasajBA.Model
             foreach (Kandidat k in KandidatiD)
                 if (k.Godine <= maxAge && k.Godine >= minAge && k.Stranka == stranka
                     && k.StrucnaSprema == strucnaSprema && k.Pozicija == pozicija && k.Popularnost >= popularnost)
-                    kandidati.add(k);
+                    kandidati.Add(k);
             return kandidati;
         }
         #endregion
