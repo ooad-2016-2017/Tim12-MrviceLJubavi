@@ -8,6 +8,7 @@ using System.Windows.Input;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
+using GlasajBA;
 
 namespace GlasajBA.ViewModel
 {
@@ -150,7 +151,7 @@ namespace GlasajBA.ViewModel
 
         public void registrujAdmina(Object o)
         {
-            //INS.Navigate(typeof(GlasajBA.View.Admin_pocetna), Parent);
+            INS.Navigate(typeof(GlasajBA.View.AdminPocetna), Parent);
         }
 
         public bool boolDodaj(Object o)

@@ -20,9 +20,9 @@ namespace GlasajBA
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Admin_pocetna : Page
+    public sealed partial class AdminPocetna : Page
     {
-        public Admin_pocetna()
+        public AdminPocetna()
         {
             this.InitializeComponent();
         }

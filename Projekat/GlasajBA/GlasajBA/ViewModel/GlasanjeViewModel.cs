@@ -1,4 +1,5 @@
 ﻿using GlasajBA.Model;
+using Microsoft.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -256,7 +257,7 @@ namespace GlasajBA.ViewModel
         {
             using (var db=new GlasacDBContext())
             {
-                db.Entries(glasaci).State = EntityState.Modified;
+                db.Entry(glasaci).State = EntityState.Modified;
                 db.SaveChanges();
             }
         }
