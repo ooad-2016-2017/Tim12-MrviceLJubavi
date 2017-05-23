@@ -110,6 +110,7 @@
     <Compile Include="Migrations\GlasacDBContextModelSnapshot.cs" />
     <Compile Include="Model\DefaultPodaciGlasaci.cs" />
     <Compile Include="Model\DefaultPodaciKandidati.cs" />
+    <Compile Include="Model\DefaultPodaciStranke.cs" />
     <Compile Include="Model\Glasac.cs" />
     <Compile Include="Model\GlasacDBContext.cs" />
     <Compile Include="Model\GlasackiSistem.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Model\Novost.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\Stranka.cs" />
+    <Compile Include="Model\StrankaDBContext.cs" />
     <Compile Include="Model\Ulica.cs" />
     <Compile Include="PivotAndButton.xaml.cs">
       <DependentUpon>PivotAndButton.xaml</DependentUpon>

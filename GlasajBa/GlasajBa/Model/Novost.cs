@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ namespace GlasajBa.Model
         DateTime datumObjave;
         Image slika;
         string naslov, tekst;
+        static int idBroj=0;
+        
+        int id;
 
         public Novost(DateTime datumObjave, Image slike, string naslov, string tekst)
         {
@@ -19,7 +23,10 @@ namespace GlasajBa.Model
             this.slika = slike;
             this.naslov = naslov;
             this.tekst = tekst;
+            idBroj++;
+            id = idBroj;
         }
+
 
         public DateTime DatumObjave
         {
@@ -49,6 +56,7 @@ namespace GlasajBa.Model
             }
         }
 
+        [Required(ErrorMessage ="Niste unijeli naslov!")]
         public string Naslov
         {
             get
@@ -62,6 +70,7 @@ namespace GlasajBa.Model
             }
         }
 
+        [Required(ErrorMessage ="Niste unijeli tekst!")]
         public string Tekst
         {
             get
@@ -78,6 +87,31 @@ namespace GlasajBa.Model
         public override string ToString()
         {
             return naslov;
+        }
+
+        [Key]
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+
+        public int IdBroj
+        {
+            get
+            {
+                return idBroj;
+            }
+            set
+            {
+                idBroj = value;
+            }
         }
     }
 }

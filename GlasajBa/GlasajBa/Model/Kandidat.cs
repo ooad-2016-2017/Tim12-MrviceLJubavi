@@ -31,6 +31,7 @@ namespace GlasajBa.Model
             }
         }
 
+        [Required(ErrorMessage ="Morate odabrati stranku!")]
         public Stranka Stranka
         {
             get
@@ -60,6 +61,7 @@ namespace GlasajBa.Model
             }
         }
 
+        [Required(ErrorMessage ="Niste unijeli sliku!")]
         public Image Slika
         {
             get
@@ -72,6 +74,7 @@ namespace GlasajBa.Model
             }
         }
 
+        [Required(ErrorMessage ="Niste unijeli strucnu spremu!")]
         public string StrucnaSprema
         {
             get
@@ -85,6 +88,7 @@ namespace GlasajBa.Model
             }
         }
 
+        [Required(ErrorMessage ="Niste odabrali poziciju!")]
         public string Pozicija
         {
             get

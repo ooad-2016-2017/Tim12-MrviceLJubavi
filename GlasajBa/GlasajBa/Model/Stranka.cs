@@ -11,12 +11,18 @@ namespace GlasajBa.Model
     {
         string naziv;
         string ukratko;
+        static int idBroj=0;
+        int id;
         public Stranka () { }
         public Stranka(string naziv, string ukratko)
         {
             this.naziv = naziv;
             this.ukratko = ukratko;
+            idBroj++;
+            id = idBroj;
         }
+
+        [Required(ErrorMessage ="Niste unijeli naziv!")]
         [Key]
         public string Naziv
         {
@@ -31,6 +37,32 @@ namespace GlasajBa.Model
             }
         }
 
+        [Key]
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value; 
+            }
+        }
+
+        public int IdBroj
+        {
+            get
+            {
+                return idBroj;
+            }
+            set
+            {
+                idBroj = value;
+            }
+        }
+
+        [Required(ErrorMessage ="Niste unijeli opis!")]
         public string Ukratko
         {
             get

@@ -15,13 +15,9 @@ namespace GlasajBa.ViewModel
     {
         /*
            sta fali:
-           -brisanje kandidata
-           -baza za novosti
            -punjenje comboboxa sa nazivima stranki
            -kako implementirati da se Stranka sacuva u bazu???
-           -richEditBox binding i rijesiti se onih eventa dodanih 
            -kod ucitavanja slike
-           -kod navigacije ne moze da prepozna neke forme
 
        */
         ICommand dodavanjeKandidata; //
@@ -291,12 +287,22 @@ namespace GlasajBa.ViewModel
 
         public void promjenaKandidata(Object o)
         {
+            int poz = -1;
             for (int i = 0; i < Sistem.KandidatiD.Count; i++)
             {
                 if (Sistem.KandidatiD[i].JMBG1 == NoviKandidat.JMBG1)
                 {
-                    Sistem.KandidatiD.RemoveAt(i);
-                    Sistem.KandidatiD.Add(NoviKandidat);
+                    Sistem.KandidatiD[i].StrucnaSprema = NoviKandidat.StrucnaSprema;
+                    Sistem.KandidatiD[i].Pozicija = NoviKandidat.Pozicija;
+                    Sistem.KandidatiD[i].Ime = NoviKandidat.Ime;
+                    Sistem.KandidatiD[i].Prezime = NoviKandidat.Prezime;
+                    Sistem.KandidatiD[i].DatRodjenja = NoviKandidat.DatRodjenja;
+                    Sistem.KandidatiD[i].DrustvenaPriznanja = NoviKandidat.DrustvenaPriznanja;
+                    Sistem.KandidatiD[i].DrzavaBoravka = NoviKandidat.DrzavaBoravka;
+                    Sistem.KandidatiD[i].Godine = NoviKandidat.Godine;
+                    Sistem.KandidatiD[i].Slika = NoviKandidat.Slika;
+                    Sistem.KandidatiD[i].Stranka = NoviKandidat.Stranka;
+                    //poz = i;
                     break;
                 }
             }
@@ -305,8 +311,17 @@ namespace GlasajBa.ViewModel
             {
                 if (Sistem.KandidatiE[i].JMBG1 == NoviKandidat.JMBG1)
                 {
-                    Sistem.KandidatiE.RemoveAt(i);
-                    Sistem.KandidatiE.Add(NoviKandidat);
+                    Sistem.KandidatiE[i].StrucnaSprema = NoviKandidat.StrucnaSprema;
+                    Sistem.KandidatiE[i].Pozicija = NoviKandidat.Pozicija;
+                    Sistem.KandidatiE[i].Ime = NoviKandidat.Ime;
+                    Sistem.KandidatiE[i].Prezime = NoviKandidat.Prezime;
+                    Sistem.KandidatiE[i].DatRodjenja = NoviKandidat.DatRodjenja;
+                    Sistem.KandidatiE[i].DrustvenaPriznanja = NoviKandidat.DrustvenaPriznanja;
+                    Sistem.KandidatiE[i].DrzavaBoravka = NoviKandidat.DrzavaBoravka;
+                    Sistem.KandidatiE[i].Godine = NoviKandidat.Godine;
+                    Sistem.KandidatiE[i].Slika = NoviKandidat.Slika;
+                    Sistem.KandidatiE[i].Stranka = NoviKandidat.Stranka;
+                    //poz = i;
                     break;
                 }
             }
@@ -315,8 +330,17 @@ namespace GlasajBa.ViewModel
             {
                 if (Sistem.KandidatiK[i].JMBG1 == NoviKandidat.JMBG1)
                 {
-                    Sistem.KandidatiK.RemoveAt(i);
-                    Sistem.KandidatiK.Add(NoviKandidat);
+                    Sistem.KandidatiK[i].StrucnaSprema = NoviKandidat.StrucnaSprema;
+                    Sistem.KandidatiK[i].Pozicija = NoviKandidat.Pozicija;
+                    Sistem.KandidatiK[i].Ime = NoviKandidat.Ime;
+                    Sistem.KandidatiK[i].Prezime = NoviKandidat.Prezime;
+                    Sistem.KandidatiK[i].DatRodjenja = NoviKandidat.DatRodjenja;
+                    Sistem.KandidatiK[i].DrustvenaPriznanja = NoviKandidat.DrustvenaPriznanja;
+                    Sistem.KandidatiK[i].DrzavaBoravka = NoviKandidat.DrzavaBoravka;
+                    Sistem.KandidatiK[i].Godine = NoviKandidat.Godine;
+                    Sistem.KandidatiK[i].Slika = NoviKandidat.Slika;
+                    Sistem.KandidatiK[i].Stranka = NoviKandidat.Stranka;
+                    //poz = i;
                     break;
                 }
             }
@@ -325,8 +349,17 @@ namespace GlasajBa.ViewModel
             {
                 if (Sistem.KandidatiO[i].JMBG1 == NoviKandidat.JMBG1)
                 {
-                    Sistem.KandidatiO.RemoveAt(i);
-                    Sistem.KandidatiO.Add(NoviKandidat);
+                    Sistem.KandidatiO[i].StrucnaSprema = NoviKandidat.StrucnaSprema;
+                    Sistem.KandidatiO[i].Pozicija = NoviKandidat.Pozicija;
+                    Sistem.KandidatiO[i].Ime = NoviKandidat.Ime;
+                    Sistem.KandidatiO[i].Prezime = NoviKandidat.Prezime;
+                    Sistem.KandidatiO[i].DatRodjenja = NoviKandidat.DatRodjenja;
+                    Sistem.KandidatiO[i].DrustvenaPriznanja = NoviKandidat.DrustvenaPriznanja;
+                    Sistem.KandidatiO[i].DrzavaBoravka = NoviKandidat.DrzavaBoravka;
+                    Sistem.KandidatiO[i].Godine = NoviKandidat.Godine;
+                    Sistem.KandidatiO[i].Slika = NoviKandidat.Slika;
+                    Sistem.KandidatiO[i].Stranka = NoviKandidat.Stranka;
+                    //poz = i;
                     break;
                 }
             }
@@ -335,9 +368,25 @@ namespace GlasajBa.ViewModel
             {
                 if (ListaKandidata[i].JMBG1 == NoviKandidat.JMBG1)
                 {
-                    ListaKandidata.RemoveAt(i);
-                    ListaKandidata.Add(NoviKandidat);
-                    return;
+                    ListaKandidata[i].StrucnaSprema = NoviKandidat.StrucnaSprema;
+                    ListaKandidata[i].Pozicija = NoviKandidat.Pozicija;
+                    ListaKandidata[i].Ime = NoviKandidat.Ime;
+                    ListaKandidata[i].Prezime = NoviKandidat.Prezime;
+                    ListaKandidata[i].DatRodjenja = NoviKandidat.DatRodjenja;
+                    ListaKandidata[i].DrustvenaPriznanja = NoviKandidat.DrustvenaPriznanja;
+                    ListaKandidata[i].DrzavaBoravka = NoviKandidat.DrzavaBoravka;
+                    ListaKandidata[i].Godine = NoviKandidat.Godine;
+                    ListaKandidata[i].Slika = NoviKandidat.Slika;
+                    ListaKandidata[i].Stranka = NoviKandidat.Stranka;
+                    poz = i;
+                    break;
+                }
+            }
+            if (poz != -1) {
+                using (var db = new KandidateDBContext())
+                {
+                    db.Update(ListaKandidata[poz]);
+                    db.SaveChanges();
                 }
             }
         }
