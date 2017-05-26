@@ -1,4 +1,5 @@
 ﻿using GlasajBa.Helper;
+using GlasajBa.Interfaces;
 using GlasajBa.Model;
 using Microsoft.Data.Entity;
 using System;
@@ -21,11 +22,7 @@ namespace GlasajBa.ViewModel
     {
         string napraviAnalizu();
     }
-    public interface Twitter
-    {
-        void dodajTweet(Novost novost);
-    }
-    class GlasanjeViewModel : Baza, Analiza, Twitter
+    class GlasanjeViewModel : Baza, Analiza, ITwitter
 
     {
         public OstaleFunkcionalnostiViewModel Parent { get; set; }
@@ -276,6 +273,30 @@ namespace GlasajBa.ViewModel
                 if (g.JeLiGlasao) brojGlasova++;
             }
             return ("Glasalo: " + brojGlasova.ToString() + "\nNije glasalo: " + (Parent.Sistem.Glasaci.Count - brojGlasova).ToString());
+        }
+
+        public void dodajTweet(string s)
+        {
+            s = napraviAnalizu();
+            string costumerKey = "5GpJFJaFR4kC23T6iGDcGG9Uz";
+            string cosumerKeySecret = "C5AE21YQOOZwnopuylvZQAuMi0TnVTHEOnhEp0pYCwtoYeqQtR";
+            string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";
+            string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
+
+            TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
+            service.sendTweet(new SendTweerOptions { Status = s }, (tweet, response) =>
+            {
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var dialog = new MessageDialog("Tweet uspjesno objavljen!");
+                    dialog.Title = "Twitter";
+                }
+                else
+                {
+                    var dialog = new MessageDialog("Tweet nije uspjesno objavljen!");
+                    dialog.Title = "Twitter";
+                }
+            });
         }
     }
 }

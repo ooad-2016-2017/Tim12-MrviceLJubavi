@@ -1,17 +1,17 @@
 ﻿using GlasajBa.Helper;
+using GlasajBa.Interfaces;
 using GlasajBa.Model;
 using System;
+//using System.TwitterSharp;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.UI.Popups;
 
 namespace GlasajBa.ViewModel
 {
-    class AdministratorViewModel
+    class AdministratorViewModel : ITwitter 
     {
         /*
            sta fali:
@@ -196,8 +196,9 @@ namespace GlasajBa.ViewModel
         {
             Sistem.Novosti.Add(NovaNovost);
 
-            //potrebno dodati kod za dodavanje Novosti
+            //potrebno dodati kod za dodavanje Novosti u bazu
 
+            dodajTweet(NovaNovost.Naslov +": " + NovaNovost.Tekst);
         }
 
         public void obrisiKandidata(Object o)
@@ -489,6 +490,50 @@ namespace GlasajBa.ViewModel
                 //uploadSlika = (await Windows.Storage.FileIO.ReadBufferAsync(file)).ToArray();
             }
 
+        }
+
+        public void dodajTweet(string s)
+        {
+            string[] t = s.Split(':');
+            if (s.Length>140)
+            {
+                string[] recenice = s.Split('.');
+                s = "";
+                string temp = s;
+                for (int i=0; i<recenice.Length; i++)
+                {
+                    temp += recenice[i];
+                    if (temp.Length>140)
+                    {
+                        break;
+                    }
+                    s = temp;
+                }
+            }
+
+            if (s=="")
+            {
+                s = t[0];
+            }
+
+            string costumerKey = "5GpJFJaFR4kC23T6iGDcGG9Uz";
+            string cosumerKeySecret = "C5AE21YQOOZwnopuylvZQAuMi0TnVTHEOnhEp0pYCwtoYeqQtR";
+            string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";
+            string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
+
+            TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
+            service.sendTweet(new SendTweerOptions { Status = s }, (tweet, response) =>
+            {
+                if (response.StatusCode==HttpStatusCode.OK)
+                {
+                    var dialog = new MessageDialog("Tweet uspjesno objavljen!");
+                    dialog.Title = "Twitter";
+                } else
+                {
+                    var dialog = new MessageDialog("Tweet nije uspjesno objavljen!");
+                    dialog.Title = "Twitter";
+                }
+            });
         }
     }
 }
