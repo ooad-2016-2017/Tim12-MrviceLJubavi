@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Media.Playback;
+using Windows.UI.Xaml.Controls;
 
 namespace GlasajBa.Model
 {
@@ -22,7 +24,7 @@ namespace GlasajBa.Model
         DataSource podaci;
         bool lokalniIzbori;
         string adminPassword, adminUsername;
-        bool slijepi;
+        public static bool slijepi;
         #endregion
 
         #region Konstruktor
@@ -42,6 +44,19 @@ namespace GlasajBa.Model
             this.adminPassword = adminPassword;
             this.adminUsername = adminUsername;
             this.slijepi = slijepi;
+            MediaPlayer mp = new MediaPlayer();
+            pustiZvuk();
+        }
+
+        private async void pustiZvuk()
+        {
+            //ovo ce trebati biti implementirano negdje drugo
+            MediaElement me = new MediaElement();
+            Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            Windows.Storage.StorageFile file = await folder.GetFileAsync("Uvod.mp3");
+            var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+            me.SetSource(stream, file.ContentType);
+            me.Play();
         }
         #endregion
 

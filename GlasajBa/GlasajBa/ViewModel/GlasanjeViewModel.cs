@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Popups;
+using Windows.UI.Xaml.Controls;
 
 namespace GlasajBa.ViewModel
 {
@@ -135,6 +136,12 @@ namespace GlasajBa.ViewModel
             PovratakNaGlavnu = new RelayCommand<object>(vratiSe, jeLiIzborniDan);
             PronalazakBirackogMjesta = new RelayCommand<object>(pronadiBirackoMjesto, jeLiMogucaPretraga);
             GlasanjeNaBirackomMjestu = new RelayCommand<object>(glasajNaBirackomMjestu, jeLiIzborniDan);
+
+            if (GlasackiSistem.slijepi)
+            {
+                pustiZvuk();
+            }
+
         }
         public bool jeLiMogucaPretraga(object parametar)
         {
@@ -297,6 +304,16 @@ namespace GlasajBa.ViewModel
                     dialog.Title = "Twitter";
                 }
             });
+        }
+
+        private async void pustiZvuk()
+        {
+            MediaElement me = new MediaElement();
+            Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            Windows.Storage.StorageFile file = await folder.GetFileAsync("Glasanje.mp3");
+            var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+            me.SetSource(stream, file.ContentType);
+            me.Play();
         }
     }
 }
