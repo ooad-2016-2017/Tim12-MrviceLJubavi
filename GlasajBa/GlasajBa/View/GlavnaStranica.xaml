@@ -8,40 +8,146 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="85" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
-            <TextBlock x:Name="textBlock" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="426,10,416,0" TextWrapping="Wrap" Text="Glasaj.ba" Width="418" FontSize="45" />
-            <Image x:Name="image1" Source="Assets\user.png" HorizontalAlignment="Left" Height="41" Margin="1209,0,0,34" VerticalAlignment="Bottom" Width="41"/>
-            <Image x:Name="image" Source="Assets\blind-walking.png" HorizontalAlignment="Left" Height="41" Margin="1163,10,0,0" VerticalAlignment="Top" Width="41"/>
+
+
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+
+                        <Setter Target="naslov.HorizontalAlignment" Value="Left" />
+                        <Setter Target="naslov.Height" Value="50" />
+                        <Setter Target="naslov.Margin" Value="10,10,0,0" />
+                        <Setter Target="naslov.VerticalAlignment" Value="Top" />
+                        <Setter Target="naslov.Width" Value="340" />
+
+
+                        <Setter Target="textBlock.HorizontalAlignment" Value="Center" />
+                        <Setter Target="textBlock.FontSize" Value="25" />
+                        <Setter Target="textBlock.VerticalAlignment" Value="Center" />
+
+
+                        <Setter Target="gridPivota.HorizontalAlignment" Value="Left"/>
+                        <Setter Target="gridPivota.Height" Value="565"/>
+                        <Setter Target="gridPivota.Margin" Value="10,65,0,0"/>
+                        <Setter Target="gridPivota.VerticalAlignment" Value="Top"/>
+                        <Setter Target="gridPivota.Width" Value="340"/>
+
+                        <Setter Target="TwitterFeed.Width" Value="75" />
+                        <Setter Target="TwitterFeed.HeaderTemplate" Value="{StaticResource MojHeader2}" />
+
+                        <Setter Target="Novosti.Width" Value="60" />
+                        <Setter Target="Novosti.HeaderTemplate" Value="{StaticResource MojHeader2}" />
+
+                        <Setter Target="Statistika.Width" Value="68" />
+                        <Setter Target="Statistika.HeaderTemplate" Value="{StaticResource MojHeader2}" />
+
+                        <Setter Target="Stranke.Width" Value="58" />
+                        <Setter Target="Stranke.HeaderTemplate" Value="{StaticResource MojHeader2}" />
+
+                        <Setter Target="Historija.Width" Value="80" />
+                        <Setter Target="Historija.Header" Value="Historija" />
+                        <Setter Target="Historija.HeaderTemplate" Value="{StaticResource MojHeader2}" />
+
+                        <Setter Target="image1.Margin" Value="0,10,0,0" />
+                        <Setter Target="image1.Height" Value="30" />
+                        <Setter Target="image1.Width" Value="30" />
+
+                        <Setter Target="image.Margin" Value="45,10,0,0" />
+                        <Setter Target="image.Height" Value="30" />
+                        <Setter Target="image.Width" Value="30" />
+
+                        <Setter Target="pivot1.HeaderTemplate" Value="{StaticResource MojHeader}"/>
+
+                        <Setter Target="hub1.HeaderTemplate" Value="{StaticResource MojHeader2}"/>
+                    </VisualState.Setters>
+
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <!--   <Pivot x:Name="pivot" Title="Pivot" HeaderTemplate="{StaticResource MojHeader2}">
+                <PivotItem Header="Početak" >
+                    <Hub Header="Hub">
+                        <HubSection Header="HubSection 0">
+                            <DataTemplate>
+                                <Grid/>
+                            </DataTemplate>
+                        </HubSection>
+                        <HubSection Header="HubSection 1">
+                            <DataTemplate>
+                                <Grid/>
+                            </DataTemplate>
+                        </HubSection>
+                    </Hub>
+
+                </PivotItem>
+                <PivotItem Header="Kako">
+                    <Grid/>
+                </PivotItem>
+                <PivotItem Header="Gdje">
+                    <Grid/>
+                </PivotItem>
+                <PivotItem Header="Glasaj">
+                    <Grid/>
+                </PivotItem>
+                <PivotItem Header="Kandidati">
+                    <Grid/>
+                </PivotItem>
+                <PivotItem Header="O nama">
+                    <Grid/>
+                </PivotItem>
+            </Pivot>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="654" Margin="10,80,0,0" VerticalAlignment="Top" Width="1260">
+
+
+        -->
+
+        <Grid x:Name="naslov" HorizontalAlignment="Left" Height="85" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
+            <TextBlock x:Name="textBlock" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Glasaj.ba" Width="200" FontSize="45" />
+            <Image x:Name="image1" Source="ms-appx:///Assets/user.png" HorizontalAlignment="Left" Height="41" Margin="1209,0,0,0" VerticalAlignment="Center" Width="41"/>
+            <Image x:Name="image" Source="ms-appx:///Assets/blind-walking.png" HorizontalAlignment="Left" Height="41" Margin="1163,10,0,0" VerticalAlignment="Center" Width="41"/>
+        </Grid>
+        <Grid x:Name="gridPivota" HorizontalAlignment="Left" Height="654" Margin="10,80,0,0" VerticalAlignment="Top" Width="1260">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="18*"/>
                 <ColumnDefinition Width="17*"/>
             </Grid.ColumnDefinitions>
-            <Pivot Title="" Margin="0,24,0,0" Grid.ColumnSpan="2">
-                <PivotItem Header="Početak" >
-                    <Hub Header="" Margin="0,0,0,50">
-                        <HubSection Header="Twitter feed" Width="253">
+            <Pivot Title="" Margin="0,24,0,0" Grid.ColumnSpan="2" x:Name="pivot1">
+                <PivotItem Header="Početak" FontSize="15"  x:Name="pocetak" Width="1236">
+                    <Hub x:Name="hub1" Header="" Margin="0,0,0,50">
+                        <HubSection Header="Twitter feed" Width="253" x:Name="TwitterFeed" FontSize="15">
                             <DataTemplate>
                                 <Grid/>
                             </DataTemplate>
                         </HubSection>
-                        <HubSection Header="Novosti"  Width="263">
+                        <HubSection Header="Novosti"  Width="263" x:Name="Novosti">
                             <DataTemplate>
                                 <Grid/>
                             </DataTemplate>
                         </HubSection>
-                        <HubSection Header="Statistika"  Width="218">
+                        <HubSection Header="Statistika"  Width="218" x:Name="Statistika">
                             <DataTemplate>
                                 <Grid/>
                             </DataTemplate>
                         </HubSection>
-                        <HubSection Header="Stranke"   Width="232" >
+                        <HubSection Header="Stranke"   Width="232" x:Name="Stranke">
                             <DataTemplate>
                                 <Grid/>
                             </DataTemplate>
                         </HubSection>
-                        <HubSection Header="Historija bh. politike" Width="272">
+                        <HubSection Header="Historija bh. politike" Width="272" x:Name="Historija">
                             <DataTemplate>
                                 <Grid/>
                             </DataTemplate>

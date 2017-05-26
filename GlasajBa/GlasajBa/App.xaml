@@ -5,4 +5,19 @@
     xmlns:local="using:GlasajBa"
     RequestedTheme="Light">
 
+    <Application.Resources>
+
+        <DataTemplate x:Key="MojHeader">
+            <ContentPresenter>
+                <TextBlock Text="{Binding}" FontSize="13"/>
+            </ContentPresenter>
+        </DataTemplate>
+        <DataTemplate x:Key="MojHeader2">
+            <ContentPresenter>
+                <TextBlock Text="{Binding}" FontSize="10"/>
+            </ContentPresenter>
+        </DataTemplate>
+
+    </Application.Resources>
+    
 </Application>

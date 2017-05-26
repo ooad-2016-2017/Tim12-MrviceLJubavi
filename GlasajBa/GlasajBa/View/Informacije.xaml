@@ -8,8 +8,45 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="586" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
-            <Pivot Title="Informacije" FontSize="50">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="gridPivota.HorizontalAlignment" Value="Left" />
+                        <Setter Target="gridPivota.Height" Value="545" />
+                        <Setter Target="gridPivota.Margin" Value="10,10,0,0" />
+                        <Setter Target="gridPivota.VerticalAlignment" Value="Top" />
+                        <Setter Target="gridPivota.Width" Value="340" />
+
+                        <Setter Target="pivot.HeaderTemplate" Value="{StaticResource MojHeader}" />
+
+                        <Setter Target="gridButtona.HorizontalAlignment" Value="Left" />
+                        <Setter Target="gridButtona.Height" Value="70" />
+                        <Setter Target="gridButtona.Margin" Value="10,560,0,0" />
+                        <Setter Target="gridButtona.VerticalAlignment" Value="Top" />
+                        <Setter Target="gridButtona.Width" Value="340" />
+
+                        <Setter Target="buttonNazad.HorizontalAlignment" Value="Center" />
+                        <Setter Target="buttonNazad.Width" Value="80" />
+                        <Setter Target="buttonNazad.FontSize" Value="18" />
+                        <Setter Target="buttonNazad.Height" Value="45" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid x:Name="gridPivota" HorizontalAlignment="Left" Height="586" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
+            <Pivot x:Name="pivot" Title="Informacije" FontSize="50">
                 <PivotItem Header="Novosti">
                     <Grid/>
                 </PivotItem>
@@ -26,8 +63,8 @@
             </Pivot>
 
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="109" Margin="10,601,0,0" VerticalAlignment="Top" Width="1260">
-            <Button x:Name="button" Content="Nazad" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="127" FontSize="30"/>
+        <Grid x:Name="gridButtona" HorizontalAlignment="Left" Height="109" Margin="10,601,0,0" VerticalAlignment="Top" Width="1260">
+            <Button x:Name="buttonNazad" Content="Nazad" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="127" FontSize="25"/>
         </Grid>
 
     </Grid>
