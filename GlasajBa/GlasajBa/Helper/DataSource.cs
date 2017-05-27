@@ -10,6 +10,8 @@ namespace GlasajBa.Helper
     {
         List<string> strucneSpreme, pozicije, priznanja, popularnosti;
 
+        List<string> birackaMjesta;
+
         public DataSource()
         {
             StrucneSpreme = new List<string>();
@@ -24,6 +26,10 @@ namespace GlasajBa.Helper
             Priznanja.Add("Najbolji politicar");
             Popularnosti.Add("Nepopularan");
             Popularnosti.Add("Popularan");
+
+            BirackaMjesta = new List<string>();
+            BirackaMjesta.Add("BBI Centar, Trg djece Sarajeva 1");
+            BirackaMjesta.Add("Shopping City Grabavica, Hasana Brkića 30");
         }
 
         public List<string> Popularnosti
@@ -75,6 +81,19 @@ namespace GlasajBa.Helper
             set
             {
                 strucneSpreme = value;
+            }
+        }
+
+        public List<string> BirackaMjesta
+        {
+            get
+            {
+                return birackaMjesta;
+            }
+
+            set
+            {
+                birackaMjesta = value;
             }
         }
     }

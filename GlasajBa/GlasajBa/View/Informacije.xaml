@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:GlasajBa.View"
+    xmlns:viewmodels="using:GlasajBa.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -24,7 +25,7 @@
                     <VisualState.Setters>
                         <Setter Target="gridPivota.HorizontalAlignment" Value="Left" />
                         <Setter Target="gridPivota.Height" Value="545" />
-                        <Setter Target="gridPivota.Margin" Value="10,10,0,0" />
+                        <Setter Target="gridPivota.Margin" Value="0,5,0,0" />
                         <Setter Target="gridPivota.VerticalAlignment" Value="Top" />
                         <Setter Target="gridPivota.Width" Value="340" />
 
@@ -40,6 +41,7 @@
                         <Setter Target="buttonNazad.Width" Value="80" />
                         <Setter Target="buttonNazad.FontSize" Value="18" />
                         <Setter Target="buttonNazad.Height" Value="45" />
+                        <Setter Target="hub1.Height" Value="356" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -48,23 +50,113 @@
         <Grid x:Name="gridPivota" HorizontalAlignment="Left" Height="586" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
             <Pivot x:Name="pivot" Title="Informacije" FontSize="50">
                 <PivotItem Header="Novosti">
-                    <Grid/>
+                    <Grid>
+                        <Hub ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <HubSection Width="340" x:Name="hub1">
+                                <DataTemplate>
+                                    <Grid Width="300" Height="454">
+                                        <TextBlock Text="{Binding Sistem.Novosti.Naslov}" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                        <RichEditBox DataContext="{Binding Sistem.Novosti.Tekst}" Margin="0,40,0,45" IsReadOnly="True"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </HubSection>
+                            <HubSection Width="340">
+                                <DataTemplate>
+                                    <Grid Width="300" Height="454">
+                                        <TextBlock Text="Novost" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                        <RichEditBox DataContext="{Binding Sistem.Novosti.Tekst}"  Margin="0,40,0,45" IsReadOnly="True" >                                            
+                                        </RichEditBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </HubSection>
+                            <HubSection Width="340">
+                                <DataTemplate>
+                                    <Grid Width="300" Height="454">
+                                        <TextBlock Text="Novost" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                        <RichEditBox DataContext="{Binding Sistem.Novosti.Tekst}" Margin="0,40,0,45" IsReadOnly="True">
+                                        </RichEditBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </HubSection>
+                        </Hub>
+                    </Grid>
                 </PivotItem>
                 <PivotItem Header="Statistika">
-                    <Grid/>
+                    <Grid>                        
+                        <Hub ScrollViewer.HorizontalScrollMode="Auto">
+                            <HubSection Width="340">
+                                <DataTemplate>
+                                    <Grid Width="300" Height="454">
+                                        <TextBlock Text="Prva analiza" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                        <RichTextBlock TextIndent="15" Margin="0,40,0,45">
+                                            <Paragraph TextIndent="15" FontSize="16">Neki tekst</Paragraph>
+                                            <Paragraph TextIndent="15" FontSize="16">prve analize</Paragraph>                                            
+                                        </RichTextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </HubSection>
+                            <HubSection Width="340">
+                                <DataTemplate>
+                                    <Grid Width="300" Height="454">
+                                        <TextBlock Text="Druga analiza" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                        <RichEditBox Margin="0,40,0,45">                                            
+                                        </RichEditBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </HubSection>
+                            <HubSection Width="340">
+                                <DataTemplate>
+                                    <Grid Width="300" Height="454">
+                                        <TextBlock Text="Treca analiza" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                        <RichEditBox DataContext="Tex" Margin="0,40,0,45">
+                                        </RichEditBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </HubSection>
+                        </Hub>
+                    </Grid>
                 </PivotItem>
-                <PivotItem Header="Stranke">
-                    <Grid/>
+                <PivotItem Header="Stranke" x:Name="Stranke">
+                    <Hub ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                        <HubSection Width="340">
+                            <DataTemplate>
+                                <Grid Width="300" Height="454">
+                                    <TextBlock Text="{Binding Sistem.Stranke.Naziv}" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                    <RichEditBox DataContext="{Binding Sistem.Stranke.Ukratko}" Margin="0,40,0,40" IsReadOnly="True"/>
+                                </Grid>
+                            </DataTemplate>
+                        </HubSection>
+                        <HubSection Width="340">
+                            <DataTemplate>
+                                <Grid Width="300" Height="454">
+                                    <TextBlock Text="Druga stranka" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                    <RichEditBox  Margin="0,40,0,45" IsReadOnly="True">
+                                    </RichEditBox>
+                                </Grid>
+                            </DataTemplate>
+                        </HubSection>
+                        <HubSection Width="340">
+                            <DataTemplate>
+                                <Grid Width="300" Height="454">
+                                    <TextBlock Text="Treća stranka" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                    <RichEditBox Margin="0,40,0,45" IsReadOnly="True">
+                                    </RichEditBox>
+                                </Grid>
+                            </DataTemplate>
+                        </HubSection>
+                    </Hub>
                 </PivotItem>
                 <PivotItem Header="Historija bh. politike">
-                    <Grid/>
+                    <Grid>
+                        <RichTextBlock>
+                            <Paragraph x:Name="historija" FontSize="16"> Ovo je historija</Paragraph>
+                        </RichTextBlock>
+                    </Grid>
                 </PivotItem>
-
             </Pivot>
-
         </Grid>
         <Grid x:Name="gridButtona" HorizontalAlignment="Left" Height="109" Margin="10,601,0,0" VerticalAlignment="Top" Width="1260">
-            <Button x:Name="buttonNazad" Content="Nazad" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="127" FontSize="25"/>
+            <Button x:Name="buttonNazad" Content="Nazad" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="127" FontSize="25" Command="{Binding Path=vratiSe}"/>
         </Grid>
 
     </Grid>

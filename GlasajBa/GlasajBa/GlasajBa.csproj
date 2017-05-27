@@ -109,6 +109,8 @@
       <DependentUpon>20170523085817_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GlasacDBContextModelSnapshot.cs" />
+    <Compile Include="Model\DefaultPodaciNovost.cs" />
+    <Compile Include="Model\DefaultPodaciUlice.cs" />
     <Compile Include="Model\DefaultPodaciGlasaci.cs" />
     <Compile Include="Model\DefaultPodaciKandidati.cs" />
     <Compile Include="Model\DefaultPodaciStranke.cs" />
@@ -118,10 +120,12 @@
     <Compile Include="Model\Kandidat.cs" />
     <Compile Include="Model\KandidateDBContext.cs" />
     <Compile Include="Model\Novost.cs" />
+    <Compile Include="Model\NovostiDBContext.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\Stranka.cs" />
     <Compile Include="Model\StrankaDBContext.cs" />
     <Compile Include="Model\Ulica.cs" />
+    <Compile Include="Model\UlicaDBContext.cs" />
     <Compile Include="PivotAndButton.xaml.cs">
       <DependentUpon>PivotAndButton.xaml</DependentUpon>
     </Compile>
@@ -135,6 +139,9 @@
     </Compile>
     <Compile Include="View\AdminPocetna.xaml.cs">
       <DependentUpon>AdminPocetna.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DodajNovost.xaml.cs">
+      <DependentUpon>DodajNovost.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Glasanje.xaml.cs">
       <DependentUpon>Glasanje.xaml</DependentUpon>
@@ -165,7 +172,12 @@
     <None Include="GlasajBa_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\blind-walking.png" />
     <Content Include="Assets\Glasanje.mp3" />
+    <Content Include="Assets\izbori1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\user.png" />
     <Content Include="Assets\Uvod.mp3" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -197,6 +209,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\DodajNovost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Glasanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,6 +241,28 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs.120, Version=14.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Universal</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.18.0">
+      <Name>SQLite for Universal Windows Platform</Name>
+    </SDKReference>
+    <SDKReference Include="TestPlatform.Universal, Version=14.0">
+      <Name>Microsoft Visual Studio Test Core</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsDesktop, Version=10.0.14393.0">
+      <Name>Windows Desktop Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

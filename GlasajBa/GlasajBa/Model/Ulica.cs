@@ -32,6 +32,8 @@ namespace GlasajBa.Model
             this.birackoMjesto = birackoMjesto;
         }
 
+        public Ulica() { }
+
         public string BirackoMjesto
         {
             get

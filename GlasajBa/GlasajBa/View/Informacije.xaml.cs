@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GlasajBa.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,14 @@ namespace GlasajBa.View
     /// </summary>
     public sealed partial class Informacije : Page
     {
+        
         public Informacije()
         {
+            
+
             this.InitializeComponent();
         }
-    }
+        
+    }    
+
 }
