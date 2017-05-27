@@ -284,7 +284,7 @@ namespace GlasajBa.ViewModel
 
         public void dodajTweet(string s)
         {
-            s = napraviAnalizu();
+            /*s = napraviAnalizu();
             string costumerKey = "5GpJFJaFR4kC23T6iGDcGG9Uz";
             string cosumerKeySecret = "C5AE21YQOOZwnopuylvZQAuMi0TnVTHEOnhEp0pYCwtoYeqQtR";
             string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";

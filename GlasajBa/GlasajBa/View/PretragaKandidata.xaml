@@ -94,8 +94,10 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <Button x:Name="ButtonIzlaz" Grid.Row="0" Grid.Column="0" Background="Blue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}"/>
-        <Image Source="Slike/zastavaGlasanje.jpg" Grid.RowSpan="2" Grid.ColumnSpan="3" Stretch="Fill" Opacity="0.5"/>
+        <Button x:Name="ButtonIzlaz" Grid.Row="0" Grid.Column="0" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}">
+            <Image Source="ms-appx:///Slike/ikonaNazad.png" Stretch="Fill" Opacity="0.5"/>
+        </Button>
+        <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
         <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>

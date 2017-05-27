@@ -1,0 +1,44 @@
+Kreacijski patterni:
+
+1. Adapter pattern
+-Buduæi da klasa GlasanjeViewModel sadrži 3 interfejsa, od kojih se jedan bavi analizom glasaèkog sistema, a drugi objavljivanjem na Twitter,
+ukoliko bi se kreirao još jedan glasaèki sistem (npr. odvojen za lokalne i opæe izbore) ili ukoliko bi se trebalo objavljivati na Twitter
+i praviti analize bez obzira na èinjenicu što nisu u toku izbori, bilo bi neophodno mijenjati date klase i njihove implementacije tih
+interfejsa, što nije dobro.
+-Potrebno je kreirati Adapter klasu koja æe naslijediti interfejse Analiza i Twitter te ih implementirati na naèin koji odgovara
+novim funkcionalnostima potrebnim u buduænosti. Na ovaj naèin klasni sistem æe biti otvoren za nadogradnju, a zatvoren za promjene.
+2. Facade pattern
+
+3. Decorator pattern
+
+4. Bridge pattern
+
+5. Proxy pattern
+-Klasa AdministratorViewModel, izmeðu ostalog, bavi se i provjerom da li osoba koja pokušava pristupiti posebnim opcijama ima ovlasti za takvo nešto.
+Buduæi da je veoma važno zaštititi ovu klasu i njene moguænosti od neovlaštenog pristupa, potrebno je uvesti Proxy klasu koja æe onemoguæiti
+pristup metodama i promjenu podataka ukoliko korisnik nema odgovarajuæe korisnièke podatke.
+-Klasa AdministratorViewModel treba se deklarisati kao privatna, te je potrebno napraviti novu Proxy klasu koja æe izvršiti kreiranje instance
+klase AdministratorViewModel. Kada korisnik unese korisnièke podatke, pozvati æe se metoda Authenticate koja æe instancirati klasu samo ukoliko
+su uneseni ispravni korisnièki podaci.
+6. Composite pattern
+
+7. Flyweight pattern
+
+
+Kreacijski patterni:
+
+1. Singleton pattern
+-U klasnom modelu postoji nekoliko klasa koje ne bi trebalo biti moguæe instancirati više puta - AdministratorViewModel, GlasanjeViewModel i
+OstaleFunkcionalnostiViewModel. Ukoliko bi bilo više instanci ovih klasa, bilo bi više naèina da se unese glas, obrišu podaci korisnika ili prikažu
+najvažnije informacije, što bi bilo neprihvatljivo. Zbog toga je potrebno onemoguæiti da se kreira više objekata ovih klasa.
+-Potrebno je kreirati klasu Singleton koja æe instancirati željenu klasu. Ta klasa æe posjedovati metodu koja æe uvijek vraæati istu instancu.
+2. Prototype pattern
+
+3. Factory Method pattern
+
+4. Abstract Factory pattern
+
+5. Builder pattern
+-Buduæi da se u klasnom modelu ne implementira "gradnja" od više dijelova, te nema ni više klasa koje bi na razlièite naèine "gradile" objekte,
+Builder pattern se ne može primijeniti. U klasnom modelu nema prosljeðivanja objekata klasa kao parametara više puta izmeðu više klasa s jednim konaènim
+rezultatom, te automatski nema ni moguænosti da se primijeni ovaj pattern.

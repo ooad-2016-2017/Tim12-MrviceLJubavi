@@ -46,7 +46,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
+        <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
         <Grid x:Name="gridPivota" HorizontalAlignment="Left" Height="586" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
             <Pivot x:Name="pivot" Title="Informacije" FontSize="50">
                 <PivotItem Header="Novosti">
