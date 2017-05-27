@@ -520,8 +520,8 @@ namespace GlasajBa.ViewModel
             string cosumerKeySecret = "C5AE21YQOOZwnopuylvZQAuMi0TnVTHEOnhEp0pYCwtoYeqQtR";
             string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";
             string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
-
-            TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
+            //ovo je zakomentarisano jer javlja error
+            /*TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
             service.sendTweet(new SendTweerOptions { Status = s }, (tweet, response) =>
             {
                 if (response.StatusCode==HttpStatusCode.OK)
@@ -533,7 +533,7 @@ namespace GlasajBa.ViewModel
                     var dialog = new MessageDialog("Tweet nije uspjesno objavljen!");
                     dialog.Title = "Twitter";
                 }
-            });
+            });*/
         }
     }
 }

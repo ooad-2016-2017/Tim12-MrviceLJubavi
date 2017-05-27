@@ -76,7 +76,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
+        <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
         <!--   <Pivot x:Name="pivot" Title="Pivot" HeaderTemplate="{StaticResource MojHeader2}">
                 <PivotItem Header="Početak" >
                     <Hub Header="Hub">

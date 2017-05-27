@@ -71,7 +71,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <Image Source="Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
+        <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
         <SplitView Name="SplitView1" IsPaneOpen="false" DisplayMode="CompactOverlay" CompactPaneLength="67">
             <SplitView.Pane>
                 <Grid Background="Gray">
@@ -88,13 +88,25 @@
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="5*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Button x:Name="ButtonOtvaranje" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Click="Prikazi_Click"/>
+                    <Button x:Name="ButtonOtvaranje" Grid.Column="0" Grid.Row="0" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Click="Prikazi_Click">
+                        <Image Source="ms-appx:///Slike/ikonaNazad.png" Stretch="Fill" Opacity="0.5"/>
+                    </Button>
 
-                    <Button x:Name="ButtonOpcina" Grid.Column="0" Grid.Row="1" Background="DarkBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaOpcinu}"/>
-                    <Button x:Name="ButtonKanton" Grid.Column="0" Grid.Row="2" Background="DarkBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaKanton}"/>
-                    <Button x:Name="ButtonEntitet" Grid.Column="0" Grid.Row="3" Background="DarkBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaEntitet}"/>
-                    <Button x:Name="ButtonDrzava" Grid.Column="0" Grid.Row="4" Background="DarkBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaDrzavu}"/>
-                    <Button x:Name="ButtonIzlaz" Grid.Column="0" Grid.Row="5" Background="DarkBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}"/>
+                    <Button x:Name="ButtonOpcina" Grid.Column="0" Grid.Row="1" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaOpcinu}">
+                        <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
+                    </Button>
+                    <Button x:Name="ButtonKanton" Grid.Column="0" Grid.Row="2" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaKanton}">
+                        <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
+                    </Button>
+                    <Button x:Name="ButtonEntitet" Grid.Column="0" Grid.Row="3" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaEntitet}">
+                        <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
+                    </Button>
+                    <Button x:Name="ButtonDrzava" Grid.Column="0" Grid.Row="4" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaDrzavu}">
+                        <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
+                    </Button>
+                    <Button x:Name="ButtonIzlaz" Grid.Column="0" Grid.Row="5" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}">
+                        <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
+                    </Button>
                     <TextBlock x:Name="TextOpcina" Grid.Column="1" Grid.Row="1" Text="Općina" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock x:Name="TextKanton" Grid.Column="1" Grid.Row="2" Text="Kanton" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock x:Name="TextEntitet" Grid.Column="1" Grid.Row="3" Text="Entitet" HorizontalAlignment="Center" VerticalAlignment="Center"/>

@@ -21,9 +21,11 @@
             <RowDefinition Height="6*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Source="Assets/zastavaGlasanje.jpg" Grid.RowSpan="5" Grid.ColumnSpan="3" Stretch="Fill" Opacity="0.5"/>
+        <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5" Grid.RowSpan="5" Grid.ColumnSpan="5"/>
         <TextBlock x:Name="TextPronalazak" FontSize="25" Text="Pronalazak biračkog mjesta" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontStyle="Italic"/>
-        <Button x:Name="ButtonIzlaz" Grid.Row="0" Grid.Column="0" Background="Blue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}"/>
+        <Button x:Name="ButtonIzlaz" Grid.Row="0" Grid.Column="0" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}">
+            <Image Source="ms-appx:///Slike/ikonaNazad.png" Stretch="Fill" Opacity="0.5"/>
+        </Button>
         <TextBlock x:Name="TextUlica" FontSize="25" Text="Ulica:" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock x:Name="TextBirackoMjesto" FontSize="25" Text="Biračko mjesto:" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox x:Name="BoxUlica" Grid.Row="1" Grid.Column="2" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" FontSize="25" Text="{Binding Path=Ulica.Naziv}"/>

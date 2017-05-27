@@ -55,6 +55,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5" Grid.RowSpan="10"/>
         <Grid x:Name="grid" Margin="10" Opacity="0"/>
         <TextBlock x:Name="textBlock" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,10" Opacity="0" Grid.Row="1" TextWrapping="Wrap" Text="Ime kandidata:" Width="220" FontFamily="Century" FontSize="27" d:LayoutOverrides="TopMargin, BottomMargin"/>
         <TextBox x:Name="textBox" Margin="10,10,28,10" Opacity="0" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Path=AdministratorViewModel.PoljePretrageKandidata}" FontFamily="Century" FontSize="27" VerticalAlignment="Center" Height="65" d:LayoutOverrides="TopMargin, BottomMargin"/>
