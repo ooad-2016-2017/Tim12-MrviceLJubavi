@@ -4,6 +4,7 @@ using GlasajBa.Model;
 using System;
 //using System.TwitterSharp;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Input;
 using Windows.Storage;
 using Windows.Storage.Pickers;
@@ -487,7 +488,7 @@ namespace GlasajBa.ViewModel
             StorageFile file = await picker.PickSingleFileAsync();
             if (file != null)
             {
-                //uploadSlika = (await Windows.Storage.FileIO.ReadBufferAsync(file)).ToArray();
+                uploadSlika = (await Windows.Storage.FileIO.ReadBufferAsync(file)).ToArray();
             }
 
         }
@@ -521,9 +522,13 @@ namespace GlasajBa.ViewModel
             string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";
             string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
 
+
+
+
+
             //TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
             /*service.sendTweet(new SendTweerOptions { Status = s }, (tweet, response) =>
-=======
+
             //ovo je zakomentarisano jer javlja error
             /*TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
             service.sendTweet(new SendTweerOptions { Status = s }, (tweet, response) =>
