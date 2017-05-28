@@ -8,6 +8,9 @@ interfejsa, što nije dobro.
 -Potrebno je kreirati Adapter klasu koja æe naslijediti interfejse Analiza i Twitter te ih implementirati na naèin koji odgovara
 novim funkcionalnostima potrebnim u buduænosti. Na ovaj naèin klasni sistem æe biti otvoren za nadogradnju, a zatvoren za promjene.
 2. Facade pattern
+-Ovaj pattern pravi poveznicu izmeðu korisnièkih interfejsa (tj. formi), i logièkog pogleda sistema. Za implementaciju ovog metoda, potrebno je
+napraviti klasu Facade koja bi objedinjavala sve logièke dijelove sistema. ViewModeli predstavljaju logièki dio sistema, te bi bilo potrebno napraviti
+jednu klasu koja sadržavala ViewModele i koja bi navigirala njima zavisno od korisnièke interakcije sa sistemom.
 
 3. Decorator pattern
 
@@ -23,7 +26,9 @@ su uneseni ispravni korisnièki podaci.
 6. Composite pattern
 
 7. Flyweight pattern
-
+-Uloga flyweight patterna je da smanji potrošnju memorije time što æe "reciklirati" objekte koji se interno ne razlikuju jedan od drugog.
+No, kako su u našim klasama svi atributi jedne instance, razlièiti od atributa druge instance, te se ne mogu uspostaviti interne, zajednièke karakteristike,
+tako ovaj pattern nije primjenjiv za naš sistem. 
 
 Kreacijski patterni:
 
@@ -35,8 +40,14 @@ najvažnije informacije, što bi bilo neprihvatljivo. Zbog toga je potrebno onemog
 2. Prototype pattern
 
 3. Factory Method pattern
+-Ovaj pattern koristi posebne metode za instanciranje objekata umjesto konstruktora, kada nam je potrebno da ne navodimo koja tacno klasa ce biti instancirana.
+U našem sistemu postoji samo jedna abstraktna klasa (Osoba), koja je generalizacija klasa Kandidat i Glasaè. Kako nam je u svakom trenutku poznato koji tip instance
+nam treba, tj. ne treba nam metoda da utvrdimo šta trebamo kreirati, tako ovaj pattern nije primjenjiv na naš sistem.
 
 4. Abstract Factory pattern
+-Slièno kao prethodni patern, i ovaj patern koristi metode za instanciranje objekata, umjesto konstruktora, samo što ovaj pattern ima jednu "SuperFactory" koja
+kontroliše instanciranje svih tipova objekta u sistemu. Kako je nama u svakom trenutku poznato koji tip instance nam treba, tj. ne treba nam metoda da utvrdimo 
+šta trebamo kreirati, tako ovaj pattern nije primjenjiv na naš sistem.
 
 5. Builder pattern
 -Buduæi da se u klasnom modelu ne implementira "gradnja" od više dijelova, te nema ni više klasa koje bi na razlièite naèine "gradile" objekte,
