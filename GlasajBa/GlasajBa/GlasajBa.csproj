@@ -133,6 +133,9 @@
     <Compile Include="ImageAndButton.xaml.cs">
       <DependentUpon>ImageAndButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LabeleZaMenu.xaml.cs">
+      <DependentUpon>LabeleZaMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AdministratorViewModel.cs" />
     <Compile Include="ViewModel\GlasanjeViewModel.cs" />
     <Compile Include="ViewModel\GpsViewModel.cs" />
@@ -210,6 +213,10 @@
     <Page Include="ImageAndButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LabeleZaMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\AdminLogin.xaml">
       <SubType>Designer</SubType>
