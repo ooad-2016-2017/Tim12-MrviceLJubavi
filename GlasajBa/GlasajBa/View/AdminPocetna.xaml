@@ -5,10 +5,488 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Foundation="using:Windows.Foundation"
+    xmlns:UserControls="using:GlasajBa.UserControls" x:Name="page"
     x:Class="GlasajBa.View.AdminPocetna"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Wide"/>
+                <VisualState x:Name="Narrow">
+                    <VisualState.Setters>
+                        <Setter Target="ime1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>9.987,8.813,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisiime1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>159.995,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisiime1.(FrameworkElement.Width)" Value="148.991"/>
+                        <Setter Target="pisiprezime1.(FrameworkElement.Width)" Value="148.986"/>
+                        <Setter Target="pisiprezime1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>159.991,32,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajdatum1.(FrameworkElement.Width)" Value="148.977"/>
+                        <Setter Target="prezime1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>9.985,37.813,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="datum1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10.044,57.813,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajdatum1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>9.958,77.813,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="jmbg1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10.034,114.764,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisijmbg1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>159.989,109.764,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisijmbg1.(FrameworkElement.Width)" Value="146.02"/>
+                        <Setter Target="pisilicnu1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160.015,141.764,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisilicnu1.(FrameworkElement.Width)" Value="146.02"/>
+                        <Setter Target="birajstranku1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10.075,196.789,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajstranku1.(FrameworkElement.Width)" Value="146.035"/>
+                        <Setter Target="birajpoziciju1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10.047,254.951,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajpoziciju1.(FrameworkElement.Width)" Value="146.048"/>
+                        <Setter Target="pisistrucnu1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>9.949,306.951,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisistrucnu1.(FrameworkElement.Width)" Value="146.06"/>
+                        <Setter Target="licna1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10.077,153.764,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stranka1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>9.969,178.764,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pozicija1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10.041,234.951,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="strucnasprema1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>9.977,286.951,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisipriznanja1.(FrameworkElement.Width)" Value="139.919"/>
+                        <Setter Target="pisipriznanja1.(FrameworkElement.Height)" Value="87"/>
+                        <Setter Target="pisipriznanja1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10.01,366.951,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,-1079,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="priznanja1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10.01,0,0,181.049</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="priznanja1.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
+                        <Setter Target="priznanja1.(FrameworkElement.Height)" Value="28"/>
+                        <Setter Target="priznanja1.(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Value="1"/>
+                        <Setter Target="priznanja1.(FrameworkElement.Width)" Value="139.989"/>
+                        <Setter Target="UC1.(UIElement.RenderTransformOrigin)">
+                            <Setter.Value>
+                                <Foundation:Point>-1.904,1.125</Foundation:Point>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="UC1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>166.31,168.764,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="UC1.(FrameworkElement.Width)" Value="180.624"/>
+                        <Setter Target="UC1.(FrameworkElement.Height)" Value="246.927"/>
+                        <Setter Target="page.(FrameworkElement.Height)" Value="593"/>
+                        <Setter Target="dodajkandidata.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160.038,427.998,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="page.(FrameworkElement.Width)" Value="362.667"/>
+                        <Setter Target="ime2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,9,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisiime2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisiprezime2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,30,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="prezime2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,38,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="datum2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,63,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajdatum2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,83,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="jmbg2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,120,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisijmbg2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,115,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="licna2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,145,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisilicnu2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,145,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stranka2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,184,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajstranku2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,204,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pozicija2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,241,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajpoziciju2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,261,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="strucnasprema2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,298,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisistrucnu2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,318,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisiime2.(FrameworkElement.Width)" Value="166"/>
+                        <Setter Target="pisiprezime2.(FrameworkElement.Width)" Value="166"/>
+                        <Setter Target="pisijmbg2.(FrameworkElement.Width)" Value="166"/>
+                        <Setter Target="pisilicnu2.(FrameworkElement.Width)" Value="166"/>
+                        <Setter Target="birajstranku2.(FrameworkElement.Width)" Value="146"/>
+                        <Setter Target="birajpoziciju2.(FrameworkElement.Width)" Value="146"/>
+                        <Setter Target="pisistrucnu2.(FrameworkElement.Width)" Value="146"/>
+                        <Setter Target="priznanja2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>16,0,0,173</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="priznanja2.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
+                        <Setter Target="pisipriznanja2.(FrameworkElement.Width)" Value="146"/>
+                        <Setter Target="pisipriznanja2.(FrameworkElement.Height)" Value="96"/>
+                        <Setter Target="pisipriznanja2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,375,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="UC2.(FrameworkElement.Width)" Value="166"/>
+                        <Setter Target="UC2.(FrameworkElement.Height)" Value="256"/>
+                        <Setter Target="UC2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,174,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="izmjenikandidata.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>179,434,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisinaslov1.(FrameworkElement.Width)" Value="168"/>
+                        <Setter Target="naslov1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,14,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisinaslov1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,10,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="tekst1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,47,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="tekst1.(FrameworkElement.Width)" Value="115"/>
+                        <Setter Target="pisitekst1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,67,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisitekst1.(FrameworkElement.Width)" Value="154"/>
+                        <Setter Target="pisitekst1.(FrameworkElement.Height)" Value="273"/>
+                        <Setter Target="UC4.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>173,57,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="UC4.(FrameworkElement.Height)" Value="282"/>
+                        <Setter Target="UC4.(FrameworkElement.Width)" Value="175"/>
+                        <Setter Target="dodajnovost.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,347,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="naslov2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,9,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisinaslov2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="tekst2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,34,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisitekst2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,59,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisitekst2.(FrameworkElement.Height)" Value="306"/>
+                        <Setter Target="pisitekst2.(FrameworkElement.Width)" Value="156"/>
+                        <Setter Target="pisinaslov2.(FrameworkElement.Width)" Value="169"/>
+                        <Setter Target="UC5.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>152,49,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="UC5.(FrameworkElement.Width)" Value="195"/>
+                        <Setter Target="izmjeninovost.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>179,363,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="naslov3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,9,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisinaslov3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="tekst3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,34,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisinaslov3.(FrameworkElement.Width)" Value="177"/>
+                        <Setter Target="pisitekst3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,54,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisitekst3.(FrameworkElement.Height)" Value="296"/>
+                        <Setter Target="pisitekst3.(FrameworkElement.Width)" Value="150"/>
+                        <Setter Target="UC6.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>146,44,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="UC6.(FrameworkElement.Width)" Value="199"/>
+                        <Setter Target="UC6.(FrameworkElement.Height)" Value="315"/>
+                        <Setter Target="obrisinovost.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,355,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="ime3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,10,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisiime3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="prezime3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,38,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisiprezime3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,30,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="datum3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,58,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajdatum3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,78,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisiime3.(FrameworkElement.Width)" Value="172"/>
+                        <Setter Target="pisiprezime3.(FrameworkElement.Width)" Value="172"/>
+                        <Setter Target="jmbg3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,121,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisijmbg3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,110,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisijmbg3.(FrameworkElement.Width)" Value="172"/>
+                        <Setter Target="licna3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,149,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisilicnu3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,137,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisilicnu3.(FrameworkElement.Width)" Value="172"/>
+                        <Setter Target="stranka3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,169,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajstranku3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,189,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajstranku3.(FrameworkElement.Width)" Value="153"/>
+                        <Setter Target="pozicija3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,221,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajpoziciju3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,241,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="birajpoziciju3.(FrameworkElement.Width)" Value="153"/>
+                        <Setter Target="strucnasprema3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,273,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisistrucnu3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,293,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisistrucnu3.(FrameworkElement.Width)" Value="153"/>
+                        <Setter Target="priznanja3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,0,0,198</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="priznanja3.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
+                        <Setter Target="pisipriznanja3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,355,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="pisipriznanja3.(FrameworkElement.Height)" Value="52"/>
+                        <Setter Target="pisipriznanja3.(FrameworkElement.Width)" Value="153"/>
+                        <Setter Target="UC3.(FrameworkElement.Width)" Value="172"/>
+                        <Setter Target="UC3.(FrameworkElement.Height)" Value="272"/>
+                        <Setter Target="UC3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>160,159,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="obrisikandidata.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,407,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="11.5*"/>
+        </Grid.RowDefinitions>
+
+
+
+
         <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
         <Pivot Title="" Margin="10,-4,10,10" Grid.Row="1">
             <PivotItem Header="Dodaj kandidata" Margin="9.213,0,14.787,8.5" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
@@ -22,26 +500,30 @@
                     <TextBlock x:Name="jmbg1" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="JMBG:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="licna1" HorizontalAlignment="Left" Margin="10,190,0,0" TextWrapping="Wrap" Text="Lična karta:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="stranka1" HorizontalAlignment="Left" Margin="10,230,0,0" TextWrapping="Wrap" Text="Stranka:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBlock x:Name="pozicija1" HorizontalAlignment="Left" Margin="10,270,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" Height="20" Width="115"/>
+                    <TextBlock x:Name="pozicija1" HorizontalAlignment="Left" Margin="10,270,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" Height="20" Width="115" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBlock x:Name="strucnasprema1" HorizontalAlignment="Left" Margin="10,310,0,0" TextWrapping="Wrap" Text="Stručna sprema:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBlock x:Name="priznanja1" HorizontalAlignment="Left" Margin="515,30,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" Height="20" Width="140"/>
-                    <TextBox x:Name="pisiime1" Text="{Binding Path=AdministratorViewModel.NoviKandidat.Ime}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisiprezime1" Text="{Binding Path=AdministratorViewModel.NoviKandidat.Prezime}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisijmbg1" Text="{Binding Path=AdministratorViewModel.NoviKandidat.JMBG1}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisilicnu1" Text="{Binding Path=AdministratorViewModel.NoviKandidat.LicnaKarta}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisistrucnu1" HorizontalAlignment="Left" Text="{Binding Path=AdministratorViewModel.NoviKandidat.StrucnaSprema}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <DatePicker x:Name="birajdatum1" Date="{Binding Path=Administrator.NoviKandidat.DatRodjenja}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
-                    <ComboBox x:Name="birajpoziciju1" SelectedItem="{Binding Path=AdministratorViewModel.NoviKandidat.Pozicija}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200">
-                        <ComboBoxItem>Država</ComboBoxItem>
-                        <ComboBoxItem>Entitet</ComboBoxItem>
-                        <ComboBoxItem>Kanton</ComboBoxItem>
-                        <ComboBoxItem>Općina</ComboBoxItem>
+                    <TextBlock x:Name="priznanja1" HorizontalAlignment="Left" Margin="515,30,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" Height="20" Width="140" d:LayoutOverrides="HorizontalAlignment" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <CompositeTransform/>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBox x:Name="pisiime1" Text="{Binding AdministratorViewModel.NoviKandidat.Ime}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisiprezime1" Text="{Binding AdministratorViewModel.NoviKandidat.Prezime}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisijmbg1" Text="{Binding AdministratorViewModel.NoviKandidat.JMBG1}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisilicnu1" Text="{Binding AdministratorViewModel.NoviKandidat.LicnaKarta}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisistrucnu1" HorizontalAlignment="Left" Text="{Binding AdministratorViewModel.NoviKandidat.StrucnaSprema}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <DatePicker x:Name="birajdatum1" Date="{Binding Administrator.NoviKandidat.DatRodjenja}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajpoziciju1" SelectedItem="{Binding AdministratorViewModel.NoviKandidat.Pozicija}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200">
+                        <ComboBoxItem Content="Država"/>
+                        <ComboBoxItem Content="Entitet"/>
+                        <ComboBoxItem Content="Kanton"/>
+                        <ComboBoxItem Content="Općina"/>
                     </ComboBox>
-                    <ComboBox x:Name="birajstranku1" ItemsSource="{Binding Path=AdministratorViewModel.Sistem.Stranke}" DisplayMemberPath="{Binding Path=Naziv}" SelectedValue="{Binding Path=AdministratorViewModel.NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
-                    <RichEditBox x:Name="pisipriznanja1" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272"/>
-                    <Image x:Name="slika1" Source="{Binding Path=AdministratorViewModel.NoviKandidat.Slika}" HorizontalAlignment="Left" Height="265" Margin="949,30,0,0" VerticalAlignment="Top" Width="229"/>
-                    <Button x:Name="ucitajsliku1" Command="{Binding Path=AdministratorViewModel.UcitajSliku}" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="1020,310,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="dodajkandidata" Command="{Binding Path=AdministratorViewModel.DodavanjeKandidata}" Content="Dodaj" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18"/>
+                    <ComboBox x:Name="birajstranku1" ItemsSource="{Binding AdministratorViewModel.Sistem.Stranke}" DisplayMemberPath="{Binding Naziv}" SelectedValue="{Binding AdministratorViewModel.NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
+                    <RichEditBox x:Name="pisipriznanja1" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="dodajkandidata" Command="{Binding AdministratorViewModel.DodavanjeKandidata}" Content="Dodaj" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <UserControls:ImageAndButton x:Name="UC1" HorizontalAlignment="Left" Height="296" Margin="932,44,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
+
                 </Grid>
             </PivotItem>
             <PivotItem Header="Izmjeni kandidata">
@@ -52,26 +534,25 @@
                     <TextBlock x:Name="jmbg2" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="JMBG:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="licna2" HorizontalAlignment="Left" Margin="10,190,0,0" TextWrapping="Wrap" Text="Lična karta:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="stranka2" HorizontalAlignment="Left" Margin="10,230,0,0" TextWrapping="Wrap" Text="Stranka:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBlock x:Name="pozicija2" HorizontalAlignment="Left" Margin="10,270,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" Height="20" Width="115"/>
+                    <TextBlock x:Name="pozicija2" HorizontalAlignment="Left" Margin="10,270,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" Height="20" Width="115" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBlock x:Name="strucnasprema2" HorizontalAlignment="Left" Margin="10,310,0,0" TextWrapping="Wrap" Text="Stručna sprema:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBlock x:Name="priznanja2" HorizontalAlignment="Left" Margin="515,30,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" Height="20" Width="140"/>
-                    <TextBox x:Name="pisiime2" Text="{Binding Path=AdministratorViewModel.NoviKandidat.Ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisiprezime2" Text="{Binding Path=AdministratorViewModel.NoviKandidat.Prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisijmbg2" IsReadOnly="True" Text="{Binding Path=AdministratorViewModel.NoviKandidat.JMBG1, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisilicnu2" IsReadOnly="True" Text="{Binding Path=AdministratorViewModel.NoviKandidat.LicnaKarta, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisistrucnu2" HorizontalAlignment="Left" Text="{Binding Path=AdministratorViewModel.NoviKandidat.StrucnaSprema, Mode=TwoWay}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <DatePicker x:Name="birajdatum2" Date="{Binding Path=Administrator.NoviKandidat.DatRodjenja, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
-                    <ComboBox x:Name="birajpoziciju2" SelectedItem="{Binding Path=AdministratorViewModel.NoviKandidat.Pozicija, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200">
-                        <ComboBoxItem>Država</ComboBoxItem>
-                        <ComboBoxItem>Entitet</ComboBoxItem>
-                        <ComboBoxItem>Kanton</ComboBoxItem>
-                        <ComboBoxItem>Općina</ComboBoxItem>
+                    <TextBlock x:Name="priznanja2" HorizontalAlignment="Left" Margin="515,30,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" Height="20" Width="140" d:LayoutOverrides="HorizontalAlignment"/>
+                    <TextBox x:Name="pisiime2" Text="{Binding AdministratorViewModel.NoviKandidat.Ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisiprezime2" Text="{Binding AdministratorViewModel.NoviKandidat.Prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisijmbg2" IsReadOnly="True" Text="{Binding AdministratorViewModel.NoviKandidat.JMBG1, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisilicnu2" IsReadOnly="True" Text="{Binding AdministratorViewModel.NoviKandidat.LicnaKarta, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisistrucnu2" HorizontalAlignment="Left" Text="{Binding AdministratorViewModel.NoviKandidat.StrucnaSprema, Mode=TwoWay}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <DatePicker x:Name="birajdatum2" Date="{Binding Administrator.NoviKandidat.DatRodjenja, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajpoziciju2" SelectedItem="{Binding AdministratorViewModel.NoviKandidat.Pozicija, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200">
+                        <ComboBoxItem Content="Država"/>
+                        <ComboBoxItem Content="Entitet"/>
+                        <ComboBoxItem Content="Kanton"/>
+                        <ComboBoxItem Content="Općina"/>
                     </ComboBox>
-                    <ComboBox x:Name="birajstranku2" ItemsSource="{Binding Path=AdministratorViewModel.Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Path=Naziv}" SelectedValue="{Binding Path=AdministratorViewModel.NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
-                    <RichEditBox x:Name="pisipriznanja2" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272"/>
-                    <Image x:Name="slika2" Source="{Binding Path=AdministratorViewModel.NoviKandidat.Slika, Mode=TwoWay}" HorizontalAlignment="Left" Height="265" Margin="949,30,0,0" VerticalAlignment="Top" Width="229"/>
-                    <Button x:Name="ucitajsliku2" Command="{Binding Path=AdministratorViewModel.UcitajSliku}" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="1020,310,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="izmjenikandidata" Command="{Binding Path=AdministratorViewModel.DodavanjeKandidata}" Content="Spasi promjene" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18"/>
+                    <ComboBox x:Name="birajstranku2" ItemsSource="{Binding AdministratorViewModel.Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Naziv}" SelectedValue="{Binding AdministratorViewModel.NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
+                    <RichEditBox x:Name="pisipriznanja2" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="izmjenikandidata" Command="{Binding AdministratorViewModel.DodavanjeKandidata}" Content="Spasi promjene" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <UserControls:ImageAndButton x:Name="UC2" HorizontalAlignment="Left" Height="296" Margin="932,44,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
                     <Grid/>
                 </Grid>
             </PivotItem>
@@ -83,71 +564,61 @@
                     <TextBlock x:Name="jmbg3" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="JMBG:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="licna3" HorizontalAlignment="Left" Margin="10,190,0,0" TextWrapping="Wrap" Text="Lična karta:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="stranka3" HorizontalAlignment="Left" Margin="10,230,0,0" TextWrapping="Wrap" Text="Stranka:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBlock x:Name="pozicija3" HorizontalAlignment="Left" Margin="10,270,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" Height="20" Width="115"/>
+                    <TextBlock x:Name="pozicija3" HorizontalAlignment="Left" Margin="10,270,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" Height="20" Width="115" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBlock x:Name="strucnasprema3" HorizontalAlignment="Left" Margin="10,310,0,0" TextWrapping="Wrap" Text="Stručna sprema:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBlock x:Name="priznanja3" HorizontalAlignment="Left" Margin="515,30,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" Height="20" Width="140"/>
-                    <TextBox x:Name="pisiime3" Text="{Binding Path=AdministratorViewModel.NoviKandidat.Ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisiprezime3" Text="{Binding Path=AdministratorViewModel.NoviKandidat.Prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisijmbg3" IsReadOnly="True" Text="{Binding Path=AdministratorViewModel.NoviKandidat.JMBG1, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisilicnu3" IsReadOnly="True" Text="{Binding Path=AdministratorViewModel.NoviKandidat.LicnaKarta, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisistrucnu3" HorizontalAlignment="Left" Text="{Binding Path=AdministratorViewModel.NoviKandidat.StrucnaSprema, Mode=TwoWay}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <DatePicker x:Name="birajdatum3" Date="{Binding Path=Administrator.NoviKandidat.DatRodjenja, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
-                    <ComboBox x:Name="birajpoziciju3" SelectedItem="{Binding Path=AdministratorViewModel.NoviKandidat.Pozicija, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200">
-                        <ComboBoxItem>Država</ComboBoxItem>
-                        <ComboBoxItem>Entitet</ComboBoxItem>
-                        <ComboBoxItem>Kanton</ComboBoxItem>
-                        <ComboBoxItem>Općina</ComboBoxItem>
+                    <TextBlock x:Name="priznanja3" HorizontalAlignment="Left" Margin="515,30,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" Height="20" Width="140" d:LayoutOverrides="HorizontalAlignment"/>
+                    <TextBox x:Name="pisiime3" Text="{Binding AdministratorViewModel.NoviKandidat.Ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisiprezime3" Text="{Binding AdministratorViewModel.NoviKandidat.Prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisijmbg3" IsReadOnly="True" Text="{Binding AdministratorViewModel.NoviKandidat.JMBG1, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisilicnu3" IsReadOnly="True" Text="{Binding AdministratorViewModel.NoviKandidat.LicnaKarta, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisistrucnu3" HorizontalAlignment="Left" Text="{Binding AdministratorViewModel.NoviKandidat.StrucnaSprema, Mode=TwoWay}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <DatePicker x:Name="birajdatum3" Date="{Binding Administrator.NoviKandidat.DatRodjenja, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajpoziciju3" SelectedItem="{Binding AdministratorViewModel.NoviKandidat.Pozicija, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200" d:LayoutOverrides="VerticalAlignment">
+                        <ComboBoxItem Content="Država"/>
+                        <ComboBoxItem Content="Entitet"/>
+                        <ComboBoxItem Content="Kanton"/>
+                        <ComboBoxItem Content="Općina"/>
                     </ComboBox>
-                    <ComboBox x:Name="birajstranku3" ItemsSource="{Binding Path=AdministratorViewModel.Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Path=Naziv}" SelectedValue="{Binding Path=AdministratorViewModel.NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
-                    <RichEditBox x:Name="pisipriznanja3" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272"/>
-                    <Image x:Name="slika3" Source="{Binding Path=AdministratorViewModel.NoviKandidat.Slika, Mode=TwoWay}" HorizontalAlignment="Left" Height="265" Margin="949,30,0,0" VerticalAlignment="Top" Width="229"/>
-                    <Button x:Name="ucitajsliku3" Command="{Binding Path=AdministratorViewModel.UcitajSliku}" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="1020,310,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="obrisikandidata" Command="{Binding Path=AdministratorViewModel.DodavanjeKandidata}" Content="Obriši" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18"/>
+                    <ComboBox x:Name="birajstranku3" ItemsSource="{Binding AdministratorViewModel.Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Naziv}" SelectedValue="{Binding AdministratorViewModel.NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
+                    <RichEditBox x:Name="pisipriznanja3" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="obrisikandidata" Command="{Binding AdministratorViewModel.DodavanjeKandidata}" Content="Obriši" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <UserControls:ImageAndButton x:Name="UC3" HorizontalAlignment="Left" Height="296" Margin="932,44,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
                 </Grid>
             </PivotItem>
             <PivotItem Header="Dodaj novost">
                 <Grid HorizontalAlignment="Left" Height="556" VerticalAlignment="Top" Width="1236">
                     <TextBlock x:Name="naslov1" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="Naslov:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="tekst1" HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Tekst:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBox x:Name="pisinaslov1" Text="{Binding Path=AdministratorViewModel.NovaNovost.Naslov}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisinaslov1" Text="{Binding AdministratorViewModel.NovaNovost.Naslov}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisitekst1" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top" Height="433" Width="454"/>
-                    <Image x:Name="slika4" Source="{Binding Path=AdministratorViewModel.NovaNovost.Slika}" HorizontalAlignment="Left" Height="324" Margin="759,30,0,0" VerticalAlignment="Top" Width="419"/>
-                    <Button x:Name="ucitajsliku4" Command="{Binding Path=AdministratorViewModel.UcitajSliku}" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="927,379,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="dodajnovost" Command="{Binding Path=AdministratorViewModel.DodavanjeNovosti}" Content="Dodaj" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18"/>
+                    <Button x:Name="dodajnovost" Command="{Binding AdministratorViewModel.DodavanjeNovosti}" Content="Dodaj" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <UserControls:ImageAndButton x:Name="UC4" HorizontalAlignment="Left" Height="296" Margin="859,20,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
                 </Grid>
             </PivotItem>
             <PivotItem Header="Izmjeni novost">
                 <Grid HorizontalAlignment="Left" Height="556" VerticalAlignment="Top" Width="1236">
                     <TextBlock x:Name="naslov2" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="Naslov:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="tekst2" HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Tekst:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBox x:Name="pisinaslov2" Text="{Binding Path=AdministratorViewModel.NovaNovost.Naslov, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisinaslov2" Text="{Binding AdministratorViewModel.NovaNovost.Naslov, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisitekst2" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top" Height="433" Width="454"/>
-                    <Image x:Name="slika5" Source="{Binding Path=AdministratorViewModel.NovaNovost.Slika, Mode=TwoWay}" HorizontalAlignment="Left" Height="324" Margin="759,30,0,0" VerticalAlignment="Top" Width="419"/>
-                    <Button x:Name="ucitajsliku5" Command="{Binding Path=AdministratorViewModel.UcitajSliku}" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="927,379,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="izmjeninovost" Command="{Binding Path=AdministratorViewModel.DodavanjeNovosti}" Content="Spasi izmjene" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18"/>
+                    <Button x:Name="izmjeninovost" Command="{Binding AdministratorViewModel.DodavanjeNovosti}" Content="Spasi izmjene" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <UserControls:ImageAndButton x:Name="UC5" HorizontalAlignment="Left" Height="296" Margin="859,20,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
+
                 </Grid>
             </PivotItem>
             <PivotItem Header="Obriši novost">
                 <Grid HorizontalAlignment="Left" Height="556" VerticalAlignment="Top" Width="1236">
                     <TextBlock x:Name="naslov3" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="Naslov:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="tekst3" HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Tekst:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBox x:Name="pisinaslov3" Text="{Binding Path=AdministratorViewModel.NovaNovost.Naslov, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisinaslov3" Text="{Binding AdministratorViewModel.NovaNovost.Naslov, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisitekst3" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top" Height="433" Width="454"/>
-                    <Image x:Name="slika6" Source="{Binding Path=AdministratorViewModel.NovaNovost.Slika, Mode=TwoWay}" HorizontalAlignment="Left" Height="324" Margin="759,30,0,0" VerticalAlignment="Top" Width="419"/>
-                    <Button x:Name="ucitajsliku6" Command="{Binding Path=AdministratorViewModel.UcitajSliku}" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="927,379,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="obrisinovost" Command="{Binding Path=AdministratorViewModel.DodavanjeNovosti}" Content="Obriši" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18"/>
+                    <Button x:Name="obrisinovost" Command="{Binding AdministratorViewModel.DodavanjeNovosti}" Content="Obriši" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <UserControls:ImageAndButton x:Name="UC6" HorizontalAlignment="Left" Height="296" Margin="859,20,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
                 </Grid>
             </PivotItem>
 
         </Pivot>
-        <Button x:Name="button12" Content="Odjava" HorizontalAlignment="Right" Margin="0,10,10,10" VerticalAlignment="Stretch" FontFamily="Century" FontSize="25" Height="64" Width="171" FontWeight="Bold" BorderThickness="2" Background="#00000000" Command="{Binding Path=AdministratorViewModel.Odjava}"/>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="11.5*"/>
-        </Grid.RowDefinitions>
+        <Button x:Name="button12" Content="Odjava" HorizontalAlignment="Right" Margin="0,10,10,10" VerticalAlignment="Stretch" FontFamily="Century" FontSize="25" Height="64" Width="171" FontWeight="Bold" BorderThickness="2" Background="#00000000" Command="{Binding AdministratorViewModel.Odjava}"/>
 
 
 

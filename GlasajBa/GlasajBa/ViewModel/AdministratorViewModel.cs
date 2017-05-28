@@ -14,13 +14,7 @@ namespace GlasajBa.ViewModel
 {
     class AdministratorViewModel : ITwitter 
     {
-        /*
-           sta fali:
-           -punjenje comboboxa sa nazivima stranki
-           -kako implementirati da se Stranka sacuva u bazu???
-           -kod ucitavanja slike
 
-       */
         ICommand dodavanjeKandidata; //
         ICommand izmjenaKandidata; //
         ICommand brisanjeKandidata; //

@@ -5,11 +5,11 @@
     xmlns:local="using:GlasajBa.UserControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="168.814" Height="229.204">
+    mc:Ignorable="d" Width="213.038" Height="256.101">
 
     <Grid>
-        <Image x:Name="slikaUC" HorizontalAlignment="Left" Height="150" Margin="19,10,0,0" VerticalAlignment="Top" Width="130"/>
-        <Button x:Name="dugmeUC" Content="Button" HorizontalAlignment="Left" Margin="50,176,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="slikaUC" HorizontalAlignment="Left" Height="190" Margin="19,10,0,0" VerticalAlignment="Top" Width="173"/>
+        <Button x:Name="dugmeUC" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="60,214,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>
