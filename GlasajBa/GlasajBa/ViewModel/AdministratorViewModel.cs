@@ -520,7 +520,6 @@ namespace GlasajBa.ViewModel
             string cosumerKeySecret = "C5AE21YQOOZwnopuylvZQAuMi0TnVTHEOnhEp0pYCwtoYeqQtR";
             string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";
             string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
-<<<<<<< HEAD
 
             //TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
             /*service.sendTweet(new SendTweerOptions { Status = s }, (tweet, response) =>
