@@ -43,11 +43,8 @@ namespace GlasajBa.Model
             this.lokalniIzbori = lokalniIzbori;
             this.adminPassword = adminPassword;
             this.adminUsername = adminUsername;
-<<<<<<< HEAD
             //this.slijepi = slijepi;
-=======
             // javlja error: this.slijepi = slijepi;
->>>>>>> db83ec053592927ce5e0c7816305cbd5530da344
             MediaPlayer mp = new MediaPlayer();
             pustiZvuk();
         }

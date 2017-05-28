@@ -75,7 +75,7 @@
 
 
                         <Setter Target="buttonNadjiBM.Margin" Value="90,70,0,0"/>
-                        
+
                         <Setter Target="textBlock1OnlineGlasanje.FontSize" Value="15"/>
                         <Setter Target="textBlock1OnlineGlasanje.Margin" Value="0,40,0,0"/>
 
@@ -92,19 +92,19 @@
                         <Setter Target="pivot1.HeaderTemplate" Value="{StaticResource MojHeader}"/>
                         <Setter Target="pivot1.Width" Value="354"/>
                         <Setter Target="pocetak.Width" Value="354"/>
-                        
+
                         <Setter Target="hub1.HeaderTemplate" Value="{StaticResource MojHeader2}"/>
                     </VisualState.Setters>
 
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-<<<<<<< HEAD
-
-        <Grid x:Name="naslov" HorizontalAlignment="Left" Height="70" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
-=======
+        
         <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
-        <!--   <Pivot x:Name="pivot" Title="Pivot" HeaderTemplate="{StaticResource MojHeader2}">
+        <Grid x:Name="naslov" HorizontalAlignment="Left" Height="70" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
+
+           
+            <!--   <Pivot x:Name="pivot" Title="Pivot" HeaderTemplate="{StaticResource MojHeader2}">
                 <PivotItem Header="Početak" >
                     <Hub Header="Hub">
                         <HubSection Header="HubSection 0">
@@ -141,8 +141,8 @@
 
         -->
 
-        <Grid x:Name="naslov" HorizontalAlignment="Left" Height="85" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
->>>>>>> db83ec053592927ce5e0c7816305cbd5530da344
+            <!--<Grid x:Name="naslov" HorizontalAlignment="Left" Height="85" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">-->
+
             <TextBlock x:Name="textBlock" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Glasaj.ba" Width="200" FontSize="45" />
             <Image x:Name="image1" Source="ms-appx:///Assets/user.png" Tapped="image1_Tapped" HorizontalAlignment="Left" Height="41" Margin="1209,0,0,0" VerticalAlignment="Center" Width="41" />
             <Image x:Name="image" Source="ms-appx:///Assets/blind-walking.png" Tapped="image_Tapped" Height="41" Margin="1163,14,0,15" VerticalAlignment="Center"  HorizontalAlignment="Left" Width="41"/>
@@ -188,7 +188,7 @@
                                 <Grid Height="400" Width="Auto">
                                     <TextBlock x:Name="naslovStranke" Text="{Binding Sistem.Stranke.Naziv}" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>
                                     <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" DataContext="{Binding Sistem.Stranke.Ukratko}"></RichEditBox>
-                                   <Button x:Name="buttonStranke" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="buttonStranke_Click" ></Button>
+                                    <Button x:Name="buttonStranke" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="buttonStranke_Click" ></Button>
 
                                 </Grid>
                             </DataTemplate>
