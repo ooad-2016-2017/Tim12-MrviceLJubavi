@@ -1,55 +1,53 @@
 Kreacijski patterni:
 
 1. Adapter pattern
--Buduæi da klasa GlasanjeViewModel sadri 3 interfejsa, od kojih se jedan bavi analizom glasaèkog sistema, a drugi objavljivanjem na Twitter,
-ukoliko bi se kreirao još jedan glasaèki sistem (npr. odvojen za lokalne i opæe izbore) ili ukoliko bi se trebalo objavljivati na Twitter
-i praviti analize bez obzira na èinjenicu što nisu u toku izbori, bilo bi neophodno mijenjati date klase i njihove implementacije tih
-interfejsa, što nije dobro.
--Potrebno je kreirati Adapter klasu koja æe naslijediti interfejse Analiza i Twitter te ih implementirati na naèin koji odgovara
-novim funkcionalnostima potrebnim u buduænosti. Na ovaj naèin klasni sistem æe biti otvoren za nadogradnju, a zatvoren za promjene.
+-BuduÄ‡i da klasa GlasanjeViewModel sadrÅ¾i 3 interfejsa, od kojih se jedan bavi analizom glasaÄkog sistema, a drugi objavljivanjem na Twitter,
+ukoliko bi se kreirao joÅ¡ jedan glasaÄki sistem (npr. odvojen za lokalne i opÄ‡e izbore) ili ukoliko bi se trebalo objavljivati na Twitter
+i praviti analize bez obzira na Äinjenicu Å¡to nisu u toku izbori, bilo bi neophodno mijenjati date klase i njihove implementacije tih
+interfejsa, Å¡to nije dobro.
+-Potrebno je kreirati Adapter klasu koja Ä‡e naslijediti interfejse Analiza i Twitter te ih implementirati na naÄin koji odgovara
+novim funkcionalnostima potrebnim u buduÄ‡nosti. Na ovaj naÄin klasni sistem Ä‡e biti otvoren za nadogradnju, a zatvoren za promjene.
 2. Facade pattern
--Ovaj pattern pravi poveznicu izmeğu korisnièkih interfejsa (tj. formi), i logièkog pogleda sistema. Za implementaciju ovog metoda, potrebno je
-napraviti klasu Facade koja bi objedinjavala sve logièke dijelove sistema. ViewModeli predstavljaju logièki dio sistema, te bi bilo potrebno napraviti
-jednu klasu koja sadravala ViewModele i koja bi navigirala njima zavisno od korisnièke interakcije sa sistemom.
-
+-Ovaj pattern pravi poveznicu izmeÄ‘u korisniÄkih interfejsa (tj. formi), i logiÄkog pogleda sistema. Za implementaciju ovog metoda, potrebno je
+napraviti klasu Facade koja bi objedinjavala sve logiÄke dijelove sistema. ViewModeli predstavljaju logiÄki dio sistema, te bi bilo potrebno napraviti
+jednu klasu koja sadrÅ¾avala ViewModele i koja bi navigirala njima zavisno od korisniÄke interakcije sa sistemom.
 3. Decorator pattern
-
+ -Ovaj patern omoguÄ‡ava dinamiÄko dodavanje novih elemenata i ponaÅ¡anja (funkcionalnosti) postojeÄ‡im objektima. Kako je moguÄ‡e da jedan glasaÄ glasa za kandidate koji pripadaju razliÄitim strankama (ovo trenutno nije realizovano - moÅ¾da pri proÅ¡irivanju aplikacije kada glasaÄ bude mogao glasati za viÅ¡e kadidata razliÄitih pozicija) i da joÅ¡ uz to bira Å¾eljenu stranku (odabrani kandidati ne moraju pripadati toj stranki), potrebno mu je omoguÄ‡iti razliÄite moguÄ‡nosti glasanja.
 4. Bridge pattern
-
+-Ovaj pattern odvaja apstrakciju od njegove implementacije, tako da se ta dva mogu razlikovati. OsmiÅ¡ljen je da odvoji interfejs klase od njegove primjene, tako da se moÅ¾e mijenjati implementacija bez promjene koda klijenta.
+Mogao bi se primjeniti pri nasljeÄ‘ivanju interfejsa ITwitter ili Baza.
 5. Proxy pattern
--Klasa AdministratorViewModel, izmeğu ostalog, bavi se i provjerom da li osoba koja pokušava pristupiti posebnim opcijama ima ovlasti za takvo nešto.
-Buduæi da je veoma vano zaštititi ovu klasu i njene moguænosti od neovlaštenog pristupa, potrebno je uvesti Proxy klasu koja æe onemoguæiti
-pristup metodama i promjenu podataka ukoliko korisnik nema odgovarajuæe korisnièke podatke.
--Klasa AdministratorViewModel treba se deklarisati kao privatna, te je potrebno napraviti novu Proxy klasu koja æe izvršiti kreiranje instance
-klase AdministratorViewModel. Kada korisnik unese korisnièke podatke, pozvati æe se metoda Authenticate koja æe instancirati klasu samo ukoliko
-su uneseni ispravni korisnièki podaci.
+-Klasa AdministratorViewModel, izmeÄ‘u ostalog, bavi se i provjerom da li osoba koja pokuÅ¡ava pristupiti posebnim opcijama ima ovlasti za takvo neÅ¡to.
+BuduÄ‡i da je veoma vaÅ¾no zaÅ¡tititi ovu klasu i njene moguÄ‡nosti od neovlaÅ¡tenog pristupa, potrebno je uvesti Proxy klasu koja Ä‡e onemoguÄ‡iti
+pristup metodama i promjenu podataka ukoliko korisnik nema odgovarajuÄ‡e korisniÄke podatke.
+-Klasa AdministratorViewModel treba se deklarisati kao privatna, te je potrebno napraviti novu Proxy klasu koja Ä‡e izvrÅ¡iti kreiranje instance
+klase AdministratorViewModel. Kada korisnik unese korisniÄke podatke, pozvati Ä‡e se metoda Authenticate koja Ä‡e instancirati klasu samo ukoliko
+su uneseni ispravni korisniÄki podaci.
 6. Composite pattern
-
+-Osnovna namjena ovag paterna jeste da omoguÄ‡i formiranje strukture stabla pomoÄ‡u klasa, u kojoj se individualni objekti (listovi stabla) i kompozicije individualnih objekata (korijeni stabla) jednako tretiraju. Koristi se ukoliko postoji potreba da klijenti budu u moguÄ‡nosti da zanemare razliku izmeÄ‘u kompozicija objekata i pojedinaÄnih objekata. Klijenti Ä‡e tretirati sve objekte u sloÅ¾enoj strukturi ravnomjerno. Ovo se moÅ¾e odnositi na korisnike aplikacije, taÄnije glasaÄe, koji Ä‡e na sve kandidate tretirati podjednako, iako su u suÅ¡tini razliÄiti, odnosno mogu se kadidovati za razliÄite pozicije (ovo se odnosi na proÅ¡irenje aplikacije razliÄitim pozicijama za koje se kandidati mogu kandidovati).
 7. Flyweight pattern
--Uloga flyweight patterna je da smanji potrošnju memorije time što æe "reciklirati" objekte koji se interno ne razlikuju jedan od drugog.
-No, kako su u našim klasama svi atributi jedne instance, razlièiti od atributa druge instance, te se ne mogu uspostaviti interne, zajednièke karakteristike,
-tako ovaj pattern nije primjenjiv za naš sistem. 
+-Uloga flyweight patterna je da smanji potroÅ¡nju memorije time Å¡to Ä‡e "reciklirati" objekte koji se interno ne razlikuju jedan od drugog.
+No, kako su u naÅ¡im klasama svi atributi jedne instance, razliÄiti od atributa druge instance, te se ne mogu uspostaviti interne, zajedniÄke karakteristike,
+tako ovaj pattern nije primjenjiv za naÅ¡ sistem. 
 
 Kreacijski patterni:
 
 1. Singleton pattern
--U klasnom modelu postoji nekoliko klasa koje ne bi trebalo biti moguæe instancirati više puta - AdministratorViewModel, GlasanjeViewModel i
-OstaleFunkcionalnostiViewModel. Ukoliko bi bilo više instanci ovih klasa, bilo bi više naèina da se unese glas, obrišu podaci korisnika ili prikau
-najvanije informacije, što bi bilo neprihvatljivo. Zbog toga je potrebno onemoguæiti da se kreira više objekata ovih klasa.
--Potrebno je kreirati klasu Singleton koja æe instancirati eljenu klasu. Ta klasa æe posjedovati metodu koja æe uvijek vraæati istu instancu.
+-U klasnom modelu postoji nekoliko klasa koje ne bi trebalo biti moguÄ‡e instancirati viÅ¡e puta - AdministratorViewModel, GlasanjeViewModel i
+OstaleFunkcionalnostiViewModel. Ukoliko bi bilo viÅ¡e instanci ovih klasa, bilo bi viÅ¡e naÄina da se unese glas, obriÅ¡u podaci korisnika ili prikaÅ¾u
+najvaÅ¾nije informacije, Å¡to bi bilo neprihvatljivo. Zbog toga je potrebno onemoguÄ‡iti da se kreira viÅ¡e objekata ovih klasa.
+-Potrebno je kreirati klasu Singleton koja Ä‡e instancirati Å¾eljenu klasu. Ta klasa Ä‡e posjedovati metodu koja Ä‡e uvijek vraÄ‡ati istu instancu.
 2. Prototype pattern
-
+-Glavni cilj ovo patterna jeste smanjiti troÅ¡kove pri kreiranju novog objekta. Ako je troÅ¡ak kreiranja novog objekta velik i kreiranje objekta je resursno zahtjevno tada se vrÅ¡i kloniranje veÄ‡ postojeÄ‡eg objekata. Prototype dizajn patern dozvoljava da se kreiraju prilagoÄ‘eni objekti bez poznavanja njihove klase ili detalja kako je objekat kreiran. Ovo bi se moglo u buduÄ‡nosti koristiti za realizaciju printanja razliÄitih glasaÄkih listiÄ‡a za razliÄite glasaÄe i tipove izbora (za sada se printa samo listiÄ‡ za opÄ‡e izbore).
 3. Factory Method pattern
 -Ovaj pattern koristi posebne metode za instanciranje objekata umjesto konstruktora, kada nam je potrebno da ne navodimo koja tacno klasa ce biti instancirana.
-U našem sistemu postoji samo jedna abstraktna klasa (Osoba), koja je generalizacija klasa Kandidat i Glasaè. Kako nam je u svakom trenutku poznato koji tip instance
-nam treba, tj. ne treba nam metoda da utvrdimo šta trebamo kreirati, tako ovaj pattern nije primjenjiv na naš sistem.
-
+U naÅ¡em sistemu postoji samo jedna abstraktna klasa (Osoba), koja je generalizacija klasa Kandidat i GlasaÄ. Kako nam je u svakom trenutku poznato koji tip instance
+nam treba, tj. ne treba nam metoda da utvrdimo Å¡ta trebamo kreirati, tako ovaj pattern nije primjenjiv na naÅ¡ sistem.
 4. Abstract Factory pattern
--Slièno kao prethodni patern, i ovaj patern koristi metode za instanciranje objekata, umjesto konstruktora, samo što ovaj pattern ima jednu "SuperFactory" koja
-kontroliše instanciranje svih tipova objekta u sistemu. Kako je nama u svakom trenutku poznato koji tip instance nam treba, tj. ne treba nam metoda da utvrdimo 
-šta trebamo kreirati, tako ovaj pattern nije primjenjiv na naš sistem.
-
+-SliÄno kao prethodni patern, i ovaj patern koristi metode za instanciranje objekata, umjesto konstruktora, samo Å¡to ovaj pattern ima jednu "SuperFactory" koja
+kontroliÅ¡e instanciranje svih tipova objekta u sistemu. Kako je nama u svakom trenutku poznato koji tip instance nam treba, tj. ne treba nam metoda da utvrdimo 
+Å¡ta trebamo kreirati, tako ovaj pattern nije primjenjiv na naÅ¡ sistem.
 5. Builder pattern
--Buduæi da se u klasnom modelu ne implementira "gradnja" od više dijelova, te nema ni više klasa koje bi na razlièite naèine "gradile" objekte,
-Builder pattern se ne moe primijeniti. U klasnom modelu nema prosljeğivanja objekata klasa kao parametara više puta izmeğu više klasa s jednim konaènim
-rezultatom, te automatski nema ni moguænosti da se primijeni ovaj pattern.
+-BuduÄ‡i da se u klasnom modelu ne implementira "gradnja" od viÅ¡e dijelova, te nema ni viÅ¡e klasa koje bi na razliÄite naÄine "gradile" objekte,
+Builder pattern se ne moÅ¾e primijeniti. U klasnom modelu nema prosljeÄ‘ivanja objekata klasa kao parametara viÅ¡e puta izmeÄ‘u viÅ¡e klasa s jednim konaÄnim
+rezultatom, te automatski nema ni moguÄ‡nosti da se primijeni ovaj pattern.
