@@ -193,6 +193,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Slike\ikonaMenu.png" />
     <Content Include="Slike\ikonaMjesto.png" />
     <Content Include="Slike\ikonaNazad.png" />
     <Content Include="Slike\zastavaGlasanje.jpg" />

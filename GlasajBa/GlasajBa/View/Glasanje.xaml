@@ -84,9 +84,8 @@
                         <RowDefinition Height="5*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Button x:Name="ButtonOtvaranje" Grid.Column="0" Grid.Row="0" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Click="Prikazi_Click">
-                        <Image Source="ms-appx:///Slike/ikonaNazad.png" Stretch="Fill" Opacity="0.5"/>
+                        <Image Source="ms-appx:///Slike/ikonaMenu.png" Stretch="Fill" Opacity="0.5"/>
                     </Button>
-
                     <Button x:Name="ButtonOpcina" Grid.Column="0" Grid.Row="1" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaOpcinu}">
                         <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
                     </Button>
@@ -100,9 +99,9 @@
                         <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
                     </Button>
                     <Button x:Name="ButtonIzlaz" Grid.Column="0" Grid.Row="5" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}">
-                        <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
+                        <Image Source="ms-appx:///Slike/ikonaNazad.png" Stretch="Fill" Opacity="0.5"/>
                     </Button>
-                    <local:LabeleZaMenuxaml x:Name="UserControl"/>
+                    <local:LabeleZaMenuxaml x:Name="UserControl" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5"/>
                 </Grid>
             </SplitView.Pane>
             <SplitView.Content>
