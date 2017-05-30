@@ -213,59 +213,56 @@ namespace GlasajBa.ViewModel
 
                      */
 
-            private void nadjiBM(Object o)
+            private void nadjiBM(object o)
             {
-                NavigationService.Navigate(typeof(PronalazakBirackogMjesta), null);
+                NavigationService.Navigate(typeof(PronalazakBirackogMjesta));
             }
 
-            private void otvoriNovost(Object o)
+            private void otvoriNovost(object o)
             {
                 INS.Navigate(typeof(Informacije));
             }
 
-            private void idiNaTwitter(Object o)
+            private void idiNaTwitter(object o)
             {
                 //ucitaj twitter
             }
 
-            private void otvoriStranke(Object o)
+            private void otvoriStranke(object o)
             {
-                NavigationService.Navigate(typeof(Informacije), null);
+                NavigationService.Navigate(typeof(Informacije));
             }
 
-            private void otvoriHistoriju(Object o)
+            private void otvoriHistoriju(object o)
             {
-                NavigationService.Navigate(typeof(Informacije), null);
+                NavigationService.Navigate(typeof(Informacije));
             }
 
-            private void slijepi(Object o)
+            private void slijepi(object o)
             {
                 //nije jos u funkciji za slijepe
                 GlasackiSistem.slijepi = true;
             }
 
-            public void registrujSe(Object o)
+            public void registrujSe(object o)
             {
-                NavigationService.Navigate(typeof(AdminLogin), null);
+                NavigationService.Navigate(typeof(AdminLogin));
             }
 
-            private void otvoriStatistiku(Object o)
+            private void otvoriStatistiku(object o)
             {
-                NavigationService.Navigate(typeof(Informacije), null);
+                NavigationService.Navigate(typeof(Informacije));
             }
-            private void pretraziKandidata(Object o)
+            private void pretraziKandidata(object o)
             {
-                NavigationService.Navigate(typeof(PretragaKandidata), null);
+                NavigationService.Navigate(typeof(PretragaKandidata));
             }
-            public bool traziKandidata(Object o)
+
+            private void glasaj(object o)
             {
-                return true;
+                NavigationService.Navigate(typeof(Glasanje));
             }
-            private void glasaj(Object o)
-            {
-                NavigationService.Navigate(typeof(Glasanje), null);
-            }
-            public bool jeLiMoguce(Object o)
+            public bool jeLiMoguce(object o)
             {
                 return true;
             }
@@ -273,10 +270,10 @@ namespace GlasajBa.ViewModel
             public OstaleFunkcionalnostiViewModel()
             {
                 NavigationService = new NavigationService();
-
+                
                 Sistem = new GlasackiSistem(new List<Glasac>(), new List<Kandidat>(), new List<Kandidat>(),new List<Kandidat>(), new List<Kandidat>(), new List<Stranka>(), new List<Ulica>(), new List<Novost>(), new DateTime(2017,10,5), new DateTime(2017,10,6), false, "mrviceljubavi", "admin", false);
 
-                PretragaKandidata = new RelayCommand<object>(pretraziKandidata, traziKandidata);
+                PretragaKandidata = new RelayCommand<object>(pretraziKandidata, jeLiMoguce);
                 PronalazakBirackogMjesta = new RelayCommand<object>(nadjiBM, jeLiMoguce);
                 PregledNovosti = new RelayCommand<object>(otvoriNovost, jeLiMoguce);
                 PregledStranaka = new RelayCommand<object>(otvoriStranke, jeLiMoguce);
@@ -287,6 +284,30 @@ namespace GlasajBa.ViewModel
                 PregledHistorije = new RelayCommand<object>(otvoriHistoriju, jeLiMoguce);
                 Glasaj = new RelayCommand<object>(glasaj, jeLiMoguce);
             }
+
+            /*
+
+            string uriToLaunch = @"https://twitter.com/glasaj_ba";
+            var uri = new Uri(uriToLaunch);
+
+            async void DefaultLaunch()
+            {
+                // Set the option to show a warning
+                var options = new Windows.System.LauncherOptions();
+                options.TreatAsUntrusted = true;
+
+                // Launch the URI with a warning prompt
+                var success = await Windows.System.Launcher.LaunchUriAsync(uri, options);
+
+                if (success)
+                {
+                    // URI launched
+                }
+                else
+                {
+                    // URI launch failed
+                }
+            }*/
         }
     }
 
