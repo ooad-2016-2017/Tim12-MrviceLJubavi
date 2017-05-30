@@ -59,13 +59,13 @@
                         <Setter Target="Historija.Header" Value="Historija" />
                         <Setter Target="Historija.HeaderTemplate" Value="{StaticResource MojHeader2}" />
 
-                        <Setter Target="image1.Margin" Value="0,10,0,0" />
+                        <Setter Target="image1.Margin" Value="0,0,0,0" />
                         <Setter Target="image1.Height" Value="30" />
                         <Setter Target="image1.Width" Value="30" />
 
-                        <Setter Target="image.Margin" Value="45,10,0,0" />
-                        <Setter Target="image.Height" Value="30" />
-                        <Setter Target="image.Width" Value="30" />
+                        <Setter Target="image2.Margin" Value="35,0,0,0" />
+                        <Setter Target="image2.Height" Value="30" />
+                        <Setter Target="image2.Width" Value="30" />
 
                         <Setter Target="richTBKakoGlasati.FontSize" Value="15"/>
 
@@ -99,53 +99,14 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        
+
         <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
-        <Grid x:Name="naslov" HorizontalAlignment="Left" Height="70" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">
-
-           
-            <!--   <Pivot x:Name="pivot" Title="Pivot" HeaderTemplate="{StaticResource MojHeader2}">
-                <PivotItem Header="Početak" >
-                    <Hub Header="Hub">
-                        <HubSection Header="HubSection 0">
-                            <DataTemplate>
-                                <Grid/>
-                            </DataTemplate>
-                        </HubSection>
-                        <HubSection Header="HubSection 1">
-                            <DataTemplate>
-                                <Grid/>
-                            </DataTemplate>
-                        </HubSection>
-                    </Hub>
-
-                </PivotItem>
-                <PivotItem Header="Kako">
-                    <Grid/>
-                </PivotItem>
-                <PivotItem Header="Gdje">
-                    <Grid/>
-                </PivotItem>
-                <PivotItem Header="Glasaj">
-                    <Grid/>
-                </PivotItem>
-                <PivotItem Header="Kandidati">
-                    <Grid/>
-                </PivotItem>
-                <PivotItem Header="O nama">
-                    <Grid/>
-                </PivotItem>
-            </Pivot>
-        </Grid>
-
-
-        -->
-
-            <!--<Grid x:Name="naslov" HorizontalAlignment="Left" Height="85" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">-->
-
-            <TextBlock x:Name="textBlock" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Glasaj.ba" Width="200" FontSize="45" />
+        
+        <Grid x:Name="naslov" HorizontalAlignment="Left" Height="70" Margin="10,15,0,0" VerticalAlignment="Top" Width="1260">
+            
+            <TextBlock x:Name="textBlock" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Glasaj.ba" Width="189" FontSize="45" />
             <Image x:Name="image1" Source="ms-appx:///Assets/user.png"  HorizontalAlignment="Left" Height="41" Margin="1209,0,0,0" VerticalAlignment="Center" Width="41" />
-            <Image x:Name="image" Source="ms-appx:///Assets/blind-walking.png"  Height="41" Margin="1163,14,0,15" VerticalAlignment="Center"  HorizontalAlignment="Left" Width="41"/>
+            <Image x:Name="image2" Source="ms-appx:///Assets/blind-walking.png" HorizontalAlignment="Left" Height="41" Width="41"  Margin="1166,15,53,14" VerticalAlignment="Center" />
         </Grid>
         <Grid x:Name="gridPivota" HorizontalAlignment="Left" Height="654" Margin="10,80,0,0" VerticalAlignment="Top" Width="1260">
             <Grid.ColumnDefinitions>
@@ -161,7 +122,7 @@
                                 <Grid Height="400" Width="Auto">
                                     <TextBlock x:Name="textBlockNaslovTwitter" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="" VerticalAlignment="Top"  FontSize="14.5"  Width="Auto"/>
                                     <RichEditBox x:Name="textBlockNovostTwitter" IsReadOnly="True"  Width="Auto" Height="330"/>
-                                    <Button x:Name="buttonTwitter" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
+                                    <Button x:Name="buttonTwitter" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=OstaleFunkcionalnosti.IdiNaTwitter}" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -179,7 +140,7 @@
                                 <Grid x:Name="gridStatistika" Height="400" Width="Auto">
                                     <TextBlock x:Name="naslovStatistike" Text="" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>
                                     <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" DataContext=""></RichEditBox>
-                                    <Button x:Name="buttonStatistika" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
+                                    <Button x:Name="buttonStatistika" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=OstaleFunkcionalnosti.PregledStatistike}" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -188,7 +149,7 @@
                                 <Grid Height="400" Width="Auto">
                                     <TextBlock x:Name="naslovStranke" Text="{Binding Sistem.Stranke.Naziv}" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>
                                     <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" DataContext="{Binding Sistem.Stranke.Ukratko}"></RichEditBox>
-                                    <Button x:Name="buttonStranke" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
+                                    <Button x:Name="buttonStranke" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=OstaleFunkcionalnosti.PregledStranaka}"></Button>
 
                                 </Grid>
                             </DataTemplate>
@@ -197,7 +158,7 @@
                             <DataTemplate>
                                 <Grid Height="400" Width="Auto">
                                     <RichEditBox x:Name="RichEditBoxHistorija"  IsReadOnly="True"  Width="Auto" Height="330" />
-                                    <Button x:Name="buttonHistorija" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
+                                    <Button x:Name="buttonHistorija" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=OstaleFunkcionalnosti.PregledHistorije}"></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -220,21 +181,21 @@
                     <Grid>
                         <TextBlock x:Name="textBlock1NdjiBM" HorizontalAlignment="Left" Margin="66,52,0,0" TextWrapping="Wrap" Text="Da biste pronašli svoje birački mjesto, kliknite na sljedeće dugme:" VerticalAlignment="Top" Height="43" Width="615" FontSize="20"/>
 
-                        <Button x:Name="buttonNadjiBM" Content="Nađi biračko mjesto" HorizontalAlignment="Left" Margin="678,52,0,0" VerticalAlignment="Top" Height="37" Width="173"/>
+                        <Button x:Name="buttonNadjiBM" Content="Nađi biračko mjesto" HorizontalAlignment="Left" Margin="678,52,0,0" VerticalAlignment="Top" Height="37" Width="173" Command="{Binding Path=OstaleFunkcionalnostiViewModel.PronalazakBirackogMjesta}"/>
                     </Grid>
                 </PivotItem>
                 <PivotItem Header="Online glasanje" >
                     <Grid>
                         <TextBlock x:Name="textBlock1OnlineGlasanje" HorizontalAlignment="Left" Margin="76,54,0,0" TextWrapping="Wrap" Text="Ako želite glasati, kliknite na sljedeće dugme:" VerticalAlignment="Top" Height="43" Width="498" FontSize="20"/>
 
-                        <Button x:Name="buttonGlasaj" Content="Glasaj" HorizontalAlignment="Left" Margin="570,55,0,0" VerticalAlignment="Top" Command="{Binding Glasanje}"/>
+                        <Button x:Name="buttonGlasaj" Content="Glasaj" HorizontalAlignment="Left" Margin="570,55,0,0" VerticalAlignment="Top" Command="{Binding Path=OstaleFunkcionalnostiViewModel.Glasanje}"/>
                     </Grid>
                 </PivotItem>
                 <PivotItem Header="Kandidati" >
                     <Grid>
-                        <TextBlock x:Name="textBlockKandidati" HorizontalAlignment="Left" Margin="76,54,0,0" TextWrapping="Wrap" Text="Za pregled kandidata, kliknite na sljedeće dugme:" VerticalAlignment="Top" Height="43" Width="498" FontSize="20"/>
+                        <TextBlock x:Name="textBlockKandidati" HorizontalAlignment="Left" Margin="76,54,0,0" TextWrapping="Wrap" Text="Za pregled kandidata, kliknite na sljedeće dugme:" VerticalAlignment="Top" Height="43" Width="498" FontSize="20" />
 
-                        <Button x:Name="buttonKandidati" Content="Pregledaj kandidate" HorizontalAlignment="Left" Margin="570,55,0,0" VerticalAlignment="Top" Command="{Binding PretragaKandidata}"/>
+                        <Button x:Name="buttonKandidati" Content="Pregledaj kandidate" HorizontalAlignment="Left" Margin="570,55,0,0" VerticalAlignment="Top" Command="{Binding Path=AdministratorViewModel.PretragaKandidata}"/>
                     </Grid>
                 </PivotItem>
                 <PivotItem Header="O nama" >

@@ -49,6 +49,10 @@ namespace GlasajBa.Model
             pustiZvuk();
         }
 
+        public GlasackiSistem()
+        {
+        }
+
         private async void pustiZvuk()
         {
             //ovo ce trebati biti implementirano negdje drugo

@@ -1,6 +1,8 @@
 ﻿using GlasajBa.Helper;
 using GlasajBa.Interfaces;
 using GlasajBa.Model;
+using GlasajBa.View;
+using GlasajBa.ViewModel.GlasajBa.ViewModel;
 using System;
 //using System.TwitterSharp;
 using System.Collections.Generic;
@@ -111,6 +113,8 @@ namespace GlasajBa.ViewModel
 
             NovaNovost = new Novost(DateTime.Today, null, "", "");
             NoviKandidat = new Kandidat();
+            this.Sistem = new GlasackiSistem();
+            Parent = new OstaleFunkcionalnostiViewModel();
             this.Sistem = Parent.Sistem;
 
             ListaKandidata = new List<Kandidat>();
@@ -141,7 +145,7 @@ namespace GlasajBa.ViewModel
 
         public void registrujAdmina(Object o)
         {
-            INS.Navigate(typeof(GlasajBa.View.AdminPocetna), Parent);
+            INS.Navigate(typeof(AdminPocetna), Parent);
         }
 
         public bool boolDodaj(Object o)

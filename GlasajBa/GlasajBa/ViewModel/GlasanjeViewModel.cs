@@ -1,6 +1,8 @@
 ﻿using GlasajBa.Helper;
 using GlasajBa.Interfaces;
 using GlasajBa.Model;
+using GlasajBa.View;
+using GlasajBa.ViewModel.GlasajBa.ViewModel;
 using Microsoft.Data.Entity;
 using System;
 using System.Collections.Generic;
@@ -173,7 +175,7 @@ namespace GlasajBa.ViewModel
                 dialog.Title = "Informacija";
                 dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
                 res = await dialog.ShowAsync();
-                NavigationService.Navigate(typeof(GlasajBa.View.GlavnaStranica), Parent);
+                NavigationService.Navigate(typeof(GlavnaStranica), Parent);
             }
         }
         public async void glasajNaBirackomMjestu(object parametar)
@@ -199,7 +201,7 @@ namespace GlasajBa.ViewModel
                 dialog.Title = "Informacija";
                 dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
                 res = await dialog.ShowAsync();
-                NavigationService.Navigate(typeof(GlasajBa.View.GlavnaStranica), Parent);
+                NavigationService.Navigate(typeof(GlavnaStranica), Parent);
             }
         }
         public void prediNaOpcinu(object parametar)
