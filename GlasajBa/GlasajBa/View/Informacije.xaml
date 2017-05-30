@@ -37,10 +37,15 @@
                         <Setter Target="gridButtona.VerticalAlignment" Value="Top" />
                         <Setter Target="gridButtona.Width" Value="340" />
 
-                        <Setter Target="buttonNazad.HorizontalAlignment" Value="Center" />
-                        <Setter Target="buttonNazad.Width" Value="80" />
+                        <Setter Target="buttonNazad.Width" Value="120" />
                         <Setter Target="buttonNazad.FontSize" Value="18" />
                         <Setter Target="buttonNazad.Height" Value="45" />
+
+                        <Setter Target="buttonPrintaj.Width" Value="120" />
+                        <Setter Target="buttonPrintaj.FontSize" Value="18" />
+                        <Setter Target="buttonPrintaj.Height" Value="45" />
+                        <Setter Target="buttonPrintaj.Content" Value="Printaj listić" />
+                        
                         <Setter Target="hub1.Height" Value="356" />
                     </VisualState.Setters>
                 </VisualState>
@@ -156,7 +161,15 @@
             </Pivot>
         </Grid>
         <Grid x:Name="gridButtona" HorizontalAlignment="Left" Height="109" Margin="10,601,0,0" VerticalAlignment="Top" Width="1260">
-            <Button x:Name="buttonNazad" Content="Nazad" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="127" FontSize="25" Command="{Binding Path=vratiSe}"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="buttonPrintaj" Grid.Column="0" HorizontalAlignment="Center" Content="Printaj glasački listić" FontSize="25" Height="66" Click="OnPrintButtonClick"></Button>
+            
+            
+            <Button x:Name="buttonNazad" Grid.Column="1" Content="Nazad" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="127" FontSize="25" Command="{Binding Path=vratiSe}"/>
         </Grid>
 
     </Grid>

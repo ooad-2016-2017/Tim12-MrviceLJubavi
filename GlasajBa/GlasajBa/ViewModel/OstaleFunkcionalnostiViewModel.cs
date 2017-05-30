@@ -7,11 +7,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using GlasajBa.ViewModel;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Printing;
+using Windows.UI.Xaml.Navigation;
+using Windows.Graphics.Printing;
+using GlasajBa.View;
+using Windows.UI.Xaml.Input;
 
 namespace GlasajBa.ViewModel
 {
     
-    class OstaleFunkcionalnostiViewModel : Baza
+    class OstaleFunkcionalnostiViewModel : PrintDocument, Baza
     {
         ICommand PronalazakBirackogMjesta { get; set; }
         ICommand PregledNovosti { get; set; }
@@ -44,120 +51,141 @@ namespace GlasajBa.ViewModel
 
         NavigationService NavigationService { get; set; }
 
-        public Novost Novost
-        {
-            get
-            {
-                return novost;
-            }
+        /* async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
+         {
+             if (Windows.Graphics.Printing.PrintManager.IsSupported())
+             {
+                 try
+                 {
+                     await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
+                 }
+                 catch
+                 {
+                     // Nije moguce printati
+                     ContentDialog noPrintingDialog = new ContentDialog()
+                     {
+                         Title = "Greška u printanju",
+                         Content = "\nŽao nam je, nije moguće printati u ovome trenutku.",
+                         PrimaryButtonText = "OK"
+                     };
+                     await noPrintingDialog.ShowAsync();
+                 }
+             }
+             else
+             {
+                 // Printanje nije podržžano na ovom uređaju
+                 ContentDialog noPrintingDialog = new ContentDialog()
+                 {
+                     Title = "Printanje nije podržano",
+                     Content = "\nŽao nam je, printanje nije podržano na ovome uređaju.",
+                     PrimaryButtonText = "OK"
+                 };
+                 await noPrintingDialog.ShowAsync();
+             }
+         }
 
-            set
-            {
-                novost = value;
-            }
+         public virtual void RegisterForPrinting()
+         {
+             PrintDocument = new PrintDocument();
+             printDocumentSource = printDocument.DocumentSource;
+             printDocument.Paginate += CreatePrintPreviewPages;
+             printDocument.GetPreviewPage += GetPrintPreviewPage;
+             printDocument.AddPages += AddPrintPages;
+
+             PrintManager printMan = PrintManager.GetForCurrentView();
+             printMan.PrintTaskRequested += PrintTaskRequested;
+         }
+
+         protected override void OnNavigatedTo(NavigationEventArgs e)
+         {
+             // Initalize common helper class and register for printing
+             printHelper = new PrintHelper(this);
+             printHelper.RegisterForPrinting();
+
+             // Initialize print content for this scenario
+             printHelper.PreparePrintContent(new PageToPrint());
+
+             // Tell the user how to print
+             MainPage.Current.NotifyUser("Print contract registered with customization, use the Print button to print.", NotifyType.StatusMessage);
+         }
+
+         protected override void OnNavigatedFrom(NavigationEventArgs e)
+         {
+             if (printHelper != null)
+             {
+                 printHelper.UnregisterForPrinting();
+             }
+         }
+
+         protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
+         {
+             PrintTask printTask = null;
+             printTask = e.Request.CreatePrintTask("C# Printing SDK Sample", sourceRequested =>
+             {
+                 // Print Task event handler is invoked when the print job is completed.
+                 printTask.Completed += async (s, args) =>
+                 {
+                     // Obavjestavanje korisnika da printanje nije uspjelo
+                     if (args.Completion == PrintTaskCompletion.Failed)
+                     {
+                         await scenarioPage.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                         {
+                             MainPage.Current.NotifyUser("Printanje nije uspjelo.", NotifyType.ErrorMessage);
+                         });
+                     }
+                 };
+                 sourceRequested.SetSource(printDocumentSource);
+             });
+         }
+         protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArgs e)
+         {
+             PrintDocument printDoc = (PrintDocument)sender;
+             printDoc.SetPreviewPage(e.PageNumber, printPreviewPages[e.PageNumber - 1]);
+         }
+
+         */
+
+        private void buttonNadjiBM_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PronalazakBirackogMjesta));
         }
 
-        internal Ulica Ulica
+        private void buttonNovosti_Click(object sender, RoutedEventArgs e)
         {
-            get
-            {
-                return ulica;
-            }
-
-            set
-            {
-                ulica = value;
-            }
+            Frame.Navigate(typeof(Informacije));
         }
 
-        internal Kandidat Kandidat
+        private void buttonTwitter_Click(object sender, RoutedEventArgs e)
         {
-            get
-            {
-                return kandidat;
-            }
-
-            set
-            {
-                kandidat = value;
-            }
+            //ucitaj twitter
         }
 
-        internal List<Ulica> ListaUlica
+        private void buttonStranke_Click(object sender, RoutedEventArgs e)
         {
-            get
-            {
-                return listaUlica;
-            }
-
-            set
-            {
-                listaUlica = value;
-            }
+            Frame.Navigate(typeof(Informacije));
         }
 
-        public List<Novost> ListaNovosti
+        private void buttonHistorija_Click(object sender, RoutedEventArgs e)
         {
-            get
-            {
-                return listaNovosti;
-            }
-
-            set
-            {
-                listaNovosti = value;
-            }
+            Frame.Navigate(typeof(Informacije));
         }
 
-        internal List<Kandidat> ListaKandidata
+        private void image_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            get
-            {
-                return listaKandidata;
-            }
-
-            set
-            {
-                listaKandidata = value;
-            }
+            //nije jos u funkciji za slijepe
         }
 
-        internal List<Kandidat> ListaPronadjenihKandidata
+        private void image1_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            get
-            {
-                return listaPronadjenihKandidata;
-            }
-
-            set
-            {
-                listaPronadjenihKandidata = value;
-            }
+            //ovo treba fino al ne znam kako
+            Frame.Navigate(typeof(AdminLogin));
         }
 
-        int godineMin, godineMax;
-        public int GodineMin
+        private void buttonStatistika_Click(object sender, RoutedEventArgs e)
         {
-            get
-            {
-                return godineMin;
-            }
-            set
-            {
-                godineMin = value;
-            }
+            Frame.Navigate(typeof(Informacije));
         }
-        public int GodineMax
-        {
-            get
-            {
-                return godineMax;
-            }
-            set
-            {
-                godineMax = value;
-            }
-        }
+
 
         public OstaleFunkcionalnostiViewModel()
         {
