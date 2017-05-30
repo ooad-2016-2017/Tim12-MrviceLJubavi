@@ -15,11 +15,6 @@
                         <AdaptiveTrigger MinWindowWidth="600"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="TextOpcina.FontSize" Value="30"/>
-                        <Setter Target="TextKanton.FontSize" Value="30"/>
-                        <Setter Target="TextEntitet.FontSize" Value="30"/>
-                        <Setter Target="TextDrzava.FontSize" Value="30"/>
-                        <Setter Target="TextIzlaz.FontSize" Value="30"/>
                         <Setter Target="TextPodaci.FontSize" Value="25"/>
                         <Setter Target="TextKandidati.FontSize" Value="25"/>
                         <Setter Target="TextIme.FontSize" Value="25"/>
@@ -89,9 +84,8 @@
                         <RowDefinition Height="5*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Button x:Name="ButtonOtvaranje" Grid.Column="0" Grid.Row="0" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Click="Prikazi_Click">
-                        <Image Source="ms-appx:///Slike/ikonaNazad.png" Stretch="Fill" Opacity="0.5"/>
+                        <Image Source="ms-appx:///Slike/ikonaMenu.png" Stretch="Fill" Opacity="0.5"/>
                     </Button>
-
                     <Button x:Name="ButtonOpcina" Grid.Column="0" Grid.Row="1" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PrelazakNaOpcinu}">
                         <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
                     </Button>
@@ -105,13 +99,9 @@
                         <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
                     </Button>
                     <Button x:Name="ButtonIzlaz" Grid.Column="0" Grid.Row="5" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Command="{Binding Path=PovratakNaGlavnu}">
-                        <Image Source="ms-appx:///Slike/ikonaMjesto.png" Stretch="Fill" Opacity="0.5"/>
+                        <Image Source="ms-appx:///Slike/ikonaNazad.png" Stretch="Fill" Opacity="0.5"/>
                     </Button>
-                    <TextBlock x:Name="TextOpcina" Grid.Column="1" Grid.Row="1" Text="Općina" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="TextKanton" Grid.Column="1" Grid.Row="2" Text="Kanton" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="TextEntitet" Grid.Column="1" Grid.Row="3" Text="Entitet" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="TextDrzava" Grid.Column="1" Grid.Row="4" Text="Država" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="TextIzlaz" Grid.Column="1" Grid.Row="5" Text="Izlaz" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <local:LabeleZaMenuxaml x:Name="UserControl" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5"/>
                 </Grid>
             </SplitView.Pane>
             <SplitView.Content>

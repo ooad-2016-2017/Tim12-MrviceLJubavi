@@ -144,8 +144,8 @@
             <!--<Grid x:Name="naslov" HorizontalAlignment="Left" Height="85" Margin="10,10,0,0" VerticalAlignment="Top" Width="1260">-->
 
             <TextBlock x:Name="textBlock" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Glasaj.ba" Width="200" FontSize="45" />
-            <Image x:Name="image1" Source="ms-appx:///Assets/user.png" Tapped="image1_Tapped" HorizontalAlignment="Left" Height="41" Margin="1209,0,0,0" VerticalAlignment="Center" Width="41" />
-            <Image x:Name="image" Source="ms-appx:///Assets/blind-walking.png" Tapped="image_Tapped" Height="41" Margin="1163,14,0,15" VerticalAlignment="Center"  HorizontalAlignment="Left" Width="41"/>
+            <Image x:Name="image1" Source="ms-appx:///Assets/user.png"  HorizontalAlignment="Left" Height="41" Margin="1209,0,0,0" VerticalAlignment="Center" Width="41" />
+            <Image x:Name="image" Source="ms-appx:///Assets/blind-walking.png"  Height="41" Margin="1163,14,0,15" VerticalAlignment="Center"  HorizontalAlignment="Left" Width="41"/>
         </Grid>
         <Grid x:Name="gridPivota" HorizontalAlignment="Left" Height="654" Margin="10,80,0,0" VerticalAlignment="Top" Width="1260">
             <Grid.ColumnDefinitions>
@@ -161,7 +161,7 @@
                                 <Grid Height="400" Width="Auto">
                                     <TextBlock x:Name="textBlockNaslovTwitter" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="" VerticalAlignment="Top"  FontSize="14.5"  Width="Auto"/>
                                     <RichEditBox x:Name="textBlockNovostTwitter" IsReadOnly="True"  Width="Auto" Height="330"/>
-                                    <Button x:Name="buttonTwitter" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="buttonTwitter_Click" ></Button>
+                                    <Button x:Name="buttonTwitter" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -170,7 +170,7 @@
                                 <Grid Height="400" Width="Auto">
                                     <TextBlock x:Name="naslovNovosti" Text="{Binding Sistem.Novosti.Naslov}" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>
                                     <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" DataContext="{Binding Sistem.Novosti.Tekst}"></RichEditBox>
-                                    <Button x:Name="buttonNovosti" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="buttonNovosti_Click"></Button>
+                                    <Button x:Name="buttonNovosti" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -179,7 +179,7 @@
                                 <Grid x:Name="gridStatistika" Height="400" Width="Auto">
                                     <TextBlock x:Name="naslovStatistike" Text="" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>
                                     <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" DataContext=""></RichEditBox>
-                                    <Button x:Name="buttonStatistika" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="buttonStatistika_Click" ></Button>
+                                    <Button x:Name="buttonStatistika" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -188,7 +188,7 @@
                                 <Grid Height="400" Width="Auto">
                                     <TextBlock x:Name="naslovStranke" Text="{Binding Sistem.Stranke.Naziv}" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>
                                     <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" DataContext="{Binding Sistem.Stranke.Ukratko}"></RichEditBox>
-                                    <Button x:Name="buttonStranke" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="buttonStranke_Click" ></Button>
+                                    <Button x:Name="buttonStranke" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
 
                                 </Grid>
                             </DataTemplate>
@@ -197,7 +197,7 @@
                             <DataTemplate>
                                 <Grid Height="400" Width="Auto">
                                     <RichEditBox x:Name="RichEditBoxHistorija"  IsReadOnly="True"  Width="Auto" Height="330" />
-                                    <Button x:Name="buttonHistorija" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="buttonHistorija_Click" ></Button>
+                                    <Button x:Name="buttonHistorija" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -220,7 +220,7 @@
                     <Grid>
                         <TextBlock x:Name="textBlock1NdjiBM" HorizontalAlignment="Left" Margin="66,52,0,0" TextWrapping="Wrap" Text="Da biste pronašli svoje birački mjesto, kliknite na sljedeće dugme:" VerticalAlignment="Top" Height="43" Width="615" FontSize="20"/>
 
-                        <Button x:Name="buttonNadjiBM" Content="Nađi biračko mjesto" HorizontalAlignment="Left" Margin="678,52,0,0" VerticalAlignment="Top" Height="37" Width="173" Click="buttonNadjiBM_Click"/>
+                        <Button x:Name="buttonNadjiBM" Content="Nađi biračko mjesto" HorizontalAlignment="Left" Margin="678,52,0,0" VerticalAlignment="Top" Height="37" Width="173"/>
                     </Grid>
                 </PivotItem>
                 <PivotItem Header="Online glasanje" >

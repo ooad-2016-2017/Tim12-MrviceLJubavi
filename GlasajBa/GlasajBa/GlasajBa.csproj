@@ -134,6 +134,9 @@
     <Compile Include="ImageAndButton.xaml.cs">
       <DependentUpon>ImageAndButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LabeleZaMenu.xaml.cs">
+      <DependentUpon>LabeleZaMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AdministratorViewModel.cs" />
     <Compile Include="ViewModel\GlasanjeViewModel.cs" />
     <Compile Include="ViewModel\GpsViewModel.cs" />
@@ -191,6 +194,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Slike\ikonaMenu.png" />
     <Content Include="Slike\ikonaMjesto.png" />
     <Content Include="Slike\ikonaNazad.png" />
     <Content Include="Slike\zastavaGlasanje.jpg" />
@@ -211,6 +215,10 @@
     <Page Include="ImageAndButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LabeleZaMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\AdminLogin.xaml">
       <SubType>Designer</SubType>

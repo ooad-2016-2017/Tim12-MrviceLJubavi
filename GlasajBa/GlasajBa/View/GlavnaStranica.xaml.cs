@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using GlasajBa.ViewModel;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,49 +28,21 @@ namespace GlasajBa.View
         public GlavnaStranica()
         {
             this.InitializeComponent();
+            //pokušaj instanciranja view modela:
+            NavigationCacheMode = NavigationCacheMode.Required;
+            DataContext = new OstaleFunkcionalnostiViewModel();
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            //SystemNavigationManager.GetForCurrentView().BackRequested += ;
         }
-
         
-
-        private void buttonNadjiBM_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(PronalazakBirackogMjesta));
+        protected override void OnNavigatedTo(NavigationEventArgs e) {
+            DataContext = new OstaleFunkcionalnostiViewModel();
         }
-
-        private void buttonNovosti_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Informacije));
+        /*
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e) {
+            if (Frame.CanGoBack) { Frame.GoBack(); e.Handled = true; } 
         }
-
-        private void buttonTwitter_Click(object sender, RoutedEventArgs e)
-        {
-            //ucitaj twitter
-        }
-
-        private void buttonStranke_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Informacije));
-        }
-
-        private void buttonHistorija_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Informacije));
-        }
-
-        private void image_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            //nije jos u funkciji za slijepe
-        }
-
-        private void image1_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            //ovo treba fino al ne znam kako
-            Frame.Navigate(typeof(AdminLogin));
-        }
-
-        private void buttonStatistika_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Informacije));
-        }
+        */
     }
 }

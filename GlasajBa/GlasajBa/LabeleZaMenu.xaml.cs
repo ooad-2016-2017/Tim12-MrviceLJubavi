@@ -12,24 +12,16 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using GlasajBa.ViewModel;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace GlasajBa.View
+namespace GlasajBa
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class AdminLogin : Page
+    public sealed partial class LabeleZaMenuxaml : UserControl
     {
-        public AdminLogin()
+        public LabeleZaMenuxaml()
         {
             this.InitializeComponent();
-        }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            DataContext = new AdministratorViewModel();
         }
     }
 }

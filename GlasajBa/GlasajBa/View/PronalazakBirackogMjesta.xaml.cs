@@ -28,5 +28,9 @@ namespace GlasajBa.View
             this.InitializeComponent();
             this.DataContext = new GpsViewModel(Mapa);
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            DataContext = (GlasanjeViewModel)e.Parameter;
+        }
     }
 }

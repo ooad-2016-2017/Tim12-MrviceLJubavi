@@ -487,7 +487,7 @@
 
 
 
-        <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
+        <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5" Grid.RowSpan="10" Grid.ColumnSpan="10"/>
         <Pivot Title="" Margin="10,-4,10,10" Grid.Row="1">
             <PivotItem Header="Dodaj kandidata" Margin="9.213,0,14.787,8.5" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
                 <PivotItem.RenderTransform>

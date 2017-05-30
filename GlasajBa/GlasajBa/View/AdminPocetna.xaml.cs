@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using GlasajBa.ViewModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,6 +30,10 @@ namespace GlasajBa.View
         private void richEditBox_TextChanged(System.Object sender, RoutedEventArgs e)
         {
 
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            DataContext = (AdministratorViewModel)e.Parameter;
         }
     }
 }
