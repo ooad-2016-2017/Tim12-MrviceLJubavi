@@ -6,7 +6,6 @@
     RequestedTheme="Light">
 
     <Application.Resources>
-
         <DataTemplate x:Key="MojHeader">
             <ContentPresenter>
                 <TextBlock Text="{Binding}" FontSize="14"/>
@@ -16,8 +15,7 @@
             <ContentPresenter>
                 <TextBlock Text="{Binding}" FontSize="14"/>
             </ContentPresenter>
-        </DataTemplate>
-
-    </Application.Resources>
+        </DataTemplate>     
+   </Application.Resources>
     
 </Application>

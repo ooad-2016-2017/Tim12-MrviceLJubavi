@@ -26,16 +26,22 @@ namespace GlasajBa.View
     /// </summary>
     public sealed partial class GlavnaStranica : Page
     {
+        OstaleFunkcionalnostiViewModel vm;
         public GlavnaStranica()
         {
             this.InitializeComponent();
+            //this.DataContext = this;
             //pokušaj instanciranja view modela:
-            NavigationCacheMode = NavigationCacheMode.Required;
+            //vm = new OstaleFunkcionalnostiViewModel();
             DataContext = new OstaleFunkcionalnostiViewModel();
+            NavigationCacheMode = NavigationCacheMode.Required;
+
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             //SystemNavigationManager.GetForCurrentView().BackRequested += ;
         }
+
+
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {

@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Graphics.Printing;
 using GlasajBa.View;
 using Windows.UI.Xaml.Input;
+using System.ComponentModel;
 
 namespace GlasajBa.ViewModel
 {  
@@ -22,18 +23,18 @@ namespace GlasajBa.ViewModel
     namespace GlasajBa.ViewModel
     {
         
-        class OstaleFunkcionalnostiViewModel : PrintDocument
+       class OstaleFunkcionalnostiViewModel
         {
-            ICommand PronalazakBirackogMjesta { get; set; }
-            ICommand PregledNovosti { get; set; }
-            ICommand PretragaKandidata { get; set; }
-            ICommand SistemZaSlijepeISlabovidne { get; set; }
-            ICommand PregledStranaka { get; set; }
-            ICommand IdiNaTwitter { get; set; }
-            ICommand Registracija { get; set; }
-            ICommand PregledStatistike { get; set; }
-            ICommand PregledHistorije { get; set; }
-            ICommand Glasaj { get; set; }
+            private ICommand PronalazakBM { get; set; }
+            private ICommand pregledNovosti;
+            private ICommand pretragaKandidata;
+            private ICommand sistemZaSlijepeISlabovidne;
+            private ICommand pregledStranaka;
+            private ICommand idiNaTwitter1;
+            private ICommand registracija;
+            private ICommand pregledStatistike;
+            private ICommand pregledHistorije;
+            private ICommand glasaj1;
 
             GlasackiSistem sistem;
 
@@ -50,9 +51,136 @@ namespace GlasajBa.ViewModel
                 }
             }
 
-            NavigationService NavigationService { get; set; }
-            INavigationService INS { get; set; }
+            public INavigationService NavigationService { get; set; }
+            //INavigationService INS { get; set; }
 
+            /*
+            public ICommand PronalazakBM
+            {
+                get
+                {
+                    return pronalazakBM ?? (pronalazakBM = new CommandHandler(() => nadjiBM(), true));
+                }
+            }*/
+
+            public ICommand PregledNovosti
+            {
+                get
+                {
+                    return pregledNovosti;
+                }
+
+                set
+                {
+                    pregledNovosti = value;
+                }
+            }
+
+            public ICommand PretragaKandidata
+            {
+                get
+                {
+                    return pretragaKandidata;
+                }
+
+                set
+                {
+                    pretragaKandidata = value;
+                }
+            }
+
+            public ICommand SistemZaSlijepeISlabovidne
+            {
+                get
+                {
+                    return sistemZaSlijepeISlabovidne;
+                }
+
+                set
+                {
+                    sistemZaSlijepeISlabovidne = value;
+                }
+            }
+
+            public ICommand PregledStranaka
+            {
+                get
+                {
+                    return pregledStranaka;
+                }
+
+                set
+                {
+                    pregledStranaka = value;
+                }
+            }
+
+            public ICommand IdiNaTwitter
+            {
+                get
+                {
+                    return idiNaTwitter1;
+                }
+
+                set
+                {
+                    idiNaTwitter1 = value;
+                }
+            }
+
+            public ICommand Registracija
+            {
+                get
+                {
+                    return registracija;
+                }
+
+                set
+                {
+                    registracija = value;
+                }
+            }
+
+            public ICommand PregledStatistike
+            {
+                get
+                {
+                    return pregledStatistike;
+                }
+
+                set
+                {
+                    pregledStatistike = value;
+                }
+            }
+
+            public ICommand PregledHistorije
+            {
+                get
+                {
+                    return pregledHistorije;
+                }
+
+                set
+                {
+                    pregledHistorije = value;
+                }
+            }
+
+            public ICommand Glasaj
+            {
+                get
+                {
+                    return glasaj1;
+                }
+
+                set
+                {
+                    glasaj1 = value;
+                }
+            }
+
+            #region print
             /* async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 
             async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
@@ -212,33 +340,48 @@ namespace GlasajBa.ViewModel
                      }
 
                      */
+            #endregion
 
-            private void nadjiBM(object o)
+            public void nadjiBM(object o)
             {
-                NavigationService.Navigate(typeof(PronalazakBirackogMjesta));
+                NavigationService.Navigate(typeof(PronalazakBirackogMjesta), new GpsViewModel(new Windows.UI.Xaml.Controls.Maps.MapControl()));
+                //((Frame)Window.Current.Content).Navigate(typeof(PronalazakBirackogMjesta), null);
             }
 
-            private void otvoriNovost(object o)
+            public void otvoriNovost(object o)
             {
-                INS.Navigate(typeof(Informacije));
+                NavigationService.Navigate(typeof(Informacije), this);
             }
 
-            private void idiNaTwitter(object o)
+            public void idiNaTwitter(object o)
             {
                 //ucitaj twitter
+                string sURL = @"https://twitter.com/glasaj_ba";
+
+                try
+                {
+                    Uri webURL = new Uri(sURL);
+                    // ctlBowser.Navigate(webURL); webview
+
+                }
+                catch (Exception)
+                {
+                    //greska pri otvaranju
+                }
+                
             }
 
-            private void otvoriStranke(object o)
+            public void otvoriStranke(object o)
             {
-                NavigationService.Navigate(typeof(Informacije));
+                NavigationService.Navigate(typeof(Informacije), this);
             }
 
-            private void otvoriHistoriju(object o)
+            public void otvoriHistoriju(object o)
             {
-                NavigationService.Navigate(typeof(Informacije));
+                NavigationService.Navigate(typeof(Informacije), this);
             }
 
-            private void slijepi(object o)
+            public void slijepi(object o)
             {
                 //nije jos u funkciji za slijepe
                 GlasackiSistem.slijepi = true;
@@ -249,16 +392,16 @@ namespace GlasajBa.ViewModel
                 NavigationService.Navigate(typeof(AdminLogin));
             }
 
-            private void otvoriStatistiku(object o)
+            public void otvoriStatistiku(object o)
             {
                 NavigationService.Navigate(typeof(Informacije));
             }
-            private void pretraziKandidata(object o)
+            public void pretraziKandidata(object o)
             {
                 NavigationService.Navigate(typeof(PretragaKandidata));
             }
 
-            private void glasaj(object o)
+            public void glasaj(object o)
             {
                 NavigationService.Navigate(typeof(Glasanje));
             }
@@ -269,12 +412,13 @@ namespace GlasajBa.ViewModel
 
             public OstaleFunkcionalnostiViewModel()
             {
-                NavigationService = new NavigationService();
-                
+                //this.DataContext = this;
                 Sistem = new GlasackiSistem(new List<Glasac>(), new List<Kandidat>(), new List<Kandidat>(),new List<Kandidat>(), new List<Kandidat>(), new List<Stranka>(), new List<Ulica>(), new List<Novost>(), new DateTime(2017,10,5), new DateTime(2017,10,6), false, "mrviceljubavi", "admin", false);
 
+                NavigationService = new NavigationService();
+
                 PretragaKandidata = new RelayCommand<object>(pretraziKandidata, jeLiMoguce);
-                PronalazakBirackogMjesta = new RelayCommand<object>(nadjiBM, jeLiMoguce);
+                PronalazakBM= new RelayCommand<object>(nadjiBM, jeLiMoguce);
                 PregledNovosti = new RelayCommand<object>(otvoriNovost, jeLiMoguce);
                 PregledStranaka = new RelayCommand<object>(otvoriStranke, jeLiMoguce);
                 PregledStatistike = new RelayCommand<object>(otvoriStatistiku, jeLiMoguce);
@@ -284,6 +428,25 @@ namespace GlasajBa.ViewModel
                 PregledHistorije = new RelayCommand<object>(otvoriHistoriju, jeLiMoguce);
                 Glasaj = new RelayCommand<object>(glasaj, jeLiMoguce);
             }
+            #region INotifyPropertyChanged Methods
+
+            public void OnPropertyChanged(string propertyName)
+            {
+                this.OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+            }
+
+            protected virtual void OnPropertyChanged(PropertyChangedEventArgs args)
+            {
+                if (this.PropertyChanged != null)
+                {
+                    this.PropertyChanged(this, args);
+                }
+            }
+
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            #endregion
 
             /*
 
