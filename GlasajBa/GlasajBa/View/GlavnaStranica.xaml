@@ -2,11 +2,12 @@
     x:Class="GlasajBa.View.GlavnaStranica"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:GlasajBa.View"
+     xmlns:local="using:GlasajBa"
     xmlns:viewmodels="using:GlasajBa.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -99,11 +100,10 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
         <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
-        
+
         <Grid x:Name="naslov" HorizontalAlignment="Left" Height="70" Margin="10,15,0,0" VerticalAlignment="Top" Width="1260">
-            
+
             <TextBlock x:Name="textBlock" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Glasaj.ba" Width="189" FontSize="45" />
             <Image x:Name="image1" Source="ms-appx:///Assets/user.png"  HorizontalAlignment="Left" Height="41" Margin="1209,0,0,0" VerticalAlignment="Center" Width="41" />
             <Image x:Name="image2" Source="ms-appx:///Assets/blind-walking.png" HorizontalAlignment="Left" Height="41" Width="41"  Margin="1166,15,53,14" VerticalAlignment="Center" />
@@ -131,7 +131,8 @@
                                 <Grid Height="400" Width="Auto">
                                     <TextBlock x:Name="naslovNovosti" Text="" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>
                                     <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" ></RichEditBox>
-                                    <Button x:Name="buttonNovosti" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Button>
+                                    <!--<TextBlock x:Name="testni" Text="{Binding Path=Naziv}" FontSize="40"></TextBlock>-->
+                                    <Button x:Name="buttonNovosti" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledNovosti}"></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -140,7 +141,7 @@
                                 <Grid x:Name="gridStatistika" Height="400" Width="Auto">
                                     <TextBlock x:Name="naslovStatistike" Text="" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>
                                     <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" DataContext=""></RichEditBox>
-                                    <Button x:Name="buttonStatistika" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=OstaleFunkcionalnostiViewModel.PregledStatistike}" ></Button>
+                                    <Button x:Name="buttonStatistika" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledStatistike}" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -149,7 +150,7 @@
                                 <Grid Height="400" Width="Auto">
                                     <TextBlock x:Name="naslovStranke" Text="" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>
                                     <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" DataContext=""></RichEditBox>
-                                    <Button x:Name="buttonStranke" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=OstaleFunkcionalnostiViewModel.PregledStranaka}"></Button>
+                                    <Button x:Name="buttonStranke" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledStranaka}"></Button>
 
                                 </Grid>
                             </DataTemplate>
@@ -158,7 +159,7 @@
                             <DataTemplate>
                                 <Grid Height="400" Width="Auto">
                                     <RichEditBox x:Name="RichEditBoxHistorija"  IsReadOnly="True"  Width="Auto" Height="330" />
-                                    <Button x:Name="buttonHistorija" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=OstaleFunkcionalnostiViewModel.PregledHistorije}"></Button>
+                                    <Button x:Name="buttonHistorija" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledHistorije}"></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -188,14 +189,14 @@
                     <Grid>
                         <TextBlock x:Name="textBlock1OnlineGlasanje" HorizontalAlignment="Left" Margin="76,54,0,0" TextWrapping="Wrap" Text="Ako želite glasati, kliknite na sljedeće dugme:" VerticalAlignment="Top" Height="43" Width="498" FontSize="20"/>
 
-                        <Button x:Name="buttonGlasaj" Content="Glasaj" HorizontalAlignment="Left" Margin="570,55,0,0" VerticalAlignment="Top" Command="{Binding Path=OstaleFunkcionalnostiViewModel.Glasaj}"/>
+                        <Button x:Name="buttonGlasaj" Content="Glasaj" HorizontalAlignment="Left" Margin="570,55,0,0" VerticalAlignment="Top" Command="{Binding Path=Glasaj}"/>
                     </Grid>
                 </PivotItem>
                 <PivotItem Header="Kandidati" >
                     <Grid>
                         <TextBlock x:Name="textBlockKandidati" HorizontalAlignment="Left" Margin="76,54,0,0" TextWrapping="Wrap" Text="Za pregled kandidata, kliknite na sljedeće dugme:" VerticalAlignment="Top" Height="43" Width="498" FontSize="20" />
 
-                        <Button x:Name="buttonKandidati" Content="Pregledaj kandidate" HorizontalAlignment="Left" Margin="570,55,0,0" VerticalAlignment="Top" Command="{Binding Path=AdministratorViewModel.PretragaKandidata}"/>
+                        <Button x:Name="buttonKandidati" Content="Pregledaj kandidate" HorizontalAlignment="Left" Margin="570,55,0,0" VerticalAlignment="Top" Command="{Binding Path=PretraziKandidate}"/>
                     </Grid>
                 </PivotItem>
                 <PivotItem Header="O nama" >

@@ -7,23 +7,24 @@ using System.Threading.Tasks;
 
 namespace GlasajBa.Helper
 {
-    class DataSource
+    internal class DataSource
     {
 
         #region Glasac - kreiranje testnih glasaca
 
         private static List<Glasac> _glasaci = new List<Glasac>()
-        {
+        { 
             new Glasac()
-            {
+            {                
                 Ime = "Prvi",
                 Prezime = "Korisnik",
                 DatRodjenja = new DateTime(1980,2,2),
                 LicnaKarta = "123456789",
                 JMBG1 = "123456789120",
                 DrzavaBoravka = "BiH",
-                JeLiGlasao = false, 
-                NaBirackomMjestu = false
+                JeLiGlasao = false,
+                NaBirackomMjestu = false,
+                
             },
             new Glasac()
             {
@@ -37,9 +38,10 @@ namespace GlasajBa.Helper
                 NaBirackomMjestu = false
             }
         };
+
         public static IList<Glasac> DajSveGlasace()
         {
-            return _glasaci;
+            return (List<Glasac>)_glasaci;
         }
         #endregion
 

@@ -60,8 +60,8 @@
                             <HubSection Width="340" x:Name="hub1">
                                 <DataTemplate>
                                     <Grid Width="300" Height="454">
-                                        <TextBlock Text="{Binding Sistem.Novosti.Naslov}" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
-                                        <RichEditBox DataContext="{Binding Sistem.Novosti.Tekst}" Margin="0,40,0,45" IsReadOnly="True"/>
+                                        <TextBlock Text="" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                        <RichEditBox DataContext="" Margin="0,40,0,45" IsReadOnly="True"/>
                                     </Grid>
                                 </DataTemplate>
                             </HubSection>
@@ -69,7 +69,7 @@
                                 <DataTemplate>
                                     <Grid Width="300" Height="454">
                                         <TextBlock Text="Novost" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
-                                        <RichEditBox DataContext="{Binding Sistem.Novosti.Tekst}"  Margin="0,40,0,45" IsReadOnly="True" >                                            
+                                        <RichEditBox DataContext=""  Margin="0,40,0,45" IsReadOnly="True" >                                            
                                         </RichEditBox>
                                     </Grid>
                                 </DataTemplate>
@@ -78,7 +78,7 @@
                                 <DataTemplate>
                                     <Grid Width="300" Height="454">
                                         <TextBlock Text="Novost" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
-                                        <RichEditBox DataContext="{Binding Sistem.Novosti.Tekst}" Margin="0,40,0,45" IsReadOnly="True">
+                                        <RichEditBox DataContext="" Margin="0,40,0,45" IsReadOnly="True">
                                         </RichEditBox>
                                     </Grid>
                                 </DataTemplate>
@@ -126,8 +126,8 @@
                         <HubSection Width="340">
                             <DataTemplate>
                                 <Grid Width="300" Height="454">
-                                    <TextBlock Text="{Binding Sistem.Stranke.Naziv}" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
-                                    <RichEditBox DataContext="{Binding Sistem.Stranke.Ukratko}" Margin="0,40,0,40" IsReadOnly="True"/>
+                                    <TextBlock Text="" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                    <RichEditBox DataContext="" Margin="0,40,0,40" IsReadOnly="True"/>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
@@ -169,7 +169,7 @@
             <Button x:Name="buttonPrintaj" Grid.Column="0" HorizontalAlignment="Center" Content="Printaj glasački listić" FontSize="25" Height="66" ></Button>
             
             
-            <Button x:Name="buttonNazad" Grid.Column="1" Content="Nazad" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="127" FontSize="25" Command="{Binding Path=vratiSe}"/>
+            <Button x:Name="buttonNazad" Grid.Column="1" Content="Nazad" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="127" FontSize="25" Command="{Binding Path=Nazad}"/>
         </Grid>
 
     </Grid>

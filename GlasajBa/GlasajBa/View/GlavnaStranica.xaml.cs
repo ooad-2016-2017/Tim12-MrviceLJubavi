@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 using GlasajBa.ViewModel;
 using Windows.UI.Core;
 using GlasajBa.ViewModel.GlasajBa.ViewModel;
+using GlasajBa.Helper;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,18 +27,27 @@ namespace GlasajBa.View
     /// </summary>
     public sealed partial class GlavnaStranica : Page
     {
-        OstaleFunkcionalnostiViewModel vm;
+
         public GlavnaStranica()
         {
             this.InitializeComponent();
-            //this.DataContext = this;
-            //pokušaj instanciranja view modela:
-            //vm = new OstaleFunkcionalnostiViewModel();
+            //var inicijalizacija = new DataSource();
             DataContext = new OstaleFunkcionalnostiViewModel();
             NavigationCacheMode = NavigationCacheMode.Required;
 
-            var currentView = SystemNavigationManager.GetForCurrentView();
-            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+
+           // var glasac = DataSource.DajSveGlasace()[0];
+            //Glasac g = new Glasac();
+            //g = glasac;
+         
+
+            //this.DataContext = this;
+            //pokušaj instanciranja view modela:
+            //vm = new OstaleFunkcionalnostiViewModel();
+            //DataContext = new OstaleFunkcionalnostiViewModel();
+
+            // var currentView = SystemNavigationManager.GetForCurrentView();
+            //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             //SystemNavigationManager.GetForCurrentView().BackRequested += ;
         }
 

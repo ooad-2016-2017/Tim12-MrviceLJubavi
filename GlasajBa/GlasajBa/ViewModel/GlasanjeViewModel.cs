@@ -127,8 +127,9 @@ namespace GlasajBa.ViewModel
         public GlasanjeViewModel(OstaleFunkcionalnostiViewModel parent)
         {
             this.Parent = parent;
-            ListaKandidata = Parent.Sistem.KandidatiO;
-            NavigationService = new NavigationService();
+            ListaKandidata = new List<Kandidat>();
+            ListaKandidata =  Parent.Sistem.KandidatiO;
+            //NavigationService = new NavigationService();
             Glasanje = new RelayCommand<object>(glasanje, jeLiIzborniDan);
             PrelazakNaOpcinu = new RelayCommand<object>(prediNaOpcinu, jeLiIzborniDan);
             PrelazakNaKanton = new RelayCommand<object>(prediNaKanton, jeLiIzborniDan);
@@ -222,8 +223,7 @@ namespace GlasajBa.ViewModel
         }
         public void vratiSe(object parametar)
         {
-            //Parent.NavigationService.GoBack();
-            //elma treba implementirati navigationservice kao što sam i ja, tad više neće javljati error
+            Parent.NavigationService.GoBack();
         }
         public void pretragaKandidata(object parametar)
         {

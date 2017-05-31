@@ -15,9 +15,8 @@ namespace GlasajBa.Helper
         #region Constructors
 
         public RelayCommand(Action<T> executeMethod) : this(executeMethod, null)
-        {
+        { }
 
-        }
         public RelayCommand(Action<T> executeMethod, Func<T, bool> canExecuteMethod)
         {
             _executeMethod = executeMethod;

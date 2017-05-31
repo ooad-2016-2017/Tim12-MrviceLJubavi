@@ -14,7 +14,7 @@ namespace GlasajBa.Helper
         void Navigate(Type sourcePage, object parameter);
         void GoBack();
     }
-   public class NavigationService : INavigationService
+    class NavigationService : INavigationService
     {
         public void Navigate(Type sourcePage)
         {

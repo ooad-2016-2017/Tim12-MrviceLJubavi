@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GlasajBa.ViewModel;
 using GlasajBa.ViewModel.GlasajBa.ViewModel;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,10 +30,22 @@ namespace GlasajBa.View
         public Informacije()
         {
             this.InitializeComponent();
+
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DataContext = (OstaleFunkcionalnostiViewModel)e.Parameter;
+        }
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+                e.Handled = true;
+            }
         }
     }    
 
