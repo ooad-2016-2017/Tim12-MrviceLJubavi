@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Skripte\JumpingScript.cs" />
+     <Compile Include="Assets\Skripte\ListicBehavior.cs" />
+     <Compile Include="Assets\Skripte\ListicCreator.cs" />
      <Compile Include="Assets\Skripte\MovementScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
