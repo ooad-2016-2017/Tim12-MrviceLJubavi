@@ -8,13 +8,13 @@ using Windows.UI.Xaml.Controls;
 
 namespace GlasajBa.Helper
 {
-    interface INavigationService
+    public interface INavigationService
     {
         void Navigate(Type sourcePage);
         void Navigate(Type sourcePage, object parameter);
         void GoBack();
     }
-    class NavigationService : INavigationService
+   public class NavigationService : INavigationService
     {
         public void Navigate(Type sourcePage)
         {
