@@ -78,9 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Skripte\GameOverScript.cs" />
     <Compile Include="Assets\Skripte\JumpingScript.cs" />
     <Compile Include="Assets\Skripte\ListicBehavior.cs" />
     <Compile Include="Assets\Skripte\ListicCreator.cs" />
+    <Compile Include="Assets\Skripte\MainMenuScript.cs" />
     <Compile Include="Assets\Skripte\MovementScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
