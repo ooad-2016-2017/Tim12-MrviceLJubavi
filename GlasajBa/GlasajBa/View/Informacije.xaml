@@ -60,8 +60,9 @@
                             <HubSection Width="340" x:Name="hub1">
                                 <DataTemplate>
                                     <Grid Width="300" Height="454">
-                                        <TextBlock Text="" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
-                                        <RichEditBox DataContext="" Margin="0,40,0,45" IsReadOnly="True"/>
+                                        <TextBlock Text="Novost" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                        <RichEditBox DataContext=""  Margin="0,40,0,45" IsReadOnly="True" >
+                                        </RichEditBox>
                                     </Grid>
                                 </DataTemplate>
                             </HubSection>
@@ -93,10 +94,8 @@
                                 <DataTemplate>
                                     <Grid Width="300" Height="454">
                                         <TextBlock Text="Prva analiza" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
-                                        <RichTextBlock TextIndent="15" Margin="0,40,0,45">
-                                            <Paragraph TextIndent="15" FontSize="16">Neki tekst</Paragraph>
-                                            <Paragraph TextIndent="15" FontSize="16">prve analize</Paragraph>                                            
-                                        </RichTextBlock>
+                                        <RichEditBox Margin="0,40,0,45">
+                                        </RichEditBox>
                                     </Grid>
                                 </DataTemplate>
                             </HubSection>
@@ -126,8 +125,9 @@
                         <HubSection Width="340">
                             <DataTemplate>
                                 <Grid Width="300" Height="454">
-                                    <TextBlock Text="" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
-                                    <RichEditBox DataContext="" Margin="0,40,0,40" IsReadOnly="True"/>
+                                    <TextBlock Text="Prva stranka" FontSize="18" Height="35" VerticalAlignment="Top" TextAlignment="Center"/>
+                                    <RichEditBox  Margin="0,40,0,45" IsReadOnly="True">
+                                    </RichEditBox>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
