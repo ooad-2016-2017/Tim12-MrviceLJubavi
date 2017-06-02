@@ -50,7 +50,7 @@ public class SpawnScript : MonoBehaviour {
         while (true)
         {
             izbor = UnityEngine.Random.Range(0, 2);
-            Vector3 pozicija = new Vector3(0, UnityEngine.Random.Range(-4,2),0);
+            Vector3 pozicija = new Vector3(0, 1,0);
             //factory.getLisic("zlatni");
             GameObject m;
             if (izbor == 0)
@@ -86,7 +86,7 @@ public class SpawnScript : MonoBehaviour {
                     listici.Add("zlatni", m);
                 }*/
             }
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(4);
         }
     }
 }
