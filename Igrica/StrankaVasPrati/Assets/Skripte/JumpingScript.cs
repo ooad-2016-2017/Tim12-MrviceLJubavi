@@ -57,7 +57,7 @@ public class JumpingScript : MonoBehaviour {
             stanjeStickmana.Handle(s);
             GetComponent<Rigidbody2D>().velocity = new Vector2(1, s.Y);
         }
-        GameObject meta = Instantiate(mete);
+        //GameObject meta = Instantiate(mete);
 	}
 
     private void HandleMovement()

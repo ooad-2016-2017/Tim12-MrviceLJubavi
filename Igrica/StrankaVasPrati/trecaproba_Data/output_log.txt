@@ -1,0 +1,45 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     912 MB
+    Driver:   10.18.10.4358
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.458 seconds
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\trecaproba_Data\Managed\System.dll (this message is harmless)
+desktop: 1600x900 40Hz; virtual: 1600x900 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 4.112986 ms
+ArgumentException: The scene is invalid.
+  at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
+  at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
+  at MainMenuScript.OnLevelFinishedLoading (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
+  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 16.907192 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 333.
+Total: 0.561178 ms (FindLiveObjects: 0.057913 ms CreateObjectMapping: 0.058280 ms MarkObjects: 0.403198 ms  DeleteObjects: 0.039953 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 225c -> priority: 1 
+  Thread -> id: 798 -> priority: 1 

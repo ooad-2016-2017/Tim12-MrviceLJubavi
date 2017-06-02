@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour {
 
-    int kojiIgrac = 0;
+    public static int kojiIgrac = 0;
 	// Use this for initialization
 	void Start () {
 		
