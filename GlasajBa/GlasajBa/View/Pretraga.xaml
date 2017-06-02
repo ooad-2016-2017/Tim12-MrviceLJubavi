@@ -48,6 +48,16 @@
                         </Setter>
                         <Setter Target="grid1.(FrameworkElement.HorizontalAlignment)" Value="Left"/>
                         <Setter Target="grid1.(FrameworkElement.Width)" Value="600"/>
+                        <Setter Target="textBox.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,4.667,278,3.667</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="listBox.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,9.667,278,30</Thickness>
+                            </Setter.Value>
+                        </Setter>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="300"/>
@@ -57,9 +67,9 @@
         </VisualStateManager.VisualStateGroups>
         <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5" Grid.RowSpan="10"/>
         <Grid x:Name="grid" Margin="10" Opacity="0"/>
-        <TextBlock x:Name="textBlock" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,10" Opacity="0" Grid.Row="1" TextWrapping="Wrap" Text="Ime kandidata:" Width="220" FontFamily="Century" FontSize="27" d:LayoutOverrides="TopMargin, BottomMargin"/>
-        <TextBox x:Name="textBox" Margin="10,10,28,10" Opacity="0" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Path=AdministratorViewModel.PoljePretrageKandidata}" FontFamily="Century" FontSize="27" VerticalAlignment="Center" Height="65" d:LayoutOverrides="TopMargin, BottomMargin"/>
-        <ListBox x:Name="listBox" ItemsSource="{Binding Path=AdministratorViewModel.ListaKandidata}" Margin="10,10,88,30" Opacity="0" Grid.Row="5" FontFamily="Century" FontSize="22"/>
+        <TextBlock x:Name="textBlock" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,10" Grid.Row="1" TextWrapping="Wrap" Text="Ime kandidata:" Width="220" FontFamily="Century" FontSize="27" d:LayoutOverrides="TopMargin, BottomMargin"/>
+        <TextBox x:Name="textBox" Margin="10,10,28,10"  Grid.Row="3" TextWrapping="Wrap" Text="{Binding Path=AdministratorViewModel.PoljePretrageKandidata}" FontFamily="Century" FontSize="27" VerticalAlignment="Center" Height="65"/>
+        <ListBox x:Name="listBox" ItemsSource="{Binding Path=AdministratorViewModel.ListaKandidata}" Margin="10,10,88,30"  Grid.Row="5" FontFamily="Century" FontSize="22"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>

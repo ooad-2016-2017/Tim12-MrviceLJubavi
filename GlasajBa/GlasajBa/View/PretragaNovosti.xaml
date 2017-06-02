@@ -15,7 +15,8 @@
                     <VisualState.Setters>
                         <Setter Target="textBox.(FrameworkElement.Margin)">
                             <Setter.Value>
-                                <Thickness>45,10,0,0</Thickness>
+                                <Thickness
+                            >45,10,0,0</Thickness>
                             </Setter.Value>
                         </Setter>
                         <Setter Target="textBox.(Grid.Row)" Value="2"/>
@@ -27,7 +28,8 @@
                         <Setter Target="listBox.(FrameworkElement.Width)" Value="544"/>
                         <Setter Target="listBox.(FrameworkElement.Margin)">
                             <Setter.Value>
-                                <Thickness>45,10,0,0</Thickness>
+                                <Thickness
+                            >45,10,0,0</Thickness>
                             </Setter.Value>
                         </Setter>
                         <Setter Target="textBox.(FrameworkElement.Width)" Value="544"/>

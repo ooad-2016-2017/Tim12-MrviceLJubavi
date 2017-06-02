@@ -12,8 +12,15 @@
     <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
-                <VisualState x:Name="Wide"/>
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
                 <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="250"/>
+                    </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="ime1.(FrameworkElement.Margin)">
                             <Setter.Value>
@@ -103,8 +110,8 @@
                                 <Thickness>9.977,286.951,0,0</Thickness>
                             </Setter.Value>
                         </Setter>
-                        <Setter Target="pisipriznanja1.(FrameworkElement.Width)" Value="139.919"/>
-                        <Setter Target="pisipriznanja1.(FrameworkElement.Height)" Value="87"/>
+                        <Setter Target="pisipriznanja1.(FrameworkElement.Width)" Value="97.022"/>
+                        <Setter Target="pisipriznanja1.(FrameworkElement.Height)" Value="47.764"/>
                         <Setter Target="pisipriznanja1.(FrameworkElement.Margin)">
                             <Setter.Value>
                                 <Thickness>10.01,366.951,0,0</Thickness>
@@ -139,7 +146,7 @@
                         <Setter Target="page.(FrameworkElement.Height)" Value="593"/>
                         <Setter Target="dodajkandidata.(FrameworkElement.Margin)">
                             <Setter.Value>
-                                <Thickness>160.038,427.998,0,0</Thickness>
+                                <Thickness>112.032,388.762,0,0</Thickness>
                             </Setter.Value>
                         </Setter>
                         <Setter Target="page.(FrameworkElement.Width)" Value="362.667"/>
@@ -236,8 +243,8 @@
                             </Setter.Value>
                         </Setter>
                         <Setter Target="priznanja2.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
-                        <Setter Target="pisipriznanja2.(FrameworkElement.Width)" Value="146"/>
-                        <Setter Target="pisipriznanja2.(FrameworkElement.Height)" Value="96"/>
+                        <Setter Target="pisipriznanja2.(FrameworkElement.Width)" Value="79"/>
+                        <Setter Target="pisipriznanja2.(FrameworkElement.Height)" Value="45"/>
                         <Setter Target="pisipriznanja2.(FrameworkElement.Margin)">
                             <Setter.Value>
                                 <Thickness>10,375,0,0</Thickness>
@@ -252,7 +259,7 @@
                         </Setter>
                         <Setter Target="izmjenikandidata.(FrameworkElement.Margin)">
                             <Setter.Value>
-                                <Thickness>179,434,0,0</Thickness>
+                                <Thickness>94,394,0,0</Thickness>
                             </Setter.Value>
                         </Setter>
                         <Setter Target="pisinaslov1.(FrameworkElement.Width)" Value="168"/>
@@ -472,6 +479,8 @@
                                 <Thickness>10,407,0,0</Thickness>
                             </Setter.Value>
                         </Setter>
+                        <Setter Target="dodajkandidata.(FrameworkElement.Width)" Value="73.283"/>
+                        <Setter Target="izmjenikandidata.(FrameworkElement.Width)" Value="85"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>

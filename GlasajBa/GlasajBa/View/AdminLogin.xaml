@@ -29,7 +29,7 @@
                         <Setter Target="textBlock2.(FrameworkElement.Width)" Value="690"/>
                         <Setter Target="textBlock2.(FrameworkElement.Margin)">
                             <Setter.Value>
-                                <Thickness>38,50,5,44</Thickness>
+                                <Thickness>10,19.667,33.333,-0.333</Thickness>
                             </Setter.Value>
                         </Setter>
                         <Setter Target="textBlock.(FrameworkElement.Margin)">
@@ -58,7 +58,7 @@
                         </Setter>
                         <Setter Target="buttonPrijava.(FrameworkElement.Margin)">
                             <Setter.Value>
-                                <Thickness>0,10,227,10</Thickness>
+                                <Thickness>0,9.667,418.333,10.667</Thickness>
                             </Setter.Value>
                         </Setter>
                         <Setter Target="textBlock2.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
@@ -70,12 +70,12 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5" Grid.RowSpan="10"/>
-        <Button x:Name="buttonPrijava" Command="{Binding Path=AdministratorViewModel.Login}" Content="Prijavi se"  Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Margin="0,10,236,10" VerticalAlignment="Stretch"  FontFamily="Century" FontSize="32" Width="277" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+        <Button x:Name="buttonPrijava" Command="{Binding Path=AdministratorViewModel.Login}" Content="Prijavi se"  Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Margin="0,10,236,10" VerticalAlignment="Stretch"  FontFamily="Century" FontSize="32" Width="277" d:LayoutOverrides="TopPosition, BottomPosition"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="3" Margin="240,10,0,10" TextWrapping="Wrap" Text="Korisničko ime:" FontFamily="Century" FontSize="26" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin, TopPosition, BottomPosition" Width="231"/>
         <TextBox x:Name="textBox" Margin="499,10,236,17" TextWrapping="Wrap"  Grid.Column="0" Grid.Row="3" Text="{Binding Path=AdminIme}" FontFamily="Century" FontSize="26" d:LayoutOverrides="HorizontalAlignment, TopMargin, BottomMargin"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left"  Grid.Column="0" Grid.Row="5" Margin="240,10,0,10" TextWrapping="Wrap" Text="Lozinka:" FontFamily="Century" FontSize="26" Width="231" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin, TopPosition, BottomPosition"/>
         <TextBox x:Name="textBox1"  Margin="499,10,236,10" Grid.Column="0" Grid.Row="5"  TextWrapping="Wrap" Text="{Binding Path=AdminSifra}" FontFamily="Century" FontSize="26" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-        <TextBlock x:Name="textBlock2" Margin="345,31,312,49" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Text="Administratore, dobro došli!" FontFamily="Century" FontSize="35" d:LayoutOverrides="VerticalAlignment, Height, LeftMargin, RightMargin, TopMargin, BottomMargin, TopPosition, BottomPosition"/>
+        <TextBlock x:Name="textBlock2" Margin="345,31,312,49" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Text="Administratore, dobro došli!" FontFamily="Century" FontSize="35" d:LayoutOverrides="VerticalAlignment, TopPosition, BottomPosition"/>
         <Grid Margin="10" x:Name="grid" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
