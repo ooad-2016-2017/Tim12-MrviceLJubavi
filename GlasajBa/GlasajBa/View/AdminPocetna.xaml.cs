@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GlasajBa.ViewModel;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,6 +27,9 @@ namespace GlasajBa.View
         public AdminPocetna()
         {
             this.InitializeComponent();
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
         private void richEditBox_TextChanged(System.Object sender, RoutedEventArgs e)
         {
@@ -34,6 +38,14 @@ namespace GlasajBa.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DataContext = (AdministratorViewModel)e.Parameter;
+        }
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+                e.Handled = true;
+            }
         }
     }
 }

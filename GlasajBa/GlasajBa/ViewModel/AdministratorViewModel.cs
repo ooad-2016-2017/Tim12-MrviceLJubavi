@@ -145,7 +145,7 @@ namespace GlasajBa.ViewModel
 
         public void registrujAdmina(Object o)
         {
-            INS.Navigate(typeof(AdminPocetna), Parent);
+            INS.Navigate(typeof(AdminPocetna), this);
         }
 
         public bool boolDodaj(Object o)
