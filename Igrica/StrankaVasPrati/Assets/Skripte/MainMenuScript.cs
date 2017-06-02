@@ -78,6 +78,10 @@ public class MainMenuScript : MonoBehaviour {
                 else if (g.name == "RI") g.transform.localScale = new Vector3(0, 0, 0);
                 else if (g.name == "TK") g.transform.localScale = new Vector3(1, 1, 1);
             }
+            /*if (g.name == "AE1") g.SetActive(false);
+            else if (g.name == "EE1") g.SetActive(false);
+            else if (g.name == "RI1") g.SetActive(false);
+            else if (g.name == "TK1") g.SetActive(false);*/
         }
     }
 }

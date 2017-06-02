@@ -84,11 +84,15 @@
     <Compile Include="Assets\Klase\IState.cs" />
     <Compile Include="Assets\Klase\Stickman.cs" />
     <Compile Include="Assets\Skripte\GameOverScript.cs" />
+    <Compile Include="Assets\Skripte\IgracBehavior.cs" />
     <Compile Include="Assets\Skripte\JumpingScript.cs" />
     <Compile Include="Assets\Skripte\ListicBehavior.cs" />
-    <Compile Include="Assets\Skripte\ListicCreator.cs" />
     <Compile Include="Assets\Skripte\MainMenuScript.cs" />
     <Compile Include="Assets\Skripte\MovementScript.cs" />
+    <Compile Include="Assets\Skripte\SmanjiIgracaScript.cs" />
+    <Compile Include="Assets\Skripte\SpawnEnemy.cs" />
+    <Compile Include="Assets\Skripte\SpawnScript.cs" />
+    <Compile Include="Assets\Skripte\UnistiListic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

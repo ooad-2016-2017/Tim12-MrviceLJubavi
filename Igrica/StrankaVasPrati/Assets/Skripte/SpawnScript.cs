@@ -9,7 +9,7 @@ public class SpawnScript : MonoBehaviour {
     public GameObject listic;
     public Vector3 vektor;
     int izbor;
-
+    static float sekunde = 5;
 
     void Start () {
         //factory = new ListicFactory();
@@ -44,13 +44,27 @@ public class SpawnScript : MonoBehaviour {
     }*/
 
     Dictionary<String, GameObject> listici = new Dictionary<string, GameObject>();
+
+    public static float Sekunde
+    {
+        get
+        {
+            return sekunde;
+        }
+
+        set
+        {
+            sekunde = value;
+        }
+    }
+
     IEnumerator cekaj()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(sekunde);
         while (true)
         {
             izbor = UnityEngine.Random.Range(0, 2);
-            Vector3 pozicija = new Vector3(0, 1,0);
+            Vector3 pozicija = new Vector3(0, izbor,0);
             //factory.getLisic("zlatni");
             GameObject m;
             if (izbor == 0)
@@ -71,8 +85,11 @@ public class SpawnScript : MonoBehaviour {
                 }*/
             } else
             {
-                m = (GameObject)Instantiate(listic, pozicija + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
-                m.GetComponent<Renderer>().material.SetColor("Yellow", Color.yellow);
+                if (listic != null)
+                {
+                    m = (GameObject)Instantiate(listic, pozicija + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
+                    m.GetComponent<Renderer>().material.SetColor("Yellow", Color.yellow);
+                }
                 //zlatni
                 /*
                 if (listici.ContainsKey("zlatni"))
@@ -86,7 +103,7 @@ public class SpawnScript : MonoBehaviour {
                     listici.Add("zlatni", m);
                 }*/
             }
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(sekunde);
         }
     }
 }

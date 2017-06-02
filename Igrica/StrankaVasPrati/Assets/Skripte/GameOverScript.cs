@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class GameOverScript : MonoBehaviour {
 
+    public Text score;
 	// Use this for initialization
 	void Start () {
-        Text tekst = (GameObject.FindWithTag("Canvas")).GetComponent<Text>();
-        tekst.text = JumpingScript.S.Score.ToString();
+        score.GetComponent<Text>();
+        score.text = JumpingScript.S.Score.ToString();
     }
 
     // Update is called once per frame
