@@ -14,14 +14,35 @@ public class UnistiListic : MonoBehaviour
         }
         else if (collision.collider.gameObject.name.Contains("Listic"))
         {
-            float ubrzanje = 1.01f;
+            float ubrzanje = 1.2f;
             bool obicni = collision.collider.gameObject.tag.Contains("OListic");
             Destroy(collision.collider.gameObject);
-            MovementScript.Brzina += 0.1f;
-            ListicBehavior.Brzina += 0.1f;
-            if (SpawnEnemy.CooldownAmount > 2) SpawnEnemy.CooldownAmount /= ubrzanje ;
-            if (SpawnScript.Sekunde > 2) SpawnScript.Sekunde /= ubrzanje;
-            ubrzanje = ubrzanje * 1.01f;
+            if (MovementScript.Brzina < 10)
+            {
+                MovementScript.Brzina += 0.2f;
+                ListicBehavior.Brzina += 0.2f;
+            }
+            else
+            {
+                MovementScript.Brzina += 0.05f;
+                ListicBehavior.Brzina += 0.05f;
+            }
+            if (MovementScript.Brzina < 10)
+            {
+                SpawnEnemy.CooldownAmount = Random.Range(0.7f, 2f);
+                SpawnScript.Sekunde = Random.Range(1, 2f);
+            }
+            else if (MovementScript.Brzina < 30)
+            {
+                SpawnEnemy.CooldownAmount = Random.Range(0.2f, 0.8f);
+                SpawnScript.Sekunde = Random.Range(0.2f, 0.8f);
+            }
+            else
+            {
+                SpawnEnemy.CooldownAmount = Random.Range(0.1f, 0.3f);
+                SpawnScript.Sekunde = Random.Range(0.1f, 0.3f);
+            }
+            ubrzanje = ubrzanje * 2f;
             if (obicni)
             {
                 JumpingScript.Observer.Update1(JumpingScript.S);

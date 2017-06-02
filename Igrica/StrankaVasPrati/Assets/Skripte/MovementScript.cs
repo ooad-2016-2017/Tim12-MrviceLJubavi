@@ -20,9 +20,6 @@ public class MovementScript : MonoBehaviour {
         }
     }
 
-    //[SerializeField]
-    //private float brzina;
-
     void Start () {
 
 	}
@@ -34,8 +31,6 @@ public class MovementScript : MonoBehaviour {
 
     void HandleMovement()
     {
-        //stickman.velocity = new Vector2(1*povecaj, 0);
-        //povecaj = stickman.velocity.x;
         transform.position = transform.position - new Vector3(Brzina * Time.deltaTime, 0, 0);
     }
 }

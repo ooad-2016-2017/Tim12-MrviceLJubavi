@@ -24,5 +24,10 @@ public class GameOverScript : MonoBehaviour {
     public void Ponovi()
     {
         SceneManager.LoadScene("MainMenu");
+        JumpingScript.S.Score = 0;
+        MovementScript.Brzina=1.01f;
+        ListicBehavior.Brzina=1.01f;
+        SpawnEnemy.CooldownAmount = 10;
+        SpawnScript.Sekunde = 5;
     }
 }
