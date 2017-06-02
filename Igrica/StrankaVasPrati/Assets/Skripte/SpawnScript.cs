@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpawnScript : MonoBehaviour {
 
     //ListicFactory factory;
-    public GameObject listic;
+    public GameObject[] listic;
     public Vector3 vektor;
     int izbor;
     static float sekunde = 5;
@@ -69,8 +69,8 @@ public class SpawnScript : MonoBehaviour {
             GameObject m;
             if (izbor == 0)
             {
-                m = Instantiate(listic, pozicija + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
-                m.GetComponent<Renderer>().material.SetColor("Gray", Color.gray);
+                m = Instantiate(listic[0], pozicija + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
+                //m.GetComponent<Renderer>().material.SetColor("Gray", Color.gray);
                 //obicni
                 /*
                 if (listici.ContainsKey("obicni"))
@@ -87,8 +87,8 @@ public class SpawnScript : MonoBehaviour {
             {
                 if (listic != null)
                 {
-                    m = (GameObject)Instantiate(listic, pozicija + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
-                    m.GetComponent<Renderer>().material.SetColor("Yellow", Color.yellow);
+                    m = (GameObject)Instantiate(listic[1], pozicija + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
+                    //m.GetComponent<Renderer>().material.SetColor("Yellow", Color.yellow);
                 }
                 //zlatni
                 /*

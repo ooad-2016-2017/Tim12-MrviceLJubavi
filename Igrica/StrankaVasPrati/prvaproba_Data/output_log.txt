@@ -2,29 +2,30 @@ Initialize engine version: 5.6.1f1 (2860b30f0b54)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: AMD Radeon HD 6800 Series (ID=0x6739)
-    Vendor:   ATI
-    VRAM:     1015 MB
-    Driver:   15.201.1151.1008
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     912 MB
+    Driver:   10.18.10.4358
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.026 seconds
-Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.055 seconds
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\System.dll (this message is harmless)
+desktop: 1600x900 40Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.301037 ms
+UnloadTime: 3.439279 ms
 ArgumentException: The scene is invalid.
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
@@ -34,13 +35,13 @@ ArgumentException: The scene is invalid.
 (Filename:  Line: -1)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.974272 ms
+UnloadTime: 20.428211 ms
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 385.
-Total: 0.283690 ms (FindLiveObjects: 0.039381 ms CreateObjectMapping: 0.029535 ms MarkObjects: 0.185966 ms  DeleteObjects: 0.027712 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 410.
+Total: 2.204760 ms (FindLiveObjects: 0.067810 ms CreateObjectMapping: 0.077707 ms MarkObjects: 2.011958 ms  DeleteObjects: 0.045451 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.438872 ms
+UnloadTime: 2.316555 ms
 ArgumentException: The scene is invalid.
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
@@ -50,9 +51,9 @@ ArgumentException: The scene is invalid.
 (Filename:  Line: -1)
 
 
-Unloading 87 unused Assets to reduce memory usage. Loaded Objects now: 291.
-Total: 0.476585 ms (FindLiveObjects: 0.026618 ms CreateObjectMapping: 0.021149 ms MarkObjects: 0.206386 ms  DeleteObjects: 0.221701 ms)
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 292.
+Total: 0.958511 ms (FindLiveObjects: 0.054981 ms CreateObjectMapping: 0.059013 ms MarkObjects: 0.527822 ms  DeleteObjects: 0.314860 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 39b4 -> priority: 1 
-  Thread -> id: 42e8 -> priority: 1 
+  Thread -> id: 347c -> priority: 1 
+  Thread -> id: 3cc -> priority: 1 

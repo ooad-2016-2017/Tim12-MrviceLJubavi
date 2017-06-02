@@ -14,14 +14,14 @@ public class UnistiListic : MonoBehaviour
         }
         else if (collision.collider.gameObject.name.Contains("Listic"))
         {
+            float ubrzanje = 1.01f;
+            bool obicni = collision.collider.gameObject.tag.Contains("OListic");
             Destroy(collision.collider.gameObject);
-            bool obicni = true;
-            //ovo ne radi, baca grešku
-            //obicni=gameObject.GetComponent<Renderer>().material.GetColor("Gray") == Color.gray;
             MovementScript.Brzina += 0.1f;
             ListicBehavior.Brzina += 0.1f;
-            if (SpawnEnemy.CooldownAmount > 2) SpawnEnemy.CooldownAmount /= 2;
-            if (SpawnScript.Sekunde > 2) SpawnScript.Sekunde /= 2;
+            if (SpawnEnemy.CooldownAmount > 2) SpawnEnemy.CooldownAmount /= ubrzanje ;
+            if (SpawnScript.Sekunde > 2) SpawnScript.Sekunde /= ubrzanje;
+            ubrzanje = ubrzanje * 1.01f;
             if (obicni)
             {
                 JumpingScript.Observer.Update1(JumpingScript.S);

@@ -55,6 +55,7 @@
      <Compile Include="Assets\Skripte\ListicBehavior.cs" />
      <Compile Include="Assets\Skripte\MainMenuScript.cs" />
      <Compile Include="Assets\Skripte\MovementScript.cs" />
+     <Compile Include="Assets\Skripte\SmanjiIgracaScript.cs" />
      <Compile Include="Assets\Skripte\SpawnEnemy.cs" />
      <Compile Include="Assets\Skripte\SpawnScript.cs" />
      <Compile Include="Assets\Skripte\UnistiListic.cs" />
