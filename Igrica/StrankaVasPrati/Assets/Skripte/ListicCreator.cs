@@ -41,7 +41,6 @@ public class ListicCreator : MonoBehaviour {
                 return listici[boja];
             } else
             {
-                
                 listici.Add(boja, new GameObject()); //provjeri kako se tacno kreira instanca objekta sa nekom bojom, tj Material
                 return listici[boja];
             }

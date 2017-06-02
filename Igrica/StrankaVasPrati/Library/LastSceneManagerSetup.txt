@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/GameOverMenu.unity
+- path: Assets/StrankaVasPrati.unity
   isLoaded: 1
   isActive: 1

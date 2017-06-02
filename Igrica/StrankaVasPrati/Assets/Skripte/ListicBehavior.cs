@@ -17,11 +17,12 @@ public class ListicBehavior : MonoBehaviour {
 
     void onCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.tag == "Stickman")
+        if (collision.collider.gameObject.tag == "AE" || collision.collider.gameObject.tag == "EE" || collision.collider.gameObject.tag == "TK" || collision.collider.gameObject.tag == "RI")
         {
             Destroy(gameObject);
             //provjeriti da li je zlatni listic ili obicni i povecati score ovdje
             //nisam uspjela skontati kako trebaš provjeriti koje je vrste listić, pa kad to središ samo ubaci provjeru:
+            
             if (true)
             {
                 JumpingScript.Observer.Update1(JumpingScript.S);
