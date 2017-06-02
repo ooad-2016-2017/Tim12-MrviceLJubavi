@@ -227,24 +227,11 @@ namespace GlasajBa.ViewModel
             {
                 NavigationService.Navigate(typeof(Informacije), this);
             }
-            /*
+            
             public void idiNaTwitter(object o)
             {
-                //ucitaj twitter
-                string sURL = @"https://twitter.com/glasaj_ba";
-
-                try
-                {
-                    Uri webURL = new Uri(sURL);
-                    // ctlBowser.Navigate(webURL); webview
-
-                }
-                catch (Exception)
-                {
-                    //greska pri otvaranju
-                }
-                
-            }*/
+                NavigationService.Navigate(typeof(PregledajTwitter), this);
+            }
 
             public void otvoriStranke(object o)
             {
@@ -312,7 +299,7 @@ namespace GlasajBa.ViewModel
                 PretraziKandidate = new RelayCommand<object>(pretraziKandidata, jeLiMoguce);
                 PronalazakBM = new RelayCommand<object>(nadjiBM, jeLiMoguce);
                 ZaSlijepeISlabovidne = new RelayCommand<object>(slijepi, jeLiMoguce);
-               // PregledTwittera = new RelayCommand<object>(pretraziKandidata, jeLiMoguce);
+                PregledTwittera = new RelayCommand<object>(idiNaTwitter, jeLiMoguce);
                 Glasaj = new RelayCommand<object>(glasaj, jeLiMoguce);
             }
             

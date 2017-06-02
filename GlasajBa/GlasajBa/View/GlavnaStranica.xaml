@@ -118,8 +118,6 @@
             <Image x:Name="image2" Source="ms-appx:///Assets/blind-walking.png" HorizontalAlignment="Left" Height="41" Width="41"  Margin="1166,15,53,14" VerticalAlignment="Center" />
        --> 
         
-        
-        
         </Grid>
         <Grid x:Name="gridPivota" HorizontalAlignment="Left" Height="654" Margin="10,80,0,0" VerticalAlignment="Top" Width="1260">
             <Grid.ColumnDefinitions>
@@ -135,7 +133,7 @@
                                 <Grid Height="400" Width="Auto">
                                     <TextBlock x:Name="textBlockNaslovTwitter" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="" VerticalAlignment="Top"  FontSize="14.5"  Width="Auto"/>
                                     <RichEditBox x:Name="textBlockNovostTwitter" IsReadOnly="True"  Width="Auto" Height="330"/>
-                                    <Button x:Name="buttonTwitter" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=OstaleFunkcionalnostiViewModel.IdiNaTwitter}" ></Button>
+                                    <Button x:Name="buttonTwitter" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledTwittera}" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>

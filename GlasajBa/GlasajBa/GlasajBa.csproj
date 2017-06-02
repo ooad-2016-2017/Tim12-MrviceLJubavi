@@ -160,6 +160,9 @@
     <Compile Include="View\Informacije.xaml.cs">
       <DependentUpon>Informacije.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PregledajTwitter.xaml.cs">
+      <DependentUpon>PregledajTwitter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pretraga.xaml.cs">
       <DependentUpon>Pretraga.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,9 @@
     </Compile>
     <Compile Include="View\PronalazakBirackogMjesta.xaml.cs">
       <DependentUpon>PronalazakBirackogMjesta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WebViewUC.xaml.cs">
+      <DependentUpon>WebViewUC.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +251,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PregledajTwitter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pretraga.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -258,6 +268,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PronalazakBirackogMjesta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WebViewUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
