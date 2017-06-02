@@ -21,6 +21,12 @@ public class ListicBehavior : MonoBehaviour {
         {
             Destroy(gameObject);
             //provjeriti da li je zlatni listic ili obicni i povecati score ovdje
+            //nisam uspjela skontati kako trebaš provjeriti koje je vrste listić, pa kad to središ samo ubaci provjeru:
+            if (true)
+            {
+                JumpingScript.Observer.Update1(JumpingScript.S);
+            }
+            else JumpingScript.Observer.Update5(JumpingScript.S);
         }
     }
 }

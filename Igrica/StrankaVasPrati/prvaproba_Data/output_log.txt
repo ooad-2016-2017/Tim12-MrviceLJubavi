@@ -17,14 +17,14 @@ Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prv
 Loading C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.194 seconds
+- Completed reload, in  0.144 seconds
 Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Emsel\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\prvaproba_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.327992 ms
+UnloadTime: 1.291921 ms
 ArgumentException: The scene is invalid.
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
@@ -33,6 +33,12 @@ ArgumentException: The scene is invalid.
  
 (Filename:  Line: -1)
 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.534360 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 308.
+Total: 0.299734 ms (FindLiveObjects: 0.028806 ms CreateObjectMapping: 0.084596 ms MarkObjects: 0.160441 ms  DeleteObjects: 0.025160 ms)
+
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1138 -> priority: 1 
-  Thread -> id: 3930 -> priority: 1 
+  Thread -> id: 3464 -> priority: 1 
+  Thread -> id: 33c8 -> priority: 1 
