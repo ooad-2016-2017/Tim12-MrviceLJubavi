@@ -216,12 +216,12 @@ namespace GlasajBa.ViewModel
 
                      */
             #endregion
-/*
+
             public void nadjiBM(object o)
             {
                 NavigationService.Navigate(typeof(PronalazakBirackogMjesta), new GpsViewModel(new Windows.UI.Xaml.Controls.Maps.MapControl()));
                 //((Frame)Window.Current.Content).Navigate(typeof(PronalazakBirackogMjesta), null);
-            }*/
+            }
 
             public void otvoriNovost(object parametar)
             {
@@ -310,8 +310,8 @@ namespace GlasajBa.ViewModel
                 PregledHistorije = new RelayCommand<object>(otvoriHistoriju, jeLiMoguce);
                 RegistrujSe = new RelayCommand<object>(registruj, jeLiMoguce);
                 PretraziKandidate = new RelayCommand<object>(pretraziKandidata, jeLiMoguce);
-               // PronalazakBM = new RelayCommand<object>(pretraziKandidata, jeLiMoguce);
-                //ZaSlijepeISlabovidne = new RelayCommand<object>(pretraziKandidata, jeLiMoguce);
+                PronalazakBM = new RelayCommand<object>(nadjiBM, jeLiMoguce);
+                ZaSlijepeISlabovidne = new RelayCommand<object>(slijepi, jeLiMoguce);
                // PregledTwittera = new RelayCommand<object>(pretraziKandidata, jeLiMoguce);
                 Glasaj = new RelayCommand<object>(glasaj, jeLiMoguce);
             }

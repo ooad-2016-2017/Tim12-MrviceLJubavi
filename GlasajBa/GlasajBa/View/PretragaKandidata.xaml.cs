@@ -35,7 +35,7 @@ namespace GlasajBa.View
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DataContext = new GlasanjeViewModel((OstaleFunkcionalnostiViewModel)e.Parameter);
+            DataContext = (GlasanjeViewModel)e.Parameter;
         }
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {

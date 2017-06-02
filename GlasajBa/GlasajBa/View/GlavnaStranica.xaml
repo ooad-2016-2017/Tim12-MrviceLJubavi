@@ -103,10 +103,23 @@
         <Image Source="ms-appx:///Slike/zastavaGlasanje.jpg" Stretch="Fill" Opacity="0.5"/>
 
         <Grid x:Name="naslov" HorizontalAlignment="Left" Height="70" Margin="10,15,0,0" VerticalAlignment="Top" Width="1260">
-
+            <Button x:Name="buttonAdmin" HorizontalAlignment="Left" VerticalAlignment="Center" Width="45" Height="45" Command="{Binding Path=RegistrujSe}">
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Image x:Name="slika1" Source="ms-appx:///Assets/user.png"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="buttonSlijepi" HorizontalAlignment="Left" VerticalAlignment="Center" Width="45" Height="45" Margin="50,0,0,0" Command="{Binding Path=ZaSlijepeISlabovidne}">
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Image x:Name="slika2" Source="ms-appx:///Assets/blind-walking.png"/>
+                </StackPanel>
+            </Button>
             <TextBlock x:Name="textBlock" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Glasaj.ba" Width="189" FontSize="45" />
-            <Image x:Name="image1" Source="ms-appx:///Assets/user.png"  HorizontalAlignment="Left" Height="41" Margin="1209,0,0,0" VerticalAlignment="Center" Width="41" />
+            <!--<Image x:Name="image1" Source="ms-appx:///Assets/user.png"  HorizontalAlignment="Left" Height="41" Margin="1209,0,0,0" VerticalAlignment="Center" Width="41" />
             <Image x:Name="image2" Source="ms-appx:///Assets/blind-walking.png" HorizontalAlignment="Left" Height="41" Width="41"  Margin="1166,15,53,14" VerticalAlignment="Center" />
+       --> 
+        
+        
+        
         </Grid>
         <Grid x:Name="gridPivota" HorizontalAlignment="Left" Height="654" Margin="10,80,0,0" VerticalAlignment="Top" Width="1260">
             <Grid.ColumnDefinitions>
