@@ -6,8 +6,10 @@ using GlasajBa.ViewModel.GlasajBa.ViewModel;
 using System;
 //using System.TwitterSharp;
 using System.Collections.Generic;
+using System.Net;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Input;
+using TweetSharp;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
@@ -494,7 +496,7 @@ namespace GlasajBa.ViewModel
 
         }
 
-        public void dodajTweet(string s)
+        public async void dodajTweet(string s)
         {
             string[] t = s.Split(':');
             if (s.Length>140)
@@ -527,13 +529,13 @@ namespace GlasajBa.ViewModel
 
 
 
-            //TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
-            /*service.sendTweet(new SendTweerOptions { Status = s }, (tweet, response) =>
+            //TweetSharp.TwitterService service = new TweetSharp.TwitterService(costumerKey, cosumerKeySecret);
+
+            //service.SendTweet(new SendTweetOptions { Status = s }, (tweet, response) =>
 
             //ovo je zakomentarisano jer javlja error
-            /*TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
-            service.sendTweet(new SendTweerOptions { Status = s }, (tweet, response) =>
->>>>>>> db83ec053592927ce5e0c7816305cbd5530da344
+            TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
+            service.SendTweet(new SendTweetOptions { Status = s }, (tweet, response) =>
             {
                 if (response.StatusCode==HttpStatusCode.OK)
                 {
@@ -544,7 +546,7 @@ namespace GlasajBa.ViewModel
                     var dialog = new MessageDialog("Tweet nije uspjesno objavljen!");
                     dialog.Title = "Twitter";
                 }
-            });*/
+            });
         }
     }
 }

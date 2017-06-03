@@ -2,11 +2,13 @@
   "dependencies": {
     "EntityFramework.Commands": "7.0.0-beta6",
     "EntityFramework.SQLite": "7.0.0-beta6",
+    "Microsoft.Azure.Mobile.Client": "4.0.0-alpha-001",
     "Microsoft.CodeAnalysis.CSharp": "1.0.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Microsoft.Toolkit.Uwp.Services": "1.4.1",
     "Prism.Core": "6.3.0",
-    "Prism.Windows": "6.3.0"
+    "Prism.Windows": "6.3.0",
+    "TweetMoaSharp": "4.0.1"
   },
   "frameworks": {
     "uap10.0": {}
