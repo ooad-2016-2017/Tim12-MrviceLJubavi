@@ -24,10 +24,11 @@ namespace GlasajBa.View
     /// </summary>
     public sealed partial class AdminLogin : Page
     {
+        AdministratorViewModel admin;
         public AdminLogin()
         {
             this.InitializeComponent();
-            this.DataContext = new AdministratorViewModel();
+            this.DataContext = admin;
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;

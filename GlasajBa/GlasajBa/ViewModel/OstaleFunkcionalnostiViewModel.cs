@@ -251,7 +251,7 @@ namespace GlasajBa.ViewModel
 
             public void registruj(object o)
             {
-                NavigationService.Navigate(typeof(AdminLogin), new AdministratorViewModel());
+                NavigationService.Navigate(typeof(AdminLogin), new AdministratorViewModel(this));
             }
 
             public void otvoriStatistiku(object o)

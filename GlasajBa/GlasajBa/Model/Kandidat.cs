@@ -20,7 +20,7 @@ namespace GlasajBa.Model
         static int idBroj = 0;
         int id;
         public Kandidat() { }
-
+        /*
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string PropertyName)
@@ -29,7 +29,7 @@ namespace GlasajBa.Model
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
             }
-        }
+        }*/
 
         [Required(ErrorMessage ="Morate odabrati stranku!")]
         public Stranka Stranka

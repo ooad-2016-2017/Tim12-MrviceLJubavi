@@ -6,7 +6,12 @@ using GlasajBa.ViewModel.GlasajBa.ViewModel;
 using System;
 //using System.TwitterSharp;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Data.Common;
+using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Input;
 using TweetSharp;
@@ -18,6 +23,7 @@ namespace GlasajBa.ViewModel
 {
     class AdministratorViewModel : ITwitter 
     {
+        #region Icommande i get i set
 
         ICommand dodavanjeKandidata; //
         ICommand izmjenaKandidata; //
@@ -29,21 +35,7 @@ namespace GlasajBa.ViewModel
         ICommand BrisanjeNovosti { get; set; } //
         ICommand PretragaNovosti { get; set; } //
         ICommand Odjava { get; set; } //
-        ICommand UcitajSliku { get; set; }
-        public static byte[] uploadSlika = null;
-
-        public OstaleFunkcionalnostiViewModel Parent { get; set; }
-        INavigationService INS { get; set; }
-
-        public Novost NovaNovost { get; set; }
-        public static Kandidat NoviKandidat { get; set; }
-        public String AdminIme { get; set; }
-        public String AdminSifra { get; set; }
-        public GlasackiSistem Sistem { get; set; }
-        public String PoljePretrageKandidata { get; set; }
-        public String PoljePretrageNovosti { get; set; }
-        public List<Kandidat> ListaKandidata { get; set; }
-        public List<Novost> ListaNovosti { get; set; }
+        ICommand UcitajSliku { get; set; } //
 
         public ICommand DodavanjeKandidata
         {
@@ -110,13 +102,31 @@ namespace GlasajBa.ViewModel
             }
         }
 
-        public AdministratorViewModel()
+        #endregion
+
+        #region atributi
+        public OstaleFunkcionalnostiViewModel Parent { get; set; }
+        INavigationService INS { get; set; }
+        public static byte[] uploadSlika = null;
+        public Novost NovaNovost { get; set; }
+        public static Kandidat NoviKandidat { get; set; }
+        public String AdminIme { get; set; }
+        public String AdminSifra { get; set; }
+        public GlasackiSistem Sistem { get; set; }
+        public String PoljePretrageKandidata { get; set; }
+        public String PoljePretrageNovosti { get; set; }
+        public List<Kandidat> ListaKandidata { get; set; }
+        public List<Novost> ListaNovosti { get; set; }
+
+        #endregion
+
+        public AdministratorViewModel(OstaleFunkcionalnostiViewModel p)
         {
 
             NovaNovost = new Novost(DateTime.Today, null, "", "");
             NoviKandidat = new Kandidat();
             this.Sistem = new GlasackiSistem();
-            Parent = new OstaleFunkcionalnostiViewModel();
+            Parent = p;
             this.Sistem = Parent.Sistem;
 
             ListaKandidata = new List<Kandidat>();
@@ -133,15 +143,17 @@ namespace GlasajBa.ViewModel
             PretragaNovosti = new RelayCommand<object>(nadjiNovosti, boolDodaj);
             PretragaKandidata = new RelayCommand<object>(nadjiKandidate, boolDodaj);
             UcitajSliku = new RelayCommand<object>(dodajSliku, boolDodaj);
-
+            NoviKandidat.ErrorsChanged += Vm_ErrorsChanged;
         }
 
+        #region metode
         public bool potvrdi(Object o)
         {
             if (AdminIme == "admin" && AdminSifra == "mrviceljubavi")
             {
                 return true;
             }
+            var dialog = new MessageDialog("Neispravni pristupni podaci!");
             return false;
         }
 
@@ -421,7 +433,7 @@ namespace GlasajBa.ViewModel
 
         public void odjava(Object o)
         {
-            //Navigate na pocetnu
+            INS.Navigate(typeof(GlavnaStranica), Parent);
         }
 
         public void nadjiNovosti(Object o)
@@ -496,7 +508,7 @@ namespace GlasajBa.ViewModel
 
         }
 
-        public async void dodajTweet(string s)
+        public void dodajTweet(string s)
         {
             string[] t = s.Split(':');
             if (s.Length>140)
@@ -525,15 +537,6 @@ namespace GlasajBa.ViewModel
             string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";
             string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
 
-
-
-
-
-            //TweetSharp.TwitterService service = new TweetSharp.TwitterService(costumerKey, cosumerKeySecret);
-
-            //service.SendTweet(new SendTweetOptions { Status = s }, (tweet, response) =>
-
-            //ovo je zakomentarisano jer javlja error
             TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
             service.SendTweet(new SendTweetOptions { Status = s }, (tweet, response) =>
             {
@@ -548,5 +551,32 @@ namespace GlasajBa.ViewModel
                 }
             });
         }
+
+        #endregion
+
+        #region dodatno
+        private void Vm_ErrorsChanged(object sender, System.ComponentModel.DataErrorsChangedEventArgs e)
+
+        {
+
+
+            Erori = new ObservableCollection<string>(NoviKandidat.Errors.Errors.Values.SelectMany(x => x).ToList());
+
+        }
+
+        private ObservableCollection<string> erori;
+
+        public ObservableCollection<string> Erori { get { return erori; } set { erori = value; OnNotifyPropertyChanged("Erori"); } }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")
+
+        {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
+
+        }
+        #endregion
     }
 }

@@ -57,8 +57,8 @@ namespace GlasajBa.Model
                 SetProperty(ref datRodjenja, value);
             }
         }
-        string licnaKarta;
-        [Required(ErrorMessage = "Niste unijeli broj lične karte")]
+        string licnaKarta; //\d\d\d[A-Z]\d\d\d\d\d
+        [Required(ErrorMessage = "Niste unijeli broj lične karte"), RegularExpression(@"\d\d\d[A-Z]\d\d\d\d\d", ErrorMessage = "Neispravan format licne karte!")]
         public string LicnaKarta
         {
             get
@@ -75,7 +75,7 @@ namespace GlasajBa.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         string JMBG;
-        [Required(ErrorMessage = "Niste unijeli matični broj")]
+        [Required(ErrorMessage = "Niste unijeli matični broj"), RegularExpression(@"\d{13}", ErrorMessage = "JMBG je 13 cifara!")]
         public string JMBG1
         {
             get
