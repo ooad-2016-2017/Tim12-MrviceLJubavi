@@ -8,8 +8,8 @@
     mc:Ignorable="d" Width="213.038" Height="256.101">
 
     <Grid>
-        <Image x:Name="slikaUC" HorizontalAlignment="Left" Height="190" Margin="19,10,0,0" VerticalAlignment="Top" Width="173"/>
-        <Button x:Name="dugmeUC" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="60,214,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="slikaUC" HorizontalAlignment="Left" Height="190" Margin="19,10,0,0" VerticalAlignment="Top" Width="173" Loaded="slikaUC_Loaded"/>
+        <Button x:Name="dugmeUC" Content="Učitaj sliku..." HorizontalAlignment="Left" Margin="60,214,0,0" VerticalAlignment="Top" Click="dugmeUC_Click"/>
 
     </Grid>
 </UserControl>

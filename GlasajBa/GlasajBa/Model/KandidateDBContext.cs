@@ -16,7 +16,7 @@ namespace GlasajBa.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string databaseFilePath = "GlasajBABaza.db";
+            string databaseFilePath = "Ooadbaza.db";
             try
             {
                 databaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, databaseFilePath);

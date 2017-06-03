@@ -27,7 +27,7 @@ namespace GlasajBa.View
         public AdminLogin()
         {
             this.InitializeComponent();
-
+            this.DataContext = new AdministratorViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;

@@ -19,6 +19,34 @@ namespace GlasajBa.Model
                         Ukratko="Stranka za bolju ocjenu! Zalazemo se za 30b na projektu!"
                     }
                     );
+                context.Stranke.AddRange(
+                    new Stranka()
+                    {
+                        Naziv = "RI",
+                        Ukratko = "RI nije kurs!"
+                    }
+                    );
+                context.Stranke.AddRange(
+                    new Stranka()
+                    {
+                        Naziv = "AE",
+                        Ukratko = "AE kurs!"
+                    }
+                    );
+                context.Stranke.AddRange(
+                    new Stranka()
+                    {
+                        Naziv = "TK",
+                        Ukratko = "Telekomunikacije"
+                    }
+                    );
+                context.Stranke.AddRange(
+                    new Stranka()
+                    {
+                        Naziv = "EE",
+                        Ukratko = "Energeticari"
+                    }
+                    );
                 context.SaveChanges();
             }
         }

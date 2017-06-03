@@ -28,13 +28,13 @@ namespace GlasajBa.ViewModel
         ICommand PretragaNovosti { get; set; } //
         ICommand Odjava { get; set; } //
         ICommand UcitajSliku { get; set; }
-        byte[] uploadSlika = null;
+        public static byte[] uploadSlika = null;
 
         public OstaleFunkcionalnostiViewModel Parent { get; set; }
         INavigationService INS { get; set; }
 
         public Novost NovaNovost { get; set; }
-        public Kandidat NoviKandidat { get; set; }
+        public static Kandidat NoviKandidat { get; set; }
         public String AdminIme { get; set; }
         public String AdminSifra { get; set; }
         public GlasackiSistem Sistem { get; set; }
@@ -155,6 +155,9 @@ namespace GlasajBa.ViewModel
 
         public void dodajKandidata(Object o)
         {
+            uploadSlika = UserControls.ImageAndButton.uploadSlika;
+            //Image x = (Bitmap)((new ImageConverter()).ConvertFrom(jpegByteArray));
+            //NoviKandidat.Slika = ;
             NoviKandidat.DrzavaBoravka = "Bosna i Hercegovina";
             //dodati kandidata
             if (NoviKandidat.Pozicija == "Opcina")
