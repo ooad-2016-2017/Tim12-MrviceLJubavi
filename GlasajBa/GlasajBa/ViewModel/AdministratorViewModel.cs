@@ -25,82 +25,17 @@ namespace GlasajBa.ViewModel
     {
         #region Icommande i get i set
 
-        ICommand dodavanjeKandidata; //
-        ICommand izmjenaKandidata; //
-        ICommand brisanjeKandidata; //
-        ICommand login; //
-        ICommand pretragaKandidata; //
+        ICommand DodavanjeKandidata { get; set; } //
+        ICommand IzmjenaKandidata { get; set; } //
+        ICommand BrisanjeKandidata { get; set; } //
+        ICommand Login { get; set; } //
+        ICommand PretragaKandidata { get; set; } //
         ICommand DodavanjeNovosti { get; set; } //
         ICommand IzmjenaNovosti { get; set; } //
         ICommand BrisanjeNovosti { get; set; } //
         ICommand PretragaNovosti { get; set; } //
         ICommand Odjava { get; set; } //
         ICommand UcitajSliku { get; set; } //
-
-        public ICommand DodavanjeKandidata
-        {
-            get
-            {
-                return dodavanjeKandidata;
-            }
-
-            set
-            {
-                dodavanjeKandidata = value;
-            }
-        }
-
-        public ICommand IzmjenaKandidata
-        {
-            get
-            {
-                return izmjenaKandidata;
-            }
-
-            set
-            {
-                izmjenaKandidata = value;
-            }
-        }
-
-        public ICommand BrisanjeKandidata
-        {
-            get
-            {
-                return brisanjeKandidata;
-            }
-
-            set
-            {
-                brisanjeKandidata = value;
-            }
-        }
-
-        public ICommand Login
-        {
-            get
-            {
-                return login;
-            }
-
-            set
-            {
-                login = value;
-            }
-        }
-
-        public ICommand PretragaKandidata
-        {
-            get
-            {
-                return pretragaKandidata;
-            }
-
-            set
-            {
-                pretragaKandidata = value;
-            }
-        }
 
         #endregion
 
