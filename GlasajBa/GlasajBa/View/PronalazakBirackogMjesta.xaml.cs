@@ -8,10 +8,12 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using GlasajBa.ViewModel;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -26,11 +28,12 @@ namespace GlasajBa.View
         public PronalazakBirackogMjesta()
         {
             this.InitializeComponent();
-            this.DataContext = new GpsViewModel(Mapa);
+            
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DataContext = (GlasanjeViewModel)e.Parameter;
+            ((GlasanjeViewModel)DataContext).map = Mapa;
         }
     }
 }

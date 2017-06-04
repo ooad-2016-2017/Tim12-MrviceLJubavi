@@ -219,7 +219,7 @@ namespace GlasajBa.ViewModel
 
             public void nadjiBM(object o)
             {
-                NavigationService.Navigate(typeof(PronalazakBirackogMjesta), new GpsViewModel(new Windows.UI.Xaml.Controls.Maps.MapControl()));
+                NavigationService.Navigate(typeof(PronalazakBirackogMjesta), new GlasanjeViewModel(this));
                 //((Frame)Window.Current.Content).Navigate(typeof(PronalazakBirackogMjesta), null);
             }
 

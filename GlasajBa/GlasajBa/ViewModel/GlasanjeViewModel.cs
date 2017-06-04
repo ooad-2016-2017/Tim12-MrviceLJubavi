@@ -6,12 +6,16 @@ using GlasajBa.ViewModel.GlasajBa.ViewModel;
 using Microsoft.Data.Entity;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 
 namespace GlasajBa.ViewModel
 {
@@ -25,25 +29,27 @@ namespace GlasajBa.ViewModel
     {
         string napraviAnalizu();
     }
-    class GlasanjeViewModel : Baza, Analiza, ITwitter
+    class GlasanjeViewModel : Baza, Analiza, ITwitter, INotifyPropertyChanged
 
     {
         public OstaleFunkcionalnostiViewModel Parent { get; set; }
-        Glasac glasac;
-        Kandidat kandidat;
-        Ulica ulica;
+        Glasac glasac=new Glasac();
+        Kandidat kandidat=new Kandidat();
+        Ulica ulica=new Ulica();
+        Osoba osoba=new Osoba();
         GpsViewModel gps;
+        public MapControl map { get; set; }
         int godineMin, godineMax;
-        ICommand Glasanje { get; set; }
-        ICommand PrelazakNaOpcinu { get; set; }
-        ICommand PrelazakNaKanton { get; set; }
-        ICommand PrelazakNaEntitet { get; set; }
-        ICommand PrelazakNaDrzavu { get; set; }
-        ICommand PovratakNaGlavnu { get; set; }
-        ICommand PretragaKandidata { get; set; }
-        ICommand PronalazakBirackogMjesta { get; set; }
-        ICommand GlasanjeNaBirackomMjestu { get; set; }
-        NavigationService NavigationService { get; set; }
+        public ICommand Glasanje { get; set; }
+        public ICommand PrelazakNaOpcinu { get; set; }
+        public ICommand PrelazakNaKanton { get; set; }
+        public ICommand PrelazakNaEntitet { get; set; }
+        public ICommand PrelazakNaDrzavu { get; set; }
+        public ICommand PovratakNaGlavnu { get; set; }
+        public ICommand PretragaKandidata { get; set; }
+        public ICommand PronalazakBirackogMjesta { get; set; }
+        public ICommand GlasanjeNaBirackomMjestu { get; set; }
+        public INavigationService NavigationService { get; set; }
         public Glasac Glasac
         {
             get
@@ -122,37 +128,91 @@ namespace GlasajBa.ViewModel
             }
         }
 
+        public Osoba Osoba
+        {
+            get
+            {
+                return osoba;
+            }
+
+            set
+            {
+                osoba = value;
+            }
+        }
+
+        public ObservableCollection<string> Erori
+        {
+            get
+            {
+                return erori;
+            }
+
+            set
+            {
+                erori = value;
+                OnNotifyPropertyChanged("Erori");
+            }
+        }
+
+        public MapControl Map
+        {
+            get
+            {
+                return map;
+            }
+
+            set
+            {
+                map = value;
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
+        }
         List<Kandidat> listaKandidata;
         List<Kandidat> rezultatiPretrage = new List<Kandidat>();
         public GlasanjeViewModel(OstaleFunkcionalnostiViewModel parent)
         {
             this.Parent = parent;
+            if (map!=null) gps = new GpsViewModel(map);
             ListaKandidata = new List<Kandidat>();
             ListaKandidata =  Parent.Sistem.KandidatiO;
-            //NavigationService = new NavigationService();
+            NavigationService = new NavigationService();
             Glasanje = new RelayCommand<object>(glasanje, jeLiIzborniDan);
             PrelazakNaOpcinu = new RelayCommand<object>(prediNaOpcinu, jeLiIzborniDan);
             PrelazakNaKanton = new RelayCommand<object>(prediNaKanton, jeLiIzborniDan);
             PrelazakNaEntitet = new RelayCommand<object>(prediNaEntitet, jeLiIzborniDan);
             PrelazakNaDrzavu = new RelayCommand<object>(prediNaDrzavu, jeLiIzborniDan);
             PretragaKandidata = new RelayCommand<object>(pretragaKandidata, jeLiMogucaPretraga);
-            PovratakNaGlavnu = new RelayCommand<object>(vratiSe, jeLiIzborniDan);
+            PovratakNaGlavnu = new RelayCommand<object>(vratiSe, jeLiMogucaPretraga);
             PronalazakBirackogMjesta = new RelayCommand<object>(pronadiBirackoMjesto, jeLiMogucaPretraga);
             GlasanjeNaBirackomMjestu = new RelayCommand<object>(glasajNaBirackomMjestu, jeLiIzborniDan);
-
+            Osoba.ErrorsChanged += Vm_ErrorsChanged;
             if (GlasackiSistem.slijepi)
             {
                 pustiZvuk();
             }
 
         }
+        private void Vm_ErrorsChanged (object sender, System.ComponentModel.DataErrorsChangedEventArgs e)
+        {
+            Erori = new ObservableCollection<string>(Osoba.Errors.Errors.Values.SelectMany(x => x).ToList());
+        }
+        private ObservableCollection<string> erori;
+
         public bool jeLiMogucaPretraga(object parametar)
         {
             return true;
         }
         public bool jeLiIzborniDan(object parametar)
         {
-            return (DateTime.Now > Parent.Sistem.Pocetak && DateTime.Now < Parent.Sistem.Kraj);
+            return true;
+            //ovo ispod je prava metoda ali bind ne radi jer nikad nije izborni dan
+            //return (DateTime.Now > Parent.Sistem.Pocetak && DateTime.Now < Parent.Sistem.Kraj);
         }
         public async void glasanje(object parametar)
         {

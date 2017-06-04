@@ -25,17 +25,17 @@ namespace GlasajBa.ViewModel
     {
         #region Icommande i get i set
 
-        ICommand DodavanjeKandidata { get; set; } //
-        ICommand IzmjenaKandidata { get; set; } //
-        ICommand BrisanjeKandidata { get; set; } //
-        ICommand Login { get; set; } //
-        ICommand PretragaKandidata { get; set; } //
-        ICommand DodavanjeNovosti { get; set; } //
-        ICommand IzmjenaNovosti { get; set; } //
-        ICommand BrisanjeNovosti { get; set; } //
-        ICommand PretragaNovosti { get; set; } //
-        ICommand Odjava { get; set; } //
-        ICommand UcitajSliku { get; set; } //
+        public ICommand DodavanjeKandidata { get; set; } //
+        public ICommand IzmjenaKandidata { get; set; } //
+        public ICommand BrisanjeKandidata { get; set; } //
+        public ICommand Login { get; set; } //
+        public ICommand PretragaKandidata { get; set; } //
+        public ICommand DodavanjeNovosti { get; set; } //
+        public ICommand IzmjenaNovosti { get; set; } //
+        public ICommand BrisanjeNovosti { get; set; } //
+        public ICommand PretragaNovosti { get; set; } //
+        public ICommand Odjava { get; set; } //
+        public ICommand UcitajSliku { get; set; } //
 
         #endregion
 

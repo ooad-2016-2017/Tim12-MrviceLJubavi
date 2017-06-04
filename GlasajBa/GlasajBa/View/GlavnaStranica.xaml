@@ -193,7 +193,7 @@
                     <Grid>
                         <TextBlock x:Name="textBlock1NdjiBM" HorizontalAlignment="Left" Margin="66,52,0,0" TextWrapping="Wrap" Text="Da biste pronašli svoje birački mjesto, kliknite na sljedeće dugme:" VerticalAlignment="Top" Height="43" Width="615" FontSize="20"/>
 
-                        <Button x:Name="buttonNadjiBM" Content="Nađi biračko mjesto" HorizontalAlignment="Left" Margin="678,52,0,0" VerticalAlignment="Top" Height="37" Width="173" Command="{Binding Path=OstaleFunkcionalnostiViewModel.PronalazakBirackogMjesta, Mode=TwoWay}"/>
+                        <Button x:Name="buttonNadjiBM" Content="Nađi biračko mjesto" HorizontalAlignment="Left" Margin="678,52,0,0" VerticalAlignment="Top" Height="37" Width="173" Command="{Binding Path=PronalazakBM, Mode=TwoWay}"/>
                     </Grid>
                 </PivotItem>
                 <PivotItem Header="Online glasanje" >
