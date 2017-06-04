@@ -35,7 +35,7 @@ namespace GlasajBa.ViewModel
             public ICommand PregledStatistike { get; set; }
             public ICommand PregledHistorije { get; set; }
             public ICommand Glasaj { get; set; }
-            
+            static int indikator=0;
             
             GlasackiSistem sistem;
 
@@ -247,6 +247,7 @@ namespace GlasajBa.ViewModel
             {
                 //nije jos u funkciji za slijepe
                 GlasackiSistem.slijepi = true;
+                //treba preci na Glasanje, gdje ce se pustiti zvuk
             }
 
             public void registruj(object o)
@@ -301,6 +302,11 @@ namespace GlasajBa.ViewModel
                 ZaSlijepeISlabovidne = new RelayCommand<object>(slijepi, jeLiMoguce);
                 PregledTwittera = new RelayCommand<object>(idiNaTwitter, jeLiMoguce);
                 Glasaj = new RelayCommand<object>(glasaj, jeLiMoguce);
+                if (indikator==0)
+                {
+                   // pustiZvuk();
+                }
+                indikator = 1;
             }
             
             public ICommand Nazad { get; set; }
@@ -309,8 +315,23 @@ namespace GlasajBa.ViewModel
                 NavigationService.GoBack();
             }
 
-            
 
+            private async void pustiZvuk()
+            {
+                //baca exception, vidjeti zasto
+                try
+                {
+                    MediaElement me = new MediaElement();
+                    Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+                    Windows.Storage.StorageFile file = await folder.GetFileAsync("Uvod.mp3");
+                    var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+                    me.SetSource(stream, file.ContentType);
+                    me.Play();
+                }catch(Exception e)
+                {
+
+                }
+            }
 
 
             /*
