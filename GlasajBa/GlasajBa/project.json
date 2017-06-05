@@ -10,6 +10,7 @@
     "Prism.Windows": "6.3.0",
     "System.Security.SecureString": "4.3.0",
     "TaskThread": "1.1.0",
+    "TweetinviAPI": "1.2.0.1",
     "TweetMoaSharp": "4.0.1"
   },
   "frameworks": {

@@ -4,6 +4,7 @@ using GlasajBa.Model;
 using GlasajBa.View;
 using GlasajBa.ViewModel.GlasajBa.ViewModel;
 using System;
+using System.ServiceModel;
 //using System.TwitterSharp;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,6 +21,7 @@ using TweetSharp;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
+using Tweetinvi;
 
 namespace GlasajBa.ViewModel
 {
@@ -126,7 +128,6 @@ namespace GlasajBa.ViewModel
         public void registrujAdmina(Object o)
         {
             INS.Navigate(typeof(AdminPocetna), this);
-            //baca exception 
         }
 
         public bool boolDodaj(Object o)
@@ -177,6 +178,7 @@ namespace GlasajBa.ViewModel
 
         public void dodajNovost(Object o)
         {
+            //dodajTweet("Proba: Twitter radi!");
             Sistem.Novosti.Add(NovaNovost);
 
             //potrebno dodati kod za dodavanje Novosti u bazu
@@ -504,19 +506,9 @@ namespace GlasajBa.ViewModel
             string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";
             string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
 
-            TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
-            service.SendTweet(new SendTweetOptions { Status = s }, (tweet, response) =>
-            {
-                if (response.StatusCode==HttpStatusCode.OK)
-                {
-                    var dialog = new MessageDialog("Tweet uspjesno objavljen!");
-                    dialog.Title = "Twitter";
-                } else
-                {
-                    var dialog = new MessageDialog("Tweet nije uspjesno objavljen!");
-                    dialog.Title = "Twitter";
-                }
-            });
+            Auth.SetUserCredentials(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
+            var user = User.GetAuthenticatedUser();
+            var tweet = Tweet.PublishTweet(s);
         }
 
         #endregion
