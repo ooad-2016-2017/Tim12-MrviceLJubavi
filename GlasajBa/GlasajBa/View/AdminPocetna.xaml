@@ -528,7 +528,7 @@
                         <ComboBoxItem Content="Kanton"/>
                         <ComboBoxItem Content="Općina"/>
                     </ComboBox>
-                    <ComboBox x:Name="birajstranku1" ItemsSource="{Binding Sistem.Stranke}" DisplayMemberPath="{Binding Stranke.Naziv}" SelectedValue="{Binding NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajstranku1" ItemsSource="{Binding Sistem.Stranke}" DisplayMemberPath="{Binding Naziv}" SelectedValue="{Binding NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisipriznanja1" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272" d:LayoutOverrides="HorizontalAlignment"/>
                     <Button x:Name="dodajkandidata" Command="{Binding DodavanjeKandidata}" Content="Dodaj" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
                     <UserControls:ImageAndButton x:Name="UC1" HorizontalAlignment="Left" Height="296" Margin="932,44,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
@@ -558,7 +558,7 @@
                         <ComboBoxItem Content="Kanton"/>
                         <ComboBoxItem Content="Općina"/>
                     </ComboBox>
-                    <ComboBox x:Name="birajstranku2" ItemsSource="{Binding Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Stranke.Naziv}" SelectedValue="{Binding NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajstranku2" ItemsSource="{Binding Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Naziv}" SelectedValue="{Binding NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisipriznanja2" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272" d:LayoutOverrides="HorizontalAlignment"/>
                     <Button x:Name="izmjenikandidata" Command="{Binding DodavanjeKandidata}" Content="Spasi promjene" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
                     <UserControls:ImageAndButton x:Name="UC2" HorizontalAlignment="Left" Height="296" Margin="932,44,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
@@ -588,7 +588,7 @@
                         <ComboBoxItem Content="Kanton"/>
                         <ComboBoxItem Content="Općina"/>
                     </ComboBox>
-                    <ComboBox x:Name="birajstranku3" ItemsSource="{Binding Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Stranke.Naziv}" SelectedValue="{Binding NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajstranku3" ItemsSource="{Binding Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Naziv}" SelectedValue="{Binding NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisipriznanja3" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272" d:LayoutOverrides="HorizontalAlignment"/>
                     <Button x:Name="obrisikandidata" Command="{Binding DodavanjeKandidata}" Content="Obriši" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
                     <UserControls:ImageAndButton x:Name="UC3" HorizontalAlignment="Left" Height="296" Margin="932,44,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
