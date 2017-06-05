@@ -1,9 +1,11 @@
-﻿using GlasajBa.Helper;
+﻿using GlasajBa.Azure;
+using GlasajBa.Helper;
 using GlasajBa.Interfaces;
 using GlasajBa.Model;
 using GlasajBa.View;
 using GlasajBa.ViewModel.GlasajBa.ViewModel;
 using Microsoft.Data.Entity;
+using Microsoft.WindowsAzure.MobileServices;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,6 +15,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Tweetinvi;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
@@ -236,6 +239,7 @@ namespace GlasajBa.ViewModel
                 dialog.Title = "Informacija";
                 dialog.Commands.Add(new UICommand { Label = "OK", Id = 0 });
                 res = await dialog.ShowAsync();
+                spasiAzure();
                 NavigationService.Navigate(typeof(GlavnaStranica), Parent);
             }
         }
@@ -333,6 +337,7 @@ namespace GlasajBa.ViewModel
         public void dodajTweet(Novost novost)
         {
             //ovo će se naknadno implementirati
+            //implementirano u produzetku
         }
         public string napraviAnalizu()
         {
@@ -346,26 +351,17 @@ namespace GlasajBa.ViewModel
 
         public void dodajTweet(string s)
         {
-            /*s = napraviAnalizu();
+            s = napraviAnalizu();
+
             string costumerKey = "5GpJFJaFR4kC23T6iGDcGG9Uz";
             string cosumerKeySecret = "C5AE21YQOOZwnopuylvZQAuMi0TnVTHEOnhEp0pYCwtoYeqQtR";
             string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";
             string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
 
-           /* TwitterService service = new TwitterService(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
-            service.sendTweet(new SendTweerOptions { Status = s }, (tweet, response) =>
-            {
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    var dialog = new MessageDialog("Tweet uspjesno objavljen!");
-                    dialog.Title = "Twitter";
-                }
-                else
-                {
-                    var dialog = new MessageDialog("Tweet nije uspjesno objavljen!");
-                    dialog.Title = "Twitter";
-                }
-            });*/
+            Auth.SetUserCredentials(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
+            var user = User.GetAuthenticatedUser();
+            var tweet = Tweet.PublishTweet(s);
+
         }
 
         private async void pustiZvuk()
@@ -376,6 +372,28 @@ namespace GlasajBa.ViewModel
             var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
             me.SetSource(stream, file.ContentType);
             me.Play();
+        }
+
+        //za Azure
+        IMobileServiceTable<Glasaci> userT = App.ms.GetTable<Glasaci>();
+        private void spasiAzure()
+        {
+            try
+            {
+                Glasaci t = new Glasaci();
+                t.Ime = glasac.Ime;
+                t.Prezime = glasac.Prezime;
+                t.JMBG = glasac.JMBG1;
+                t.Drzava = glasac.DrzavaBoravka;
+                t.DatumRodjenja = glasac.DatRodjenja;
+                t.LicnaKarta = glasac.LicnaKarta;
+                t.Glasao = glasac.JeLiGlasao;
+                t.NaBirackom = glasac.NaBirackomMjestu;
+                userT.InsertAsync(t);
+            } catch (Exception ex)
+            {
+
+            }
         }
     }
 }

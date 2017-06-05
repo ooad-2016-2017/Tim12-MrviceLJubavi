@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GlasajBa.View;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace GlasajBa
 {
@@ -32,6 +33,8 @@ namespace GlasajBa
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
+
+        public static MobileServiceClient ms = new MobileServiceClient("http://mrviceljubavi.azurewebsites.net");
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
