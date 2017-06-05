@@ -18,6 +18,8 @@ using Windows.UI.Xaml.Input;
 using System.ComponentModel;
 using Windows.Media.Playback;
 using Windows.Media.Core;
+using GlasajBa.Interfaces;
+using Tweetinvi;
 
 namespace GlasajBa.ViewModel
 {  
@@ -38,6 +40,7 @@ namespace GlasajBa.ViewModel
             public ICommand PregledHistorije { get; set; }
             public ICommand Glasaj { get; set; }
             static int indikator=0;
+            public string tweets;
             
             GlasackiSistem sistem;
 
@@ -292,7 +295,7 @@ namespace GlasajBa.ViewModel
             {
                 Sistem = new GlasackiSistem();
                 NavigationService = new NavigationService();
-
+                dodajTweet("");
                 PregledNovosti = new RelayCommand<object>(otvoriNovost, jeLiMoguce);
                 Nazad = new RelayCommand<object>(idiNazad, jeLiMoguce);
                 PregledStatistike = new RelayCommand<object>(otvoriStatistiku, jeLiMoguce);
@@ -342,6 +345,23 @@ namespace GlasajBa.ViewModel
                 catch (Exception e)
                 {
 
+                }
+            }
+
+            public void dodajTweet(string s)
+            {
+                string costumerKey = "5GpJFJaFR4kC23T6iGDcGG9Uz";
+                string cosumerKeySecret = "C5AE21YQOOZwnopuylvZQAuMi0TnVTHEOnhEp0pYCwtoYeqQtR";
+                string accessToken = "843137449496887297-fQFb4dCy36ZuZb3unonItmwuTEFYQd9";
+                string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
+
+                Auth.SetUserCredentials(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
+                var user = User.GetAuthenticatedUser();
+                var tweetss = Timeline.GetUserTimeline(user, 3);
+                foreach (var tm in tweetss)
+                {
+                    tweets += tm;
+                    tweets += "\n";
                 }
             }
 
