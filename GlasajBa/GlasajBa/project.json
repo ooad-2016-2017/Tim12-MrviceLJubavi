@@ -9,6 +9,7 @@
     "Prism.Core": "6.3.0",
     "Prism.Windows": "6.3.0",
     "System.Security.SecureString": "4.3.0",
+    "TaskThread": "1.1.0",
     "TweetMoaSharp": "4.0.1"
   },
   "frameworks": {

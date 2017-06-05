@@ -90,7 +90,7 @@ namespace GlasajBa.ViewModel
 
             ListaKandidata = new List<Kandidat>();
             ListaNovosti = new List<Novost>();
-            //INS!!!
+            INS = new NavigationService();
             Login = new RelayCommand<object>(registrujAdmina, potvrdi);
             DodavanjeKandidata = new RelayCommand<object>(dodajKandidata, boolDodaj);
             DodavanjeNovosti = new RelayCommand<object>(dodajNovost, boolDodaj);

@@ -516,26 +516,26 @@
                             <CompositeTransform/>
                         </TextBlock.RenderTransform>
                     </TextBlock>
-                    <TextBox x:Name="pisiime1" Text="{Binding AdministratorViewModel.NoviKandidat.Ime}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisiprezime1" Text="{Binding AdministratorViewModel.NoviKandidat.Prezime}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisijmbg1" Text="{Binding AdministratorViewModel.NoviKandidat.JMBG1}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisilicnu1" Text="{Binding AdministratorViewModel.NoviKandidat.LicnaKarta}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisistrucnu1" HorizontalAlignment="Left" Text="{Binding AdministratorViewModel.NoviKandidat.StrucnaSprema}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <DatePicker x:Name="birajdatum1" Date="{Binding Administrator.NoviKandidat.DatRodjenja}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
-                    <ComboBox x:Name="birajpoziciju1" SelectedItem="{Binding AdministratorViewModel.NoviKandidat.Pozicija}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200">
+                    <TextBox x:Name="pisiime1" Text="{Binding NoviKandidat.Ime}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisiprezime1" Text="{Binding NoviKandidat.Prezime}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisijmbg1" Text="{Binding NoviKandidat.JMBG1}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisilicnu1" Text="{Binding NoviKandidat.LicnaKarta}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisistrucnu1" HorizontalAlignment="Left" Text="{Binding NoviKandidat.StrucnaSprema}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <DatePicker x:Name="birajdatum1" Date="{Binding NoviKandidat.DatRodjenja}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajpoziciju1" SelectedItem="{Binding NoviKandidat.Pozicija}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200">
                         <ComboBoxItem Content="Država"/>
                         <ComboBoxItem Content="Entitet"/>
                         <ComboBoxItem Content="Kanton"/>
                         <ComboBoxItem Content="Općina"/>
                     </ComboBox>
-                    <ComboBox x:Name="birajstranku1" ItemsSource="{Binding AdministratorViewModel.Sistem.Stranke}" DisplayMemberPath="{Binding Naziv}" SelectedValue="{Binding AdministratorViewModel.NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajstranku1" ItemsSource="{Binding Sistem.Stranke}" DisplayMemberPath="{Binding Stranke.Naziv}" SelectedValue="{Binding NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisipriznanja1" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272" d:LayoutOverrides="HorizontalAlignment"/>
-                    <Button x:Name="dodajkandidata" Command="{Binding AdministratorViewModel.DodavanjeKandidata}" Content="Dodaj" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="dodajkandidata" Command="{Binding DodavanjeKandidata}" Content="Dodaj" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
                     <UserControls:ImageAndButton x:Name="UC1" HorizontalAlignment="Left" Height="296" Margin="932,44,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
 
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Izmjeni kandidata">
+            <PivotItem Header="Izmjeni kandidata" >
                 <Grid HorizontalAlignment="Left" Height="548" VerticalAlignment="Top" Width="1236" Margin="0,0,0,-0.5">
                     <TextBlock x:Name="ime2" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="Ime:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="prezime2" HorizontalAlignment="Left" Margin="10,70,0,0" TextWrapping="Wrap" Text="Prezime:" VerticalAlignment="Top" Height="20" Width="115"/>
@@ -546,21 +546,21 @@
                     <TextBlock x:Name="pozicija2" HorizontalAlignment="Left" Margin="10,270,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" Height="20" Width="115" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBlock x:Name="strucnasprema2" HorizontalAlignment="Left" Margin="10,310,0,0" TextWrapping="Wrap" Text="Stručna sprema:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="priznanja2" HorizontalAlignment="Left" Margin="515,30,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" Height="20" Width="140" d:LayoutOverrides="HorizontalAlignment"/>
-                    <TextBox x:Name="pisiime2" Text="{Binding AdministratorViewModel.NoviKandidat.Ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisiprezime2" Text="{Binding AdministratorViewModel.NoviKandidat.Prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisijmbg2" IsReadOnly="True" Text="{Binding AdministratorViewModel.NoviKandidat.JMBG1, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisilicnu2" IsReadOnly="True" Text="{Binding AdministratorViewModel.NoviKandidat.LicnaKarta, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisistrucnu2" HorizontalAlignment="Left" Text="{Binding AdministratorViewModel.NoviKandidat.StrucnaSprema, Mode=TwoWay}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <DatePicker x:Name="birajdatum2" Date="{Binding Administrator.NoviKandidat.DatRodjenja, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
-                    <ComboBox x:Name="birajpoziciju2" SelectedItem="{Binding AdministratorViewModel.NoviKandidat.Pozicija, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200">
+                    <TextBox x:Name="pisiime2" Text="{Binding NoviKandidat.Ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisiprezime2" Text="{Binding NoviKandidat.Prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisijmbg2" IsReadOnly="True" Text="{Binding NoviKandidat.JMBG1, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisilicnu2" IsReadOnly="True" Text="{Binding NoviKandidat.LicnaKarta, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisistrucnu2" HorizontalAlignment="Left" Text="{Binding NoviKandidat.StrucnaSprema, Mode=TwoWay}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <DatePicker x:Name="birajdatum2" Date="{Binding NoviKandidat.DatRodjenja, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajpoziciju2" SelectedItem="{Binding NoviKandidat.Pozicija, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200">
                         <ComboBoxItem Content="Država"/>
                         <ComboBoxItem Content="Entitet"/>
                         <ComboBoxItem Content="Kanton"/>
                         <ComboBoxItem Content="Općina"/>
                     </ComboBox>
-                    <ComboBox x:Name="birajstranku2" ItemsSource="{Binding AdministratorViewModel.Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Naziv}" SelectedValue="{Binding AdministratorViewModel.NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajstranku2" ItemsSource="{Binding Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Stranke.Naziv}" SelectedValue="{Binding NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisipriznanja2" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272" d:LayoutOverrides="HorizontalAlignment"/>
-                    <Button x:Name="izmjenikandidata" Command="{Binding AdministratorViewModel.DodavanjeKandidata}" Content="Spasi promjene" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="izmjenikandidata" Command="{Binding DodavanjeKandidata}" Content="Spasi promjene" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
                     <UserControls:ImageAndButton x:Name="UC2" HorizontalAlignment="Left" Height="296" Margin="932,44,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
                     <Grid/>
                 </Grid>
@@ -576,21 +576,21 @@
                     <TextBlock x:Name="pozicija3" HorizontalAlignment="Left" Margin="10,270,0,0" TextWrapping="Wrap" Text="Pozicija:" VerticalAlignment="Top" Height="20" Width="115" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBlock x:Name="strucnasprema3" HorizontalAlignment="Left" Margin="10,310,0,0" TextWrapping="Wrap" Text="Stručna sprema:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="priznanja3" HorizontalAlignment="Left" Margin="515,30,0,0" TextWrapping="Wrap" Text="Društvena priznanja:" VerticalAlignment="Top" Height="20" Width="140" d:LayoutOverrides="HorizontalAlignment"/>
-                    <TextBox x:Name="pisiime3" Text="{Binding AdministratorViewModel.NoviKandidat.Ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisiprezime3" Text="{Binding AdministratorViewModel.NoviKandidat.Prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisijmbg3" IsReadOnly="True" Text="{Binding AdministratorViewModel.NoviKandidat.JMBG1, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisilicnu3" IsReadOnly="True" Text="{Binding AdministratorViewModel.NoviKandidat.LicnaKarta, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <TextBox x:Name="pisistrucnu3" HorizontalAlignment="Left" Text="{Binding AdministratorViewModel.NoviKandidat.StrucnaSprema, Mode=TwoWay}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-                    <DatePicker x:Name="birajdatum3" Date="{Binding Administrator.NoviKandidat.DatRodjenja, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
-                    <ComboBox x:Name="birajpoziciju3" SelectedItem="{Binding AdministratorViewModel.NoviKandidat.Pozicija, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200" d:LayoutOverrides="VerticalAlignment">
+                    <TextBox x:Name="pisiime3" Text="{Binding NoviKandidat.Ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisiprezime3" Text="{Binding NoviKandidat.Prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisijmbg3" IsReadOnly="True" Text="{Binding NoviKandidat.JMBG1, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisilicnu3" IsReadOnly="True" Text="{Binding NoviKandidat.LicnaKarta, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,185,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisistrucnu3" HorizontalAlignment="Left" Text="{Binding NoviKandidat.StrucnaSprema, Mode=TwoWay}" Margin="160,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                    <DatePicker x:Name="birajdatum3" Date="{Binding NoviKandidat.DatRodjenja, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,105,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajpoziciju3" SelectedItem="{Binding NoviKandidat.Pozicija, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="200" d:LayoutOverrides="VerticalAlignment">
                         <ComboBoxItem Content="Država"/>
                         <ComboBoxItem Content="Entitet"/>
                         <ComboBoxItem Content="Kanton"/>
                         <ComboBoxItem Content="Općina"/>
                     </ComboBox>
-                    <ComboBox x:Name="birajstranku3" ItemsSource="{Binding AdministratorViewModel.Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Naziv}" SelectedValue="{Binding AdministratorViewModel.NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
+                    <ComboBox x:Name="birajstranku3" ItemsSource="{Binding Sistem.Stranke, Mode=TwoWay}" DisplayMemberPath="{Binding Stranke.Naziv}" SelectedValue="{Binding NoviKandidat.Stranka}" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisipriznanja3" HorizontalAlignment="Left" Margin="515,65,0,0" VerticalAlignment="Top" Width="272" Height="272" d:LayoutOverrides="HorizontalAlignment"/>
-                    <Button x:Name="obrisikandidata" Command="{Binding AdministratorViewModel.DodavanjeKandidata}" Content="Obriši" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="obrisikandidata" Command="{Binding DodavanjeKandidata}" Content="Obriši" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
                     <UserControls:ImageAndButton x:Name="UC3" HorizontalAlignment="Left" Height="296" Margin="932,44,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
                 </Grid>
             </PivotItem>
@@ -598,9 +598,9 @@
                 <Grid HorizontalAlignment="Left" Height="556" VerticalAlignment="Top" Width="1236">
                     <TextBlock x:Name="naslov1" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="Naslov:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="tekst1" HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Tekst:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBox x:Name="pisinaslov1" Text="{Binding AdministratorViewModel.NovaNovost.Naslov}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisinaslov1" Text="{Binding NovaNovost.Naslov}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisitekst1" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top" Height="433" Width="454"/>
-                    <Button x:Name="dodajnovost" Command="{Binding AdministratorViewModel.DodavanjeNovosti}" Content="Dodaj" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="dodajnovost" Command="{Binding DodavanjeNovosti}" Content="Dodaj" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
                     <UserControls:ImageAndButton x:Name="UC4" HorizontalAlignment="Left" Height="296" Margin="859,20,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
                 </Grid>
             </PivotItem>
@@ -608,9 +608,9 @@
                 <Grid HorizontalAlignment="Left" Height="556" VerticalAlignment="Top" Width="1236">
                     <TextBlock x:Name="naslov2" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="Naslov:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="tekst2" HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Tekst:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBox x:Name="pisinaslov2" Text="{Binding AdministratorViewModel.NovaNovost.Naslov, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisinaslov2" Text="{Binding NovaNovost.Naslov, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisitekst2" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top" Height="433" Width="454"/>
-                    <Button x:Name="izmjeninovost" Command="{Binding AdministratorViewModel.DodavanjeNovosti}" Content="Spasi izmjene" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="izmjeninovost" Command="{Binding DodavanjeNovosti}" Content="Spasi izmjene" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
                     <UserControls:ImageAndButton x:Name="UC5" HorizontalAlignment="Left" Height="296" Margin="859,20,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
 
                 </Grid>
@@ -619,18 +619,15 @@
                 <Grid HorizontalAlignment="Left" Height="556" VerticalAlignment="Top" Width="1236">
                     <TextBlock x:Name="naslov3" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="Naslov:" VerticalAlignment="Top" Height="20" Width="115"/>
                     <TextBlock x:Name="tekst3" HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Tekst:" VerticalAlignment="Top" Height="20" Width="115"/>
-                    <TextBox x:Name="pisinaslov3" Text="{Binding AdministratorViewModel.NovaNovost.Naslov, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="pisinaslov3" Text="{Binding NovaNovost.Naslov, Mode=TwoWay}" HorizontalAlignment="Left" Margin="160,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
                     <RichEditBox x:Name="pisitekst3" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top" Height="433" Width="454"/>
-                    <Button x:Name="obrisinovost" Command="{Binding AdministratorViewModel.DodavanjeNovosti}" Content="Obriši" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Button x:Name="obrisinovost" Command="{Binding DodavanjeNovosti}" Content="Obriši" HorizontalAlignment="Left" Margin="1020,500,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18" d:LayoutOverrides="HorizontalAlignment"/>
                     <UserControls:ImageAndButton x:Name="UC6" HorizontalAlignment="Left" Height="296" Margin="859,20,0,0" VerticalAlignment="Top" Width="232" d:LayoutOverrides="HorizontalAlignment"/>
                 </Grid>
             </PivotItem>
 
         </Pivot>
-        <Button x:Name="button12" Content="Odjava" HorizontalAlignment="Right" Margin="0,10,10,10" VerticalAlignment="Stretch" FontFamily="Century" FontSize="25" Height="64" Width="171" FontWeight="Bold" BorderThickness="2" Background="#00000000" Command="{Binding AdministratorViewModel.Odjava}"/>
-
-
-
+        <Button x:Name="button12" Content="Odjava" HorizontalAlignment="Right" Margin="0,4,1260.667,0.333" VerticalAlignment="Stretch" FontFamily="Century" FontSize="25" Height="64" Width="171" FontWeight="Bold" BorderThickness="2" Background="#00000000" Command="{Binding Path=Odjava}"/>
 
     </Grid>
 </Page>

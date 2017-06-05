@@ -306,7 +306,9 @@ namespace GlasajBa.ViewModel
                 Glasaj = new RelayCommand<object>(glasaj, jeLiMoguce);
                 if (indikator==0)
                 {
-                   pustiZvuk();
+                    Task.Run(() => pustiZvuk());
+                    //t.Start();
+                   //pustiZvuk();
                 }
                 indikator = 1;
             }
@@ -316,6 +318,7 @@ namespace GlasajBa.ViewModel
             {
                 NavigationService.GoBack();
             }
+
 
 
             private void pustiZvuk()
@@ -331,12 +334,12 @@ namespace GlasajBa.ViewModel
                     me.SetSource(stream, file.ContentType);
                     me.Play();
                     */
-                    
                     MediaPlayer player = new MediaPlayer();
                     player.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/uvod.mp3"));
                     player.Play();
-                    
-                }catch(Exception e)
+
+                }
+                catch (Exception e)
                 {
 
                 }

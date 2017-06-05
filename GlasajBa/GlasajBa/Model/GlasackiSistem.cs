@@ -45,24 +45,47 @@ namespace GlasajBa.Model
             this.adminUsername = adminUsername;
             //this.slijepi = slijepi;
             // javlja error: this.slijepi = slijepi;
-            MediaPlayer mp = new MediaPlayer();
-            pustiZvuk();
+            stranke.Add(
+                    new Stranka()
+                    {
+                        Naziv = "OOAD",
+                        Ukratko = "Stranka za bolju ocjenu! Zalazemo se za 30b na projektu!"
+                    }
+                    );
+            stranke.Add(
+                new Stranka()
+                {
+                    Naziv = "RI",
+                    Ukratko = "RI nije kurs!"
+                }
+                );
+            stranke.Add(
+                new Stranka()
+                {
+                    Naziv = "AE",
+                    Ukratko = "AE kurs!"
+                }
+                );
+            stranke.Add(
+                new Stranka()
+                {
+                    Naziv = "TK",
+                    Ukratko = "Telekomunikacije"
+                }
+                );
+            stranke.Add(
+                new Stranka()
+                {
+                    Naziv = "EE",
+                    Ukratko = "Energeticari"
+                }
+                );
         }
 
         public GlasackiSistem()
         {
         }
 
-        private async void pustiZvuk()
-        {
-            //ovo ce trebati biti implementirano negdje drugo
-            MediaElement me = new MediaElement();
-            Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
-            Windows.Storage.StorageFile file = await folder.GetFileAsync("Uvod.mp3");
-            var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
-            me.SetSource(stream, file.ContentType);
-            me.Play();
-        }
         #endregion
 
         #region GeteriISeteri
@@ -256,7 +279,7 @@ namespace GlasajBa.Model
         #endregion
 
         #region Metode
-
+        /*
         string nadjiBiracko(string ul)
         {
             foreach (Ulica u in ulice)
@@ -279,7 +302,7 @@ namespace GlasajBa.Model
                     && k.StrucnaSprema == strucnaSprema && k.Pozicija == pozicija && k.Popularnost >= popularnost)
                     kandidati.Add(k);
             return kandidati;
-        }
+        }*/
         #endregion
     }
 }

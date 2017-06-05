@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
@@ -47,8 +48,7 @@ namespace GlasajBa.UserControls
 
         private void slikaUC_Loaded(object sender, RoutedEventArgs e)
         {
-            //Image x = (Bitmap)((new ImageConverter()).ConvertFrom(jpegByteArray));
-            
+            //
         }
     }
 }
