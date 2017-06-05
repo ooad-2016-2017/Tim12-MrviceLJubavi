@@ -87,6 +87,9 @@
                         <Setter Target="pocetak.Width" Value="354"/>
 
                         <Setter Target="hub1.HeaderTemplate" Value="{StaticResource MojHeader2}"/>
+
+
+
                     </VisualState.Setters>
 
                 </VisualState>
@@ -117,23 +120,23 @@
                 <ColumnDefinition Width="585*"/>
                 <ColumnDefinition Width="28*"/>
             </Grid.ColumnDefinitions>
-            <Pivot Title=" " Margin="0,4,0,30" Grid.ColumnSpan="3" x:Name="pivot1">
-                <PivotItem Header="Početak" FontSize="15"  x:Name="pocetak" Width="1236">
-                    <Hub x:Name="hub1" Header=" " Height="520" Margin="0,0,0,50" ScrollViewer.HorizontalScrollMode="Enabled">
+            <Pivot Title=" "  Grid.ColumnSpan="3" x:Name="pivot1">
+                <PivotItem Header="Početak" FontSize="15"  x:Name="pocetak" Width="Auto" Margin="10,0,10,20">
+                    <Hub x:Name="hub1" Header=" " Height="470" Margin="0,0,0,50" ScrollViewer.HorizontalScrollMode="Enabled">
                         <HubSection Header="Twitter feed" Width="253" x:Name="TwitterFeed" FontSize="15">
                             <DataTemplate>
-                                <Grid Height="370" Width="Auto">
+                                <Grid Height="350" Width="Auto">
                                     <!--<TextBlock x:Name="textBlockNaslovTwitter" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="" VerticalAlignment="Top"  FontSize="14.5"  Width="Auto"/>
-                                    --><RichEditBox x:Name="textBlockNovostTwitter" IsReadOnly="True"  Width="Auto" Height="330" VerticalAlignment="Top"/>
+                                    --><RichEditBox x:Name="rebTwitter" IsReadOnly="True"  Width="Auto" Height="300" VerticalAlignment="Top"/>
                                     <Button x:Name="buttonTwitter"  Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledTwittera}" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
                         <HubSection Header="Novosti"  Width="253" x:Name="Novosti">
                             <DataTemplate>
-                                <Grid Height="370" Width="Auto">
+                                <Grid Height="350" Width="Auto">
                                     <!--<TextBlock x:Name="naslovNovosti" Text="" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>-->
-                                    <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" VerticalAlignment="Top"></RichEditBox>
+                                    <RichEditBox x:Name="rebNovost" IsReadOnly="True"  Width="Auto" Height="300" VerticalAlignment="Top"></RichEditBox>
                                     <!--<TextBlock x:Name="testni" Text="{Binding Path=Naziv}" FontSize="40"></TextBlock>-->
                                     <Button x:Name="buttonNovosti" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledNovosti}"></Button>
                                 </Grid>
@@ -141,18 +144,18 @@
                         </HubSection>
                         <HubSection Header="Statistika"  Width="253" x:Name="Statistika">
                             <DataTemplate>
-                                <Grid x:Name="gridStatistika" Height="370" Width="Auto">
+                                <Grid x:Name="gridStatistika" Height="350" Width="Auto">
                                     <!--<TextBlock x:Name="naslovStatistike" Text="" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>-->
-                                    <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" VerticalAlignment="Top" DataContext=""></RichEditBox>
+                                    <RichEditBox IsReadOnly="True"  Width="Auto" Height="300" VerticalAlignment="Top" DataContext=""></RichEditBox>
                                     <Button x:Name="buttonStatistika" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledStatistike}" ></Button>
                                 </Grid>
                             </DataTemplate>
                         </HubSection>
                         <HubSection Header="Stranke"   Width="253" x:Name="Stranke">
                             <DataTemplate>
-                                <Grid Height="370" Width="Auto">
+                                <Grid Height="350" Width="Auto">
                                     <!--<TextBlock x:Name="naslovStranke" Text="" FontSize="14.5" TextAlignment="Center" VerticalAlignment="Top" Height="32"></TextBlock>-->
-                                    <RichEditBox IsReadOnly="True"  Width="Auto" Height="330" VerticalAlignment="Top" DataContext=""></RichEditBox>
+                                    <RichEditBox IsReadOnly="True"  Width="Auto" Height="300" VerticalAlignment="Top" DataContext=""></RichEditBox>
                                     <Button x:Name="buttonStranke" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledStranaka}"></Button>
 
                                 </Grid>
@@ -160,8 +163,8 @@
                         </HubSection>
                         <HubSection Header="Historija bh. politike" Width="272" x:Name="Historija">
                             <DataTemplate>
-                                <Grid Height="370" Width="Auto">
-                                    <RichEditBox x:Name="RichEditBoxHistorija"  IsReadOnly="True" VerticalAlignment="Top" Width="Auto" Height="330" />
+                                <Grid Height="350" Width="Auto">
+                                    <RichEditBox x:Name="RichEditBoxHistorija"  IsReadOnly="True" VerticalAlignment="Top" Width="Auto" Height="300" />
                                     <Button x:Name="buttonHistorija" Content="Pogledaj više" VerticalAlignment="Bottom" HorizontalAlignment="Center" Command="{Binding Path=PregledHistorije}"></Button>
                                 </Grid>
                             </DataTemplate>
