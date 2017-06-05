@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp uap3">
   <Identity Name="2a9a2d43-f913-45b6-b532-689356f34794" Publisher="CN=Emsel" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="2a9a2d43-f913-45b6-b532-689356f34794" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
@@ -26,5 +26,6 @@
     <Capability Name="internetClient" />
     <Capability Name="privateNetworkClientServer" />
     <uap:Capability Name="picturesLibrary" />
+    <uap3:Capability Name="backgroundMediaPlayback" />
   </Capabilities>
 </Package>

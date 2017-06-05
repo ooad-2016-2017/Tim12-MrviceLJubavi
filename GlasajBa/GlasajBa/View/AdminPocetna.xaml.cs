@@ -24,11 +24,11 @@ namespace GlasajBa.View
     /// </summary>
     public sealed partial class AdminPocetna : Page
     {
-        AdministratorViewModel admin;
+        //AdministratorViewModel admin;
         public AdminPocetna()
         {
             this.InitializeComponent();
-            //this.DataContext = new AdministratorViewModel();
+            this.DataContext = new AdministratorViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;

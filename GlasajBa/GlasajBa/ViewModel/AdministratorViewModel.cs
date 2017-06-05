@@ -12,7 +12,9 @@ using System.Data.Common;
 using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security;
 using System.Windows.Input;
 using TweetSharp;
 using Windows.Storage;
@@ -46,7 +48,7 @@ namespace GlasajBa.ViewModel
         public Novost NovaNovost { get; set; }
         public static Kandidat NoviKandidat { get; set; }
         public String AdminIme { get; set; }
-        public String AdminSifra { get; set; }
+        public string AdminSifra { get; set; }
         public GlasackiSistem Sistem { get; set; }
         public String PoljePretrageKandidata { get; set; }
         public String PoljePretrageNovosti { get; set; }
@@ -54,6 +56,28 @@ namespace GlasajBa.ViewModel
         public List<Novost> ListaNovosti { get; set; }
 
         #endregion
+
+        public AdministratorViewModel()
+        {
+            this.Sistem = new GlasackiSistem();
+            //this.Sistem = Parent.Sistem;
+
+            ListaKandidata = new List<Kandidat>();
+            ListaNovosti = new List<Novost>();
+
+            Login = new RelayCommand<object>(registrujAdmina, potvrdi);
+            DodavanjeKandidata = new RelayCommand<object>(dodajKandidata, boolDodaj);
+            DodavanjeNovosti = new RelayCommand<object>(dodajNovost, boolDodaj);
+            BrisanjeKandidata = new RelayCommand<object>(obrisiKandidata, boolDodaj);
+            BrisanjeNovosti = new RelayCommand<object>(obrisiNovost, boolDodaj);
+            IzmjenaKandidata = new RelayCommand<object>(promjenaKandidata, boolDodaj);
+            IzmjenaNovosti = new RelayCommand<object>(promjenaNovosti, boolDodaj);
+            Odjava = new RelayCommand<object>(odjava, boolDodaj);
+            PretragaNovosti = new RelayCommand<object>(nadjiNovosti, boolDodaj);
+            PretragaKandidata = new RelayCommand<object>(nadjiKandidate, boolDodaj);
+            UcitajSliku = new RelayCommand<object>(dodajSliku, boolDodaj);
+            NoviKandidat.ErrorsChanged += Vm_ErrorsChanged;
+        }
 
         public AdministratorViewModel(OstaleFunkcionalnostiViewModel p)
         {
@@ -84,24 +108,32 @@ namespace GlasajBa.ViewModel
         #region metode
         public bool potvrdi(Object o)
         {
-            if (AdminIme == "admin" && AdminSifra == "mrviceljubavi")
+            /*
+            string password = new System.Net.NetworkCredential(string.Empty, AdminSifra).Password;
+            
+            if (AdminIme.Equals("admin") && password.Equals("mrviceljubavi"))
             {
                 return true;
             }
             var dialog = new MessageDialog("Neispravni pristupni podaci!");
-            return false;
+            */
+            
+            //stalno vraca true jer passwordBox pretvara string u SecureString, metode koje sam nasla na Internetu za pretvaranje
+            //su za starije verzije VS
+            return true;
         }
 
         public void registrujAdmina(Object o)
         {
             INS.Navigate(typeof(AdminPocetna), this);
+            //baca exception 
         }
 
         public bool boolDodaj(Object o)
         {
             return true;
         }
-
+        
         public void dodajKandidata(Object o)
         {
             uploadSlika = UserControls.ImageAndButton.uploadSlika;
@@ -512,6 +544,7 @@ namespace GlasajBa.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
 
         }
+
         #endregion
     }
 }

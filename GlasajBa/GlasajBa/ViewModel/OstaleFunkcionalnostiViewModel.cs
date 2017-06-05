@@ -16,6 +16,8 @@ using Windows.Graphics.Printing;
 using GlasajBa.View;
 using Windows.UI.Xaml.Input;
 using System.ComponentModel;
+using Windows.Media.Playback;
+using Windows.Media.Core;
 
 namespace GlasajBa.ViewModel
 {  
@@ -321,12 +323,17 @@ namespace GlasajBa.ViewModel
                 //baca exception, vidjeti zasto
                 try
                 {
+                    /*
                     MediaElement me = new MediaElement();
                     Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
                     Windows.Storage.StorageFile file = await folder.GetFileAsync("Uvod.mp3");
                     var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
                     me.SetSource(stream, file.ContentType);
                     me.Play();
+                    */
+                    MediaPlayer player = new MediaPlayer();
+                    player.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/uvod.mp3"));
+                    player.Play();
                 }catch(Exception e)
                 {
 

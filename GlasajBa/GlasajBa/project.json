@@ -8,6 +8,7 @@
     "Microsoft.Toolkit.Uwp.Services": "1.4.1",
     "Prism.Core": "6.3.0",
     "Prism.Windows": "6.3.0",
+    "System.Security.SecureString": "4.3.0",
     "TweetMoaSharp": "4.0.1"
   },
   "frameworks": {
