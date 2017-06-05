@@ -40,6 +40,8 @@ namespace GlasajBa.ViewModel
         public ICommand PretragaNovosti { get; set; } //
         public ICommand Odjava { get; set; } //
         public ICommand UcitajSliku { get; set; } //
+        public ICommand OtvoriPretraguK { get; set; }
+        public ICommand OtvoriPretraguN { get; set; }
 
         #endregion
 
@@ -101,6 +103,8 @@ namespace GlasajBa.ViewModel
             IzmjenaKandidata = new RelayCommand<object>(promjenaKandidata, boolDodaj);
             IzmjenaNovosti = new RelayCommand<object>(promjenaNovosti, boolDodaj);
             Odjava = new RelayCommand<object>(odjava, boolDodaj);
+            OtvoriPretraguK = new RelayCommand<object>(pretragaK, boolDodaj);
+            OtvoriPretraguN = new RelayCommand<object>(pretragaN, boolDodaj);
             PretragaNovosti = new RelayCommand<object>(nadjiNovosti, boolDodaj);
             PretragaKandidata = new RelayCommand<object>(nadjiKandidate, boolDodaj);
             UcitajSliku = new RelayCommand<object>(dodajSliku, boolDodaj);
@@ -128,6 +132,16 @@ namespace GlasajBa.ViewModel
         public void registrujAdmina(Object o)
         {
             INS.Navigate(typeof(AdminPocetna), this);
+        }
+
+        public void pretragaN(Object o)
+        {
+            INS.Navigate(typeof(PretragaNovosti), this);
+        }
+
+        public void pretragaK(Object o)
+        {
+            INS.Navigate(typeof(Pretraga), this);
         }
 
         public bool boolDodaj(Object o)

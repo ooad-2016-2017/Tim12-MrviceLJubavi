@@ -627,7 +627,9 @@
             </PivotItem>
 
         </Pivot>
-        <Button x:Name="button12" Content="Odjava" HorizontalAlignment="Right" Margin="0,4,1260.667,0.333" VerticalAlignment="Stretch" FontFamily="Century" FontSize="25" Height="64" Width="171" FontWeight="Bold" BorderThickness="2" Background="#00000000" Command="{Binding Path=Odjava}"/>
+        <Button x:Name="button12" Content="Odjava" HorizontalAlignment="Right" Margin="0,0,1345.667,4.333" VerticalAlignment="Stretch" FontFamily="Century" FontSize="22" Height="64" Width="96" FontWeight="Bold" BorderThickness="2" Background="#00000000" Command="{Binding Path=Odjava}"/>
+        <Button x:Name="button13" Content="Kandidati" HorizontalAlignment="Right" Margin="0,0,1213.667,4.333" VerticalAlignment="Stretch" FontFamily="Century" FontSize="22" Height="64" Width="127" FontWeight="Bold" BorderThickness="2" Background="#00000000" Command="{Binding OtvoriPretraguK}"/>
+        <Button x:Name="button14" Content="Novosti" HorizontalAlignment="Right" Margin="0,0,1100.667,4.333" VerticalAlignment="Stretch" FontFamily="Century" FontSize="22" Height="64" Width="110" FontWeight="Bold" BorderThickness="2" Background="#00000000" Command="{Binding OtvoriPretraguN}"/>
 
     </Grid>
 </Page>
