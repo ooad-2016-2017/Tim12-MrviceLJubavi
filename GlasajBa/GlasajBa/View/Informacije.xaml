@@ -46,7 +46,7 @@
                         <Setter Target="buttonPrintaj.Height" Value="45" />
                         <Setter Target="buttonPrintaj.Content" Value="Printaj listić" />
                         
-                        <Setter Target="hub1.Height" Value="356" />
+                        <!--<Setter Target="hub1.Height" Value="356" />-->
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>

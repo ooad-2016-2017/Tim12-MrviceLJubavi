@@ -31,40 +31,15 @@ namespace GlasajBa.View
         public GlavnaStranica()
         {
             this.InitializeComponent();
-            //var inicijalizacija = new DataSource();
+
             DataContext = new OstaleFunkcionalnostiViewModel();
-            NavigationCacheMode = NavigationCacheMode.Required;
-
-
-           // var glasac = DataSource.DajSveGlasace()[0];
-            //Glasac g = new Glasac();
-            //g = glasac;
-         
-
-            //this.DataContext = this;
-            //pokušaj instanciranja view modela:
-            //vm = new OstaleFunkcionalnostiViewModel();
-            //DataContext = new OstaleFunkcionalnostiViewModel();
-
-            // var currentView = SystemNavigationManager.GetForCurrentView();
-            //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-            //SystemNavigationManager.GetForCurrentView().BackRequested += ;
+            NavigationCacheMode = NavigationCacheMode.Required;            
         }
-
-
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
         }
-        /* protected override void OnNavigatedTo(NavigationEventArgs e) {
-             DataContext = new OstaleFunkcionalnostiViewModel();
-         }*/
-        /*
-        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e) {
-            if (Frame.CanGoBack) { Frame.GoBack(); e.Handled = true; } 
-        }
-        */
     }
 }

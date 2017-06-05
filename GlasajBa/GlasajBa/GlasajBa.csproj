@@ -148,9 +148,6 @@
     <Compile Include="View\AdminPocetna.xaml.cs">
       <DependentUpon>AdminPocetna.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DodajNovost.xaml.cs">
-      <DependentUpon>DodajNovost.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Glasanje.xaml.cs">
       <DependentUpon>Glasanje.xaml</DependentUpon>
     </Compile>
@@ -232,10 +229,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AdminPocetna.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DodajNovost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
