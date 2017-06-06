@@ -20,6 +20,10 @@ using Windows.Media.Playback;
 using Windows.Media.Core;
 using GlasajBa.Interfaces;
 using Tweetinvi;
+using Windows.UI.Xaml.Media.Animation;
+using Microsoft.Graph;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 
 namespace GlasajBa.ViewModel
 {  
@@ -39,6 +43,7 @@ namespace GlasajBa.ViewModel
             public ICommand PregledStatistike { get; set; }
             public ICommand PregledHistorije { get; set; }
             public ICommand Glasaj { get; set; }
+            public ICommand Printanje { get; set; }
             static int indikator=0;
             public string tweets;
             
@@ -59,7 +64,7 @@ namespace GlasajBa.ViewModel
             
             public INavigationService NavigationService { get; set; }
 
-            
+
             #region print
             /* async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 
@@ -222,6 +227,18 @@ namespace GlasajBa.ViewModel
                      */
             #endregion
 
+            public async void otvoriGL(object o)
+            {
+                StorageFile file = null;
+                FileOpenPicker filePicker = new FileOpenPicker();
+                filePicker.FileTypeFilter.Add(".pdf");
+                filePicker.ViewMode = PickerViewMode.Thumbnail;
+                filePicker.SuggestedStartLocation = PickerLocationId.HomeGroup;
+                filePicker.SettingsIdentifier = "picker1";
+                filePicker.CommitButtonText = "Otvori PDF fajl";
+                file = await filePicker.PickSingleFileAsync();
+                if (file != null) await Windows.System.Launcher.LaunchFileAsync(file);
+            }
             public void nadjiBM(object o)
             {
                 NavigationService.Navigate(typeof(PronalazakBirackogMjesta), new GlasanjeViewModel(this));
@@ -307,6 +324,7 @@ namespace GlasajBa.ViewModel
                 ZaSlijepeISlabovidne = new RelayCommand<object>(slijepi, jeLiMoguce);
                 PregledTwittera = new RelayCommand<object>(idiNaTwitter, jeLiMoguce);
                 Glasaj = new RelayCommand<object>(glasaj, jeLiMoguce);
+                Printanje = new RelayCommand<object>(otvoriGL, jeLiMoguce);
                 if (indikator==0)
                 {
                     Task.Run(() => pustiZvuk());

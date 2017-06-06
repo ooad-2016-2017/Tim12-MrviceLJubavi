@@ -166,9 +166,8 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="buttonPrintaj" Grid.Column="0" HorizontalAlignment="Center" Content="Printaj glasački listić" FontSize="25" Height="66" ></Button>
-            
-            
+            <Button x:Name="buttonPrintaj" Grid.Column="0" HorizontalAlignment="Center" Content="Printaj glasački listić" FontSize="25" Height="66" Command="{Binding Path=Printanje}"></Button>
+                       
             <Button x:Name="buttonNazad" Grid.Column="1" Content="Nazad" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="127" FontSize="25" Command="{Binding Path=Nazad}"/>
         </Grid>
 
