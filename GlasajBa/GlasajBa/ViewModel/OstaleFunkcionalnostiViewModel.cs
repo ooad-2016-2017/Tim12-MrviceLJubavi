@@ -374,8 +374,8 @@ namespace GlasajBa.ViewModel
                 string accessTokenSecret = "aqCPTUPcE3IcMXn4kg0DXbUU66PsUixHwKeLxcoDck25a";
 
                 Auth.SetUserCredentials(costumerKey, cosumerKeySecret, accessToken, accessTokenSecret);
-                var user = User.GetAuthenticatedUser();
-                var tweetss = Timeline.GetUserTimeline(user, 3);
+                var user = Tweetinvi.User.GetAuthenticatedUser();
+                var tweetss = Tweetinvi.Timeline.GetUserTimeline(user, 3);
                 foreach (var tm in tweetss)
                 {
                     tweets += tm;
