@@ -12,7 +12,7 @@ namespace GlasajBa.Model
 {
     class Kandidat : Osoba, INotifyPropertyChanged
     {
-        Stranka stranka;
+        string stranka;
         int godine;
         string strucnaSprema, pozicija, drustvenaPriznanja;
         int popularnost;
@@ -32,7 +32,7 @@ namespace GlasajBa.Model
         }*/
 
         [Required(ErrorMessage ="Morate odabrati stranku!")]
-        public Stranka Stranka
+        public string Stranka
         {
             get
             {
@@ -158,7 +158,7 @@ namespace GlasajBa.Model
         { }
         public Kandidat(string im, string prez, DateTime datR, string LK, string maticni, string drzava, Stranka stranka, int godine, string strucnaSprema, string pozicija, string drustvenaPriznanja, Image img, int popularnost = 0) : base(im, prez, datR, LK, maticni, drzava)
         {
-            this.stranka = stranka;
+            this.stranka = stranka.Naziv;
             this.godine = godine;
             this.godine = (int)((DateTime.Today - datR).TotalDays / 365.2425);
             this.strucnaSprema = strucnaSprema;

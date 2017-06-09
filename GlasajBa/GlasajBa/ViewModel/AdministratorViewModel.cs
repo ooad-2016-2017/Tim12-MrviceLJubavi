@@ -48,9 +48,10 @@ namespace GlasajBa.ViewModel
         #region atributi
         public OstaleFunkcionalnostiViewModel Parent { get; set; }
         INavigationService INS { get; set; }
+        public Stranka kojaStranka { get; set; }
         public static byte[] uploadSlika = null;
         public Novost NovaNovost { get; set; }
-        public static Kandidat NoviKandidat { get; set; }
+        public Kandidat NoviKandidat { get; set; }
         public String AdminIme { get; set; }
         public string AdminSifra { get; set; }
         public GlasackiSistem Sistem { get; set; }
@@ -58,7 +59,7 @@ namespace GlasajBa.ViewModel
         public String PoljePretrageNovosti { get; set; }
         public List<Kandidat> ListaKandidata { get; set; }
         public List<Novost> ListaNovosti { get; set; }
-
+        public ObservableCollection<string> NaziviStranki { get; set; }
         #endregion
 
         public AdministratorViewModel()
@@ -66,9 +67,11 @@ namespace GlasajBa.ViewModel
             this.Sistem = new GlasackiSistem();
             //this.Sistem = Parent.Sistem;
 
-            ListaKandidata = new List<Kandidat>();
-            ListaNovosti = new List<Novost>();
-
+            ListaKandidata = Sistem.KandidatiD;
+            ListaNovosti = Sistem.Novosti;
+            NoviKandidat = new Kandidat();
+            NovaNovost = new Novost();
+            NoviKandidat.DatRodjenja = DateTime.Now;
             Login = new RelayCommand<object>(registrujAdmina, potvrdi);
             DodavanjeKandidata = new RelayCommand<object>(dodajKandidata, boolDodaj);
             DodavanjeNovosti = new RelayCommand<object>(dodajNovost, boolDodaj);
@@ -80,18 +83,28 @@ namespace GlasajBa.ViewModel
             PretragaNovosti = new RelayCommand<object>(nadjiNovosti, boolDodaj);
             PretragaKandidata = new RelayCommand<object>(nadjiKandidate, boolDodaj);
             UcitajSliku = new RelayCommand<object>(dodajSliku, boolDodaj);
-            NoviKandidat.ErrorsChanged += Vm_ErrorsChanged;
+            NaziviStranki = new ObservableCollection<string>();
+            NaziviStranki.Add("OOAD");
+            NaziviStranki.Add("Proba");
+            /*
+            for (int i=0; i<Sistem.Stranke.Count; i++)
+            {
+                NaziviStranki.Add(Sistem.Stranke[i].Naziv);
+            }
+            */
+            //NoviKandidat.ErrorsChanged += Vm_ErrorsChanged;
         }
 
         public AdministratorViewModel(OstaleFunkcionalnostiViewModel p)
         {
 
+            
             NovaNovost = new Novost(DateTime.Today, null, "", "");
             NoviKandidat = new Kandidat();
-            this.Sistem = new GlasackiSistem();
+            //this.Sistem = new GlasackiSistem();
             Parent = p;
             this.Sistem = Parent.Sistem;
-
+            kojaStranka = new Stranka();
             ListaKandidata = new List<Kandidat>();
             ListaNovosti = new List<Novost>();
             INS = new NavigationService();

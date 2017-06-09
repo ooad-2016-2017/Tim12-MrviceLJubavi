@@ -27,8 +27,8 @@ namespace GlasajBa.View
         //AdministratorViewModel admin;
         public AdminPocetna()
         {
-            this.InitializeComponent();
             this.DataContext = new AdministratorViewModel();
+            this.InitializeComponent();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;

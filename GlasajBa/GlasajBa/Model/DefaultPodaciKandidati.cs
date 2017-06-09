@@ -21,7 +21,7 @@ namespace GlasajBa.Model
                         LicnaKarta = "241M95835",
                         JMBG1 = "0806996176503",
                         DrzavaBoravka = "Bosna i Hercegovina",
-                        Stranka = new Stranka("OOAD", "Mrvice Ljubavi"),
+                        Stranka = new Stranka("OOAD", "Mrvice Ljubavi").Naziv,
                         Godine = 21,
                         StrucnaSprema = "SSS",
                         Pozicija = "Općina",

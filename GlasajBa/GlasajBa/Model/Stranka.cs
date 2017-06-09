@@ -23,8 +23,7 @@ namespace GlasajBa.Model
         }
 
         [Required(ErrorMessage ="Niste unijeli naziv!")]
-        [Key]
-        public string Naziv
+        public String Naziv
         {
             get
             {

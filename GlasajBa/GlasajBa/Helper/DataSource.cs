@@ -105,7 +105,7 @@ namespace GlasajBa.Helper
                 DrustvenaPriznanja = "",
                 DrzavaBoravka = "BiH",
                 Godine = DateTime.Now.Year - 1940,
-                Stranka = DajSveStranke()[0],
+                Stranka = DajSveStranke()[0].Naziv,
                 StrucnaSprema = "VSS",
                 Pozicija = "predsjednik",
                 Slika = null,
