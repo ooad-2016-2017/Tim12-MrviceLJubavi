@@ -33,13 +33,11 @@ namespace GlasajBa.View
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
-        private void richEditBox_TextChanged(System.Object sender, RoutedEventArgs e)
-        {
-
-        }
+        AdministratorViewModel admin;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DataContext = (AdministratorViewModel)e.Parameter;
+            admin = (AdministratorViewModel)e.Parameter;
+            DataContext = admin;
         }
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {

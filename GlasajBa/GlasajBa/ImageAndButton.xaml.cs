@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -29,6 +31,7 @@ namespace GlasajBa.UserControls
         }
 
         public static byte[] uploadSlika = null;
+        public static Image image = null;
         private async void dugmeUC_Click(object sender, RoutedEventArgs e)
         {
             //byte[] uploadSlika = null;
@@ -41,9 +44,31 @@ namespace GlasajBa.UserControls
             StorageFile file = await picker.PickSingleFileAsync();
             if (file != null)
             {
-                uploadSlika = (await Windows.Storage.FileIO.ReadBufferAsync(file)).ToArray();
-                //AdministratorViewModel.NoviKandidat.Slika = uploadSlika;
+                BitmapImage bitmapImage = new BitmapImage();
+                using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                {
+                    // Set the image source to the selected bitmap 
+                    //uploadSlika = (await Windows.Storage.FileIO.ReadBufferAsync(file)).ToArray();
+                    //AdministratorViewModel.NoviKandidat.Slika = uploadSlika;
+                    //BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.DecodePixelWidth = 600; //match the target Image.Width, not shown
+                    await bitmapImage.SetSourceAsync(fileStream);
+                    slikaUC.Source = bitmapImage;
+                    image = slikaUC;
+                    
+                }
+                //uploadSlika =await spasi(bitmapImage);
             }
+
+        }
+
+        private async Task<byte[]> spasi(BitmapImage image)
+        {
+            RandomAccessStreamReference streamRef = RandomAccessStreamReference.CreateFromUri(image.UriSource);
+            IRandomAccessStreamWithContentType streamWithContent = await streamRef.OpenReadAsync();
+            byte[] buffer = new byte[streamWithContent.Size];
+            await streamWithContent.ReadAsync(buffer.AsBuffer(), (uint)streamWithContent.Size, InputStreamOptions.None);
+            return buffer;
         }
 
         private void slikaUC_Loaded(object sender, RoutedEventArgs e)

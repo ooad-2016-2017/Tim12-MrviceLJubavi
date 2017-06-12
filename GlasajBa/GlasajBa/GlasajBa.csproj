@@ -99,6 +99,7 @@
     <Compile Include="Azure\Glasaci.cs" />
     <Compile Include="Helper\CommandHandler.cs" />
     <Compile Include="Helper\DataSource.cs" />
+    <Compile Include="Helper\DateConvertercs.cs" />
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\PictureConverter.cs" />
     <Compile Include="Helper\PunoljetstvoPropertyAttribute.cs" />

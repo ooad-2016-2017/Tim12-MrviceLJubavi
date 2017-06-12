@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GlasajBa.ViewModel;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,11 +26,25 @@ namespace GlasajBa.View
     {
         public PretragaNovosti()
         {
+            this.DataContext = new AdministratorViewModel();
             this.InitializeComponent();
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
+        AdministratorViewModel admin;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DataContext = (AdministratorViewModel)e.Parameter;
+            admin = (AdministratorViewModel)e.Parameter;
+            DataContext = admin;
+        }
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+                e.Handled = true;
+            }
         }
     }
 }

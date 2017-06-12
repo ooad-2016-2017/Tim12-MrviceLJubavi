@@ -24,18 +24,19 @@ namespace GlasajBa.View
     /// </summary>
     public sealed partial class AdminLogin : Page
     {
-        AdministratorViewModel admin;
         public AdminLogin()
         {
             this.InitializeComponent();
-            this.DataContext = admin;
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
+
+        AdministratorViewModel admin;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DataContext = (AdministratorViewModel)e.Parameter;
+            admin = (AdministratorViewModel)e.Parameter;
+            DataContext = admin;
         }
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {

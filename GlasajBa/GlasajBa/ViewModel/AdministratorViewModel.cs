@@ -22,6 +22,7 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
 using Tweetinvi;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace GlasajBa.ViewModel
 {
@@ -164,9 +165,10 @@ namespace GlasajBa.ViewModel
         
         public void dodajKandidata(Object o)
         {
-            uploadSlika = UserControls.ImageAndButton.uploadSlika;
-            //Image x = (Bitmap)((new ImageConverter()).ConvertFrom(jpegByteArray));
-            //NoviKandidat.Slika = ;
+            if (UserControls.ImageAndButton.uploadSlika!=null)
+                uploadSlika = UserControls.ImageAndButton.uploadSlika;
+            
+            NoviKandidat.Slika = UserControls.ImageAndButton.image;
             NoviKandidat.DrzavaBoravka = "Bosna i Hercegovina";
             //dodati kandidata
             if (NoviKandidat.Pozicija == "Opcina")
@@ -205,10 +207,19 @@ namespace GlasajBa.ViewModel
 
         public void dodajNovost(Object o)
         {
-            //dodajTweet("Proba: Twitter radi!");
-            Sistem.Novosti.Add(NovaNovost);
+            if (UserControls.ImageAndButton.uploadSlika != null)
+                uploadSlika = UserControls.ImageAndButton.uploadSlika;
 
-            //potrebno dodati kod za dodavanje Novosti u bazu
+            NovaNovost.Slike = UserControls.ImageAndButton.image;
+            //dodajTweet("Proba: Twitter radi!");
+
+            Sistem.Novosti.Add(NovaNovost);
+            using (var db = new NovostiDBContext())
+            {
+                var contact = NovaNovost;
+                db.Novosti.Add(contact);
+                db.SaveChanges();
+            }
 
             dodajTweet(NovaNovost.Naslov +": " + NovaNovost.Tekst);
         }
@@ -279,10 +290,12 @@ namespace GlasajBa.ViewModel
 
         public void obrisiNovost(Object o)
         {
+            Novost n = null;
             for (int i = 0; i < Sistem.Novosti.Count; i++)
             {
                 if (Sistem.Novosti[i].Naslov == NovaNovost.Naslov)
                 {
+                    n = Sistem.Novosti[i];
                     Sistem.Novosti.RemoveAt(i);
                     break;
                 }
@@ -293,7 +306,15 @@ namespace GlasajBa.ViewModel
                 if (ListaNovosti[i].Naslov == NovaNovost.Naslov)
                 {
                     ListaNovosti.RemoveAt(i);
-                    return;
+                    break;
+                }
+            }
+            if (n != null)
+            {
+                using (var db = new NovostiDBContext())
+                {
+                    db.Novosti.Remove(n);
+                    db.SaveChanges();
                 }
             }
         }
@@ -315,7 +336,7 @@ namespace GlasajBa.ViewModel
                     Sistem.KandidatiD[i].Godine = NoviKandidat.Godine;
                     Sistem.KandidatiD[i].Slika = NoviKandidat.Slika;
                     Sistem.KandidatiD[i].Stranka = NoviKandidat.Stranka;
-                    //poz = i;
+                    poz = i;
                     break;
                 }
             }
@@ -334,7 +355,7 @@ namespace GlasajBa.ViewModel
                     Sistem.KandidatiE[i].Godine = NoviKandidat.Godine;
                     Sistem.KandidatiE[i].Slika = NoviKandidat.Slika;
                     Sistem.KandidatiE[i].Stranka = NoviKandidat.Stranka;
-                    //poz = i;
+                    poz = i;
                     break;
                 }
             }
@@ -353,7 +374,7 @@ namespace GlasajBa.ViewModel
                     Sistem.KandidatiK[i].Godine = NoviKandidat.Godine;
                     Sistem.KandidatiK[i].Slika = NoviKandidat.Slika;
                     Sistem.KandidatiK[i].Stranka = NoviKandidat.Stranka;
-                    //poz = i;
+                    poz = i;
                     break;
                 }
             }
@@ -372,7 +393,7 @@ namespace GlasajBa.ViewModel
                     Sistem.KandidatiO[i].Godine = NoviKandidat.Godine;
                     Sistem.KandidatiO[i].Slika = NoviKandidat.Slika;
                     Sistem.KandidatiO[i].Stranka = NoviKandidat.Stranka;
-                    //poz = i;
+                    poz = i;
                     break;
                 }
             }
@@ -406,12 +427,14 @@ namespace GlasajBa.ViewModel
 
         public void promjenaNovosti(Object o)
         {
+            int poz = -1;
             for (int i = 0; i < Sistem.Novosti.Count; i++)
             {
                 if (Sistem.Novosti[i].Naslov == NovaNovost.Naslov)
                 {
                     Sistem.Novosti.RemoveAt(i);
                     Sistem.Novosti.Add(NovaNovost);
+                    poz = i;
                     break;
                 }
             }
@@ -422,7 +445,16 @@ namespace GlasajBa.ViewModel
                 {
                     ListaNovosti.RemoveAt(i);
                     ListaNovosti.Add(NovaNovost);
-                    return;
+                    break;
+                }
+            }
+
+            if (poz != -1)
+            {
+                using (var db = new NovostiDBContext())
+                {
+                    db.Update(ListaNovosti[poz]);
+                    db.SaveChanges();
                 }
             }
         }
@@ -559,7 +591,6 @@ namespace GlasajBa.ViewModel
         protected void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")
 
         {
-
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
 
         }

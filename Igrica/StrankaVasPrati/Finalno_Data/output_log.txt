@@ -17,7 +17,7 @@ Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\Finaln
 Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\Finalno_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\Finalno_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\Finalno_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.595 seconds
+- Completed reload, in  6.992 seconds
 Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\Finalno_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\MM\Tim12-MrviceLJubavi\Igrica\StrankaVasPrati\Finalno_Data\Managed\System.dll (this message is harmless)
 desktop: 1600x900 40Hz; virtual: 1600x900 at 0,0
@@ -25,7 +25,7 @@ desktop: 1600x900 40Hz; virtual: 1600x900 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.519987 ms
+UnloadTime: 49.556335 ms
 ArgumentException: The scene is invalid.
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
@@ -35,13 +35,13 @@ ArgumentException: The scene is invalid.
 (Filename:  Line: -1)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 30.270641 ms
+UnloadTime: 24.589581 ms
 
 Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 410.
-Total: 0.635586 ms (FindLiveObjects: 0.065611 ms CreateObjectMapping: 0.066710 ms MarkObjects: 0.458912 ms  DeleteObjects: 0.042885 ms)
+Total: 0.628622 ms (FindLiveObjects: 0.064145 ms CreateObjectMapping: 0.098600 ms MarkObjects: 0.425557 ms  DeleteObjects: 0.038853 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.189067 ms
+UnloadTime: 1.307827 ms
 ArgumentException: The scene is invalid.
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
   at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
@@ -52,122 +52,8 @@ ArgumentException: The scene is invalid.
 
 
 Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 292.
-Total: 0.988568 ms (FindLiveObjects: 0.052049 ms CreateObjectMapping: 0.061212 ms MarkObjects: 0.543584 ms  DeleteObjects: 0.330255 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.385901 ms
-ArgumentException: The scene is invalid.
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
-  at MainMenuScript.OnLevelFinishedLoading (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 335.
-Total: 0.666009 ms (FindLiveObjects: 0.057913 ms CreateObjectMapping: 0.055714 ms MarkObjects: 0.539918 ms  DeleteObjects: 0.010996 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.209960 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 410.
-Total: 0.652081 ms (FindLiveObjects: 0.064511 ms CreateObjectMapping: 0.068543 ms MarkObjects: 0.471375 ms  DeleteObjects: 0.046551 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.416324 ms
-ArgumentException: The scene is invalid.
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
-  at MainMenuScript.OnLevelFinishedLoading (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 292.
-Total: 1.036585 ms (FindLiveObjects: 0.052049 ms CreateObjectMapping: 0.066710 ms MarkObjects: 0.568875 ms  DeleteObjects: 0.347849 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.920391 ms
-ArgumentException: The scene is invalid.
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
-  at MainMenuScript.OnLevelFinishedLoading (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 335.
-Total: 0.698632 ms (FindLiveObjects: 0.059380 ms CreateObjectMapping: 0.053515 ms MarkObjects: 0.572174 ms  DeleteObjects: 0.011729 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.161210 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 410.
-Total: 0.566309 ms (FindLiveObjects: 0.066344 ms CreateObjectMapping: 0.057547 ms MarkObjects: 0.399899 ms  DeleteObjects: 0.040686 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.902430 ms
-ArgumentException: The scene is invalid.
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
-  at MainMenuScript.OnLevelFinishedLoading (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 292.
-Total: 0.823990 ms (FindLiveObjects: 0.054981 ms CreateObjectMapping: 0.056814 ms MarkObjects: 0.422624 ms  DeleteObjects: 0.288103 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.864309 ms
-ArgumentException: The scene is invalid.
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
-  at MainMenuScript.OnLevelFinishedLoading (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 335.
-Total: 0.544317 ms (FindLiveObjects: 0.056081 ms CreateObjectMapping: 0.045451 ms MarkObjects: 0.431421 ms  DeleteObjects: 0.010629 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.254678 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 410.
-Total: 0.596733 ms (FindLiveObjects: 0.067810 ms CreateObjectMapping: 0.060113 ms MarkObjects: 0.425923 ms  DeleteObjects: 0.041052 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.837483 ms
-ArgumentException: The scene is invalid.
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects (System.Collections.Generic.List`1 rootGameObjects) [0x00000] in <filename unknown>:0 
-  at UnityEngine.SceneManagement.Scene.GetRootGameObjects () [0x00000] in <filename unknown>:0 
-  at MainMenuScript.OnLevelFinishedLoading (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
-  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 292.
-Total: 0.966575 ms (FindLiveObjects: 0.052049 ms CreateObjectMapping: 0.061212 ms MarkObjects: 0.530388 ms  DeleteObjects: 0.321092 ms)
+Total: 0.755813 ms (FindLiveObjects: 0.039953 ms CreateObjectMapping: 0.042152 ms MarkObjects: 0.399532 ms  DeleteObjects: 0.273075 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3bcc -> priority: 1 
-  Thread -> id: 3578 -> priority: 1 
+  Thread -> id: 4770 -> priority: 1 
+  Thread -> id: 3498 -> priority: 1 

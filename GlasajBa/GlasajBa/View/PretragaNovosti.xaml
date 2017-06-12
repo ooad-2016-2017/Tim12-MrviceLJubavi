@@ -70,7 +70,7 @@
         <Grid x:Name="grid" Margin="10" Opacity="0"/>
         <TextBlock x:Name="textBlock" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,10" Grid.Row="1" TextWrapping="Wrap" Text="Naslov novosti:" Width="220" FontFamily="Century" FontSize="27" d:LayoutOverrides="TopMargin, BottomMargin"/>
         <TextBox x:Name="textBox" Margin="10,10,28,10"  Grid.Row="3" TextWrapping="Wrap" Text="{Binding Path=PoljePretrageNovosti}" FontFamily="Century" FontSize="27" VerticalAlignment="Center" Height="65"/>
-        <ListBox x:Name="listBox" ItemsSource="{Binding Path=ListaNovosti}" Margin="10,10,88,30"  Grid.Row="5" FontFamily="Century" FontSize="22"/>
+        <ListBox x:Name="listBox" ItemsSource="{Binding Path=ListaNovosti}" SelectedItem="{Binding Path=NovaNovost}" Margin="10,10,88,30"  Grid.Row="5" FontFamily="Century" FontSize="22"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>

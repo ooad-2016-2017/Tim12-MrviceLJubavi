@@ -84,6 +84,11 @@ namespace GlasajBa.Model
 
         public GlasackiSistem()
         {
+            Novosti = new List<Novost>();
+            KandidatiD = new List<Kandidat>();
+            KandidatiE = new List<Kandidat>();
+            KandidatiK = new List<Kandidat>();
+            KandidatiO = new List<Kandidat>();
         }
 
         #endregion
